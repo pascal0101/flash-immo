@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AgenceImmobiliere extends Model
+class Quartiers extends Model
 {
-
     public function Offre()
     {
         return $this->belongsTo('App\Offre');
@@ -14,5 +13,13 @@ class AgenceImmobiliere extends Model
     public function Offres()
     {
         return $this->hasMany('App\Offre');
+    }
+    public function Ville()
+    {
+        return $this->hasOne('App\Ville');
+    }
+    public function Villes()
+    {
+        return $this->belongsTo('App\Ville');
     }
 }

@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class TypeBien extends Model
 {
-    public function biens()
+    public function Offres()
     {
-        return $this->hasMany('App\Bien');
+        return $this->hasMany('App\Offre');
     }
-    public function bien()
+    public function Offre()
     {
-        return $this->belongsTo('App\Bien');
+        return $this->belongsTo('App\Offre');
     }
 }
