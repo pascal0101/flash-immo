@@ -31,11 +31,11 @@ class CreateOffresTable extends Migration
             $table->unsignedBigInteger('IdQuartier');
             $table->foreign('IdQuartier')->references('id')->on('Quartiers')->onDelete('cascade');
             $table->unsignedBigInteger('IdTypeOffre');
-            $table->foreign('IdTypeOffre')->references('id')->on('TypeOffres')->onDelete('cascade');
+            $table->foreign('IdTypeOffre')->references('id')->on('Type_Offres')->onDelete('cascade');
             $table->unsignedBigInteger('IdTypeBien');
-            $table->foreign('IdTypeBien')->references('id')->on('TypeBiens')->onDelete('cascade');
+            $table->foreign('IdTypeBien')->references('id')->on('Type_Biens')->onDelete('cascade');
             $table->unsignedBigInteger('IdAgenceImmobiliere');
-            $table->foreign('IdAgenceImmobiliere')->references('id')->on('AgenceImmobilieres')->onDelete('cascade');
+            $table->foreign('IdAgenceImmobiliere')->references('id')->on('Agence_Immobilieres')->onDelete('cascade');
             $table->unsignedBigInteger('IdUtilisateur');
             $table->foreign('IdUtilisateur')->references('id')->on('Utilisateurs')->onDelete('cascade');
             $table->date('DateCreation');
