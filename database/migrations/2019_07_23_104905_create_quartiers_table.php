@@ -17,7 +17,7 @@ class CreateQuartiersTable extends Migration
             $table->bigIncrements('id');
             $table->string('NomQuartier');
             $table->unsignedBigInteger('IdVille');
-            $table->foreign('IdVille')->references('id')->on('Villes');
+            $table->foreign('IdVille')->references('id')->on('Villes')->onDelete('cascade');
             $table->timestamps();
         });
     }

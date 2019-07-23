@@ -38,20 +38,6 @@ class CreateBiensTable extends Migration
             $table->boolean('Balcon')->default(false);
             $table->boolean('Piscine')->default(false);
             $table->boolean('Publier')->default(false);
-
-
-            $table->unsignedBigInteger('IdTypeBien');
-
-            $table->foreign('IdTypeBien')->references('id')->on('TypeBiens');
-
-            $table->unsignedBigInteger('IdAgenceImmobiliere');
-
-            $table->foreign('IdAgenceImmobiliere')->references('id')->on('AgenceImmobilieres');
-
-            $table->unsignedBigInteger('IdUtilisateur');
-
-            $table->foreign('IdUtilisateur')->references('id')->on('Utilisateurs');
-
             $table->timestamps();
         });
     }
