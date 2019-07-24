@@ -3,37 +3,34 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
-
-<html lang="{{ app()->getLocale() }}">
+<html class="no-js" lang="en">
 <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Immobilier</title>
+    <title>Sufee Admin - HTML5 Admin Template</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="TemplateAdmin/apple-icon.png">
-    <link rel="shortcut icon" href="TemplateAdmin/favicon.ico">
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
 
     <link rel="stylesheet" href="TemplateAdmin/vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="TemplateAdmin/vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="TemplateAdmin/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="TemplateAdmin/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="TemplateAdmin/vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="TemplateAdmin/vendors/jqvmap/dist/jqvmap.min.css">
-
+    <link rel="stylesheet" href="TemplateAdmin/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="TemplateAdmin/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
 
     <link rel="stylesheet" href="TemplateAdmin/assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
 </head>
 
 <body>
-
-
     <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -44,10 +41,10 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="./"><img src="TemplateAdmin/images/logo1.png" alt="Logo">FLASH-IMMO</a>
-                <a class="navbar-brand hidden" href="./"><img src="TemplateAdmin/images/logo1.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="TemplateAdmin/images/logo2.png" alt="Logo"></a>
             </div>
 
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
+           <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
@@ -78,17 +75,12 @@
 
 
                     <h3 class="menu-title"></h3><!-- /.menu-title -->
-
-
-                </ul>
-            </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
 
     <!-- Left Panel -->
 
     <!-- Right Panel -->
-
 
     <div id="right-panel" class="right-panel">
 
@@ -140,7 +132,7 @@
                             <div class="dropdown-menu" aria-labelledby="message">
                                 <p class="red">You have 4 Mails</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="TemplateAdmin/images/avatar/1.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Jonathan Smith</span>
                                     <span class="time float-right">Just now</span>
@@ -148,7 +140,7 @@
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="TemplateAdmin/images/avatar/2.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Jack Sanders</span>
                                     <span class="time float-right">5 minutes ago</span>
@@ -156,7 +148,7 @@
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="TemplateAdmin/images/avatar/3.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Cheryl Wheeler</span>
                                     <span class="time float-right">10 minutes ago</span>
@@ -164,7 +156,7 @@
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="TemplateAdmin/images/avatar/4.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Rachel Santos</span>
                                     <span class="time float-right">15 minutes ago</span>
@@ -221,37 +213,49 @@
 
         @yield('content')
 
-        <script src="TemplateAdmin/vendors/jquery/dist/jquery.min.js"></script>
-        <script src="TemplateAdmin/vendors/popper.js/dist/umd/popper.min.js"></script>
-        <script src="TemplateAdmin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="TemplateAdmin/assets/js/main.js"></script>
+    <script src="TemplateAdmin/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="TemplateAdmin/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="TemplateAdmin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="TemplateAdmin/assets/js/main.js"></script>
 
 
-        <script src="TemplateAdmin/vendors/chart.js/dist/Chart.bundle.min.js"></script>
-        <script src="TemplateAdmin/assets/js/dashboard.js"></script>
-        <script src="TemplateAdmin/assets/js/widgets.js"></script>
-        <script src="TemplateAdmin/vendors/jqvmap/dist/jquery.vmap.min.js"></script>
-        <script src="TemplateAdmin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-        <script src="TemplateAdmin/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="TemplateAdmin/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="TemplateAdmin/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="TemplateAdmin/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="TemplateAdmin/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="TemplateAdmin/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="TemplateAdmin/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="TemplateAdmin/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="TemplateAdmin/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="TemplateAdmin/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="TemplateAdmin/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="TemplateAdmin/assets/js/init-scripts/data-table/datatables-init.js"></script>
         <script>
-            (function($) {
-                "use strict";
-
-                jQuery('#vmap').vectorMap({
-                    map: 'world_en',
-                    backgroundColor: null,
-                    color: '#ffffff',
-                    hoverOpacity: 0.7,
-                    selectedColor: '#1de9b6',
-                    enableZoom: true,
-                    showTooltip: true,
-                    values: sample_data,
-                    scaleColors: ['#1de9b6', '#03a9f5'],
-                    normalizeFunction: 'polynomial'
-                });
-            })(jQuery);
+            $('#example').DataTable( {<font></font>
+    language: {<font></font>
+        processing:     "Traitement en cours...",<font></font>
+        search:         "Rechercher&nbsp;:",<font></font>
+        lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",<font></font>
+        info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",<font></font>
+        infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",<font></font>
+        infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",<font></font>
+        infoPostFix:    "",<font></font>
+        loadingRecords: "Chargement en cours...",<font></font>
+        zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",<font></font>
+        emptyTable:     "Aucune donnée disponible dans le tableau",<font></font>
+        paginate: {<font></font>
+            first:      "Premier",<font></font>
+            previous:   "Pr&eacute;c&eacute;dent",<font></font>
+            next:       "Suivant",<font></font>
+            last:       "Dernier"<font></font>
+        },<font></font>
+        aria: {<font></font>
+            sortAscending:  ": activer pour trier la colonne par ordre croissant",<font></font>
+            sortDescending: ": activer pour trier la colonne par ordre décroissant"<font></font>
+        }<font></font>
+    }<font></font>
+} );<font></font>
         </script>
-
     </body>
 
     </html>

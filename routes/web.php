@@ -53,3 +53,10 @@ Route::get('/utilisateur', function () {
 Route::get('/agence', function () {
     return view('User/agence');
 });
+Route::get('/lesbiens', function () {
+    return view('Admin/lesbiens');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

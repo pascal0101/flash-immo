@@ -14,7 +14,9 @@ class TypeBienController extends Controller
      */
     public function index()
     {
-        //
+        $typebiens = TypeBien::all();
+
+        return response()->json($typebiens);
     }
 
     /**
