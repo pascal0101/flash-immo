@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sufee Admin - HTML5 Admin Template</title>
+    <title>Immobilier</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,6 +28,12 @@
     <link rel="stylesheet" href="TemplateAdmin/assets/css/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+    .navbar .menu-title {
+        padding: 0px;
+    }
+
+    </style>
 </head>
 
 <body>
@@ -40,14 +46,14 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="TemplateAdmin/images/logo1.png" alt="Logo">FLASH-IMMO</a>
-                <a class="navbar-brand hidden" href="./"><img src="TemplateAdmin/images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="{{url('/admin')}}"><img src="TemplateAdmin/images/logo1.png" alt="Logo">FLASH-IMMO</a>
+                <a class="navbar-brand hidden" href="{{url('/admin')}}"><img src="TemplateAdmin/images/logo1.png" alt="Logo"></a>
             </div>
 
            <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                        <a href="{{url('/admin')}}"> <i class="menu-icon fa fa-dashboard"></i>Acceuil </a>
                     </li>
                     <h3 class="menu-title">Administrateur</h3><!-- /.menu-title -->
                      <li class="menu-item-has-children dropdown">
@@ -59,20 +65,33 @@
                     </li>
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon  fa fa-list-alt"></i>OFFRES</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">LesBiens</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{url('/active')}}">Biens Activés</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{url('/desactive')}}">Biens Désactivés</a></li>
                         </ul>
                     </li>
 
+                     <li class="menu-item-has-children dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>CLIENTS</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="{{url('/clients')}}">Les Clients</a></li>
+
+                        </ul>
+
+                    <li>
+                        <a href=""> <i class="menu-icon fa fa-print"></i>ETATS </a>
+                    </li>
+                    <li>
+                        <a href=""> <i class="menu-icon fa fa-bar-chart-o"></i>STATISTIQUES </a>
+                    </li>
+
+                     <li>
+                        <a href=""> <i class="menu-icon fa fa-wrench"></i>PARAMETRES </a>
+                    </li>
+                    <li>
+                        <a href=""> <i class="menu-icon fa  fa-credit-card"></i>PAYEMENTS </a>
+                    </li>
 
                     <h3 class="menu-title"></h3><!-- /.menu-title -->
         </nav>
@@ -185,31 +204,34 @@
                         </div>
                     </div>
 
-                    <div class="language-select dropdown" id="language-select">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
-                            <i class="flag-icon flag-icon-us"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="language">
-                            <div class="dropdown-item">
-                                <span class="flag-icon flag-icon-fr"></span>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-es"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-us"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-it"></i>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
 
         </header><!-- /header -->
         <!-- Header-->
+  <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>ADMINISTRATEUR</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Table</a></li>
+                            <li class="active">Data table</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         @yield('content')
 

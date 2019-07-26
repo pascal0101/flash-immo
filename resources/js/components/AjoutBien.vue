@@ -1,17 +1,5 @@
-@extends('UserLayouts.index')
-
-@section('content')
-<!-- Submit Property start -->
-<div class="content-area-7 submit-property">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-
-            </div>
-            <div class="col-md-12">
-                <div class="submit-address">
-    <form method="POST"  action="{{ route('ajoutbien') }}" enctype="multipart/form-data">
-                {{csrf_field()}}
+<template>
+<form method="POST">
                         <div class="main-title-2">
                             <h1 style="color: black"><span >Information</span> de  Base</h1>
                         </div>
@@ -227,8 +215,8 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
                                 <div class="form-group">
-                                    <label style="color: black">Nom</label>
-                                    <input type="text" class="input-text" name="nom" placeholder="Name">
+                                    <label style="color: black">Name</label>
+                                    <input type="text" class="input-text" name="name" placeholder="Name">
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4">
@@ -244,14 +232,15 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn button-md button-theme"><i class="fa fa-check"></i>Enregistrer</button>
+                                <a type="submit" class="btn button-md button-theme"><i class="fa fa-check"></i>Enregistrer</a>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@endsection
+</template>
+<script>
+export default {
+  submitbien() {
+    console.log("ok");
+  }
+};
+</script>

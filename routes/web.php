@@ -15,35 +15,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Admin', function () {
-    return view('Admin/acceuil');
+Route::get('/admin', function () {
+    return view('admin/acceuil');
 });
-Route::get('/User', function () {
-    return view('User/acceuil');
+Route::get('/user', function () {
+    return view('user/acceuil');
 });
 Route::get('/ajoutbien', function () {
-    return view('User/ajoutbien');
+    return view('user/ajoutbien');
 });
 Route::get('/login', function () {
-    return view('User/login');
+    return view('user/login');
 });
 Route::get('/password', function () {
-    return view('User/password');
+    return view('user/password');
 });
 Route::get('/favoris', function () {
-    return view('User/favoris');
+    return view('user/favoris');
 });
 Route::get('/detail', function () {
-    return view('User/detail');
+    return view('user/detail');
 });
 Route::get('/contact', function () {
-    return view('User/contact');
+    return view('user/contact');
 });
 Route::get('/profil', function () {
-    return view('User/profil');
+    return view('user/profil');
 });
 Route::get('/mesbiens', function () {
-    return view('User/mesbiens');
+    return view('user/mesbiens');
 });
 
 Route::get('/utilisateur', function () {
@@ -53,9 +53,17 @@ Route::get('/utilisateur', function () {
 Route::get('/agence', function () {
     return view('User/agence');
 });
-Route::get('/lesbiens', function () {
-    return view('Admin/lesbiens');
+Route::get('/active', function () {
+    return view('Admin/active');
 });
+Route::get('/desactive', function () {
+    return view('Admin/desactive');
+});
+Route::get('/clients', function () {
+    return view('Admin/clients');
+});
+
+Route::post('ajoutbien','OffresController@store')->name('ajoutbien');
 
 Auth::routes();
 

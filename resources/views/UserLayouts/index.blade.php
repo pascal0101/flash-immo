@@ -180,7 +180,7 @@
                     <li>
                         <a href="{{url('/ajoutbien')}}" class="button">
                             <i class="glyphicon glyphicon-bullhorn"></i>
-                            Publier une annonce
+                            Publier une offre
                         </a>
                     </li>
                 </ul>

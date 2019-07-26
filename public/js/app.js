@@ -1688,6 +1688,262 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AjoutBien.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AjoutBien.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  submitbien: function submitbien() {
+    console.log("ok");
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -37027,6 +37283,537 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AjoutBien.vue?vue&type=template&id=4db68afa&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AjoutBien.vue?vue&type=template&id=4db68afa& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("form", { attrs: { method: "POST" } }, [
+      _c("div", { staticClass: "main-title-2" }, [
+        _c("h1", { staticStyle: { color: "black" } }, [
+          _c("span", [_vm._v("Information")]),
+          _vm._v(" de  Base")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "search-contents-sidebar mb-30" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { staticStyle: { color: "black" } }, [_vm._v("Titre")]),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "input-text",
+            attrs: { type: "text", name: "titre", placeholder: "Titre" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticStyle: { color: "black" } }, [
+                _vm._v("Type Offre")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  staticClass: "selectpicker search-fields",
+                  attrs: { name: "typeoffre" }
+                },
+                [
+                  _c("option", [_vm._v("A Vendre")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("A Louer")])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticStyle: { color: "black" } }, [
+                _vm._v("Type Bien")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  staticClass: "selectpicker search-fields",
+                  attrs: { name: "typebien" }
+                },
+                [
+                  _c("option", [_vm._v("Appartement")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Maison")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Commercial")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Garage")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Lot")])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticStyle: { color: "black" } }, [
+                _vm._v("Prix")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "input-text",
+                attrs: { type: "text", name: "prix", placeholder: "FCFA" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticStyle: { color: "black" } }, [
+                _vm._v("Surface")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "input-text",
+                attrs: { type: "text", name: "surface", placeholder: "m²" }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticStyle: { color: "black" } }, [
+                _vm._v("Pièces")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  staticClass: "selectpicker search-fields",
+                  attrs: { name: "nombrepiece" }
+                },
+                [
+                  _c("option", [_vm._v("1")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("2")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("3")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("4")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("5")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("6")])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3 col-sm-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticStyle: { color: "black" } }, [
+                _vm._v("Etage")
+              ]),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  staticClass: "selectpicker search-fields",
+                  attrs: { name: "etage" }
+                },
+                [
+                  _c("option", [_vm._v("1")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("2")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("3")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("4")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("5")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("6")])
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-title-2" }, [
+        _c("h1", [
+          _c("span", { staticStyle: { color: "black" } }, [_vm._v("Galerie")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dropzone dropzone-design mb-50",
+          attrs: { id: "myDropZone" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "dz-default dz-message", attrs: { name: "image" } },
+            [_c("span", [_vm._v("Déposer des images ici")])]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-title-2" }, [
+        _c("h1", [
+          _c("span", { staticStyle: { color: "black" } }, [
+            _vm._v("Emplacement")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mb-30 " }, [
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [
+              _vm._v("Adresse")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "input-text",
+              attrs: { type: "text", name: "adresse", placeholder: "Adresse" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [_vm._v("Ville")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                staticClass: "selectpicker search-fields",
+                attrs: {
+                  name: "ville",
+                  "data-live-search": "true",
+                  "data-live-search-placeholder": "Search value"
+                }
+              },
+              [
+                _c("option", [_vm._v("Choose City")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("New York")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Los Angeles")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Chicago")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Brooklyn")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Queens")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Houston")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Manhattan")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Philadelphia")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Phoenix")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("San Antonio")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Bronx")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("San Diego")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Dallas")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("San Jose")])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [
+              _vm._v("Quartier")
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                staticClass: "selectpicker search-fields",
+                attrs: {
+                  name: "quartier",
+                  "data-live-search": "true",
+                  "data-live-search-placeholder": "Search value"
+                }
+              },
+              [
+                _c("option", [_vm._v("Choose City")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("New York")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Los Angeles")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Chicago")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Brooklyn")])
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-title-2" }, [
+        _c("h1", [_c("span", [_vm._v("Information détaillé")])])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mb-30" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [
+              _vm._v("Description")
+            ]),
+            _vm._v(" "),
+            _c("textarea", {
+              staticClass: "input-text",
+              attrs: { name: "description", placeholder: "Description" }
+            })
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mb-30" }, [
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [
+              _vm._v("Etat "),
+              _c("span")
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                staticClass: "selectpicker search-fields",
+                attrs: { name: "etat" }
+              },
+              [
+                _c("option", [_vm._v("Neuf")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Rennové")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Ancien")])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticStyle: { color: "black" } }, [
+                _vm._v("Nom Agence Immobilière")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "input-text",
+                attrs: { type: "text", name: "agence", placeholder: "PAS immo" }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [
+              _vm._v("Wc + Douche")
+            ]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                staticClass: "selectpicker search-fields",
+                attrs: { name: "wcdouche" }
+              },
+              [
+                _c("option", [_vm._v("1")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("2")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("3")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("4")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("5")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("6")])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-4 col-sm-4 col-xs-12" }, [
+              _c(
+                "div",
+                { staticClass: "checkbox checkbox-theme checkbox-circle" },
+                [
+                  _c("input", {
+                    attrs: {
+                      id: "checkbox1",
+                      type: "checkbox",
+                      name: "garage",
+                      value: "garage"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkbox1" } }, [
+                    _vm._v(
+                      "\r\n                                                Garage\r\n                                            "
+                    )
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-sm-4 col-xs-12" }, [
+              _c(
+                "div",
+                { staticClass: "checkbox checkbox-theme checkbox-circle" },
+                [
+                  _c("input", {
+                    attrs: {
+                      id: "checkbox4",
+                      type: "checkbox",
+                      name: "meuble",
+                      value: "meuble"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkbox4" } }, [
+                    _vm._v(
+                      "\r\n                                                Meublé\r\n                                            "
+                    )
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-4 col-sm-4 col-xs-12" }, [
+              _c(
+                "div",
+                { staticClass: "checkbox checkbox-theme checkbox-circle" },
+                [
+                  _c("input", {
+                    attrs: {
+                      id: "checkbox7",
+                      type: "checkbox",
+                      name: "cuisine",
+                      value: "cuisine"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("label", { attrs: { for: "checkbox7" } }, [
+                    _vm._v(
+                      "\r\n                                                Cuisine\r\n                                            "
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "main-title-2" }, [
+        _c("h1", [
+          _c("span", { staticStyle: { color: "black" } }, [
+            _vm._v("Contact Details")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [_vm._v("Name")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "input-text",
+              attrs: { type: "text", name: "name", placeholder: "Name" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [_vm._v("Email")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "input-text",
+              attrs: { type: "email", name: "email", placeholder: "Email" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 col-sm-4" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { staticStyle: { color: "black" } }, [
+              _vm._v("Numero de Télephone")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "input-text",
+              attrs: {
+                type: "text",
+                name: "numtelephone",
+                placeholder: "Phone"
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-12" }, [
+          _c(
+            "a",
+            {
+              staticClass: "btn button-md button-theme",
+              attrs: { type: "submit" }
+            },
+            [_c("i", { staticClass: "fa fa-check" }), _vm._v("Enregistrer")]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -49286,6 +50073,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component("example-component", __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component("password-input", __webpack_require__(/*! ./components/PasswordInput.vue */ "./resources/js/components/PasswordInput.vue")["default"]);
+Vue.component("ajout-bien", __webpack_require__(/*! ./components/AjoutBien.vue */ "./resources/js/components/AjoutBien.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -49353,6 +50141,75 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/AjoutBien.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/AjoutBien.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AjoutBien_vue_vue_type_template_id_4db68afa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AjoutBien.vue?vue&type=template&id=4db68afa& */ "./resources/js/components/AjoutBien.vue?vue&type=template&id=4db68afa&");
+/* harmony import */ var _AjoutBien_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AjoutBien.vue?vue&type=script&lang=js& */ "./resources/js/components/AjoutBien.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AjoutBien_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AjoutBien_vue_vue_type_template_id_4db68afa___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AjoutBien_vue_vue_type_template_id_4db68afa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/AjoutBien.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/AjoutBien.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/AjoutBien.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AjoutBien_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AjoutBien.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AjoutBien.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AjoutBien_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/AjoutBien.vue?vue&type=template&id=4db68afa&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/AjoutBien.vue?vue&type=template&id=4db68afa& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AjoutBien_vue_vue_type_template_id_4db68afa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AjoutBien.vue?vue&type=template&id=4db68afa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AjoutBien.vue?vue&type=template&id=4db68afa&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AjoutBien_vue_vue_type_template_id_4db68afa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AjoutBien_vue_vue_type_template_id_4db68afa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

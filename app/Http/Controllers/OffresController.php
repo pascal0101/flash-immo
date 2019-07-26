@@ -2,8 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Offres;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Illuminate\Http\UploadedFile;
+use View;
+use Illuminate\Http\Controllers;
+use App\Offre;
+use App\TypeBien;
+use App\TypeOffre;
+use App\Quartier;
+use App\Utilisateur;
 
 class OffresController extends Controller
 {
@@ -35,7 +45,39 @@ class OffresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        if($request->isMethod('post')){
+
+        $offre = new offre();
+
+        $offre ->titre =$request->input('titre');
+        $offre->typeoffre=$request->input('typeoffre');
+        $offre ->typebien = $request->input('typebien');
+        $offre ->prix = $request->input('prix');
+        $offre ->surface = $request->input('surface');
+        $offre ->nombrepiece =$request->input('nombrepiece');
+        $offre->etage=$request->input('etage');
+        $offre ->image = $request->input('image');
+        $offre ->adresse = $request->input('adresse');
+        $offre ->ville = $request->input('ville');
+        $offre ->quartier =$request->input('quartier');
+        $offre->description=$request->input('description');
+        $offre ->etat = $request->input('etat');
+        $offre ->agence =$request->input('agence');
+        $offre->wcdouche=$request->input('wcdouche');
+        $offre ->garage = $request->input('garage');
+        $offre ->meuble = $request->input('meuble');
+        $offre ->cuisine = $request->input('cuisine');
+        $offre ->nom = $request->input('nom');
+        $offre ->email = $request->input('email');
+        $offre ->numtelephone = $request->input('numtelephone');
+
+         dd($offre);
+
+         $offre->save();
+        }
+       //flash('bien ajouté')->success();
+       return redirect('/');
     }
 
     /**

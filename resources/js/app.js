@@ -28,6 +28,7 @@ Vue.component(
     "password-input",
     require("./components/PasswordInput.vue").default
 );
+Vue.component("ajout-bien", require("./components/AjoutBien.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
