@@ -97,7 +97,13 @@
                     <li>
                         <a href="{{url('/utilisateur')}}" class="sign-in"><i class="fa fa-user"></i> S'enregistrer</a>
                     </li>
+                     <li>
+
+                       <a href="{{url('/logout')}}" class="sign-in"><i class="fa fa-user"></i> S'enregistrer</a>
+                    </li>
+
                 </ul>
+
             </div>
         </div>
     </div>

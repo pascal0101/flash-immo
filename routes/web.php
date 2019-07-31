@@ -24,7 +24,7 @@ Route::get('/user', function () {
 Route::get('/ajoutbien', function () {
     return view('user/ajoutbien');
 });
-Route::get('/login', function () {
+Route::get('/login1', function () {
     return view('user/login');
 });
 Route::get('/password', function () {
@@ -69,6 +69,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 //admin route for our multi-auth system
 
