@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Quartiers;
+use App\Quartier;
+use App\Ville;
 use Illuminate\Http\Request;
+use App\Http\Requests\VilleRequest;
+
 
 class QuartiersController extends Controller
 {
@@ -14,7 +17,11 @@ class QuartiersController extends Controller
      */
     public function index()
     {
-        //
+        $villes = ville::all();
+
+        $quartiers = quartier::all();
+
+        return view('admin.quartier')->withQuartiers($quartiers);
     }
 
     /**
@@ -35,7 +42,16 @@ class QuartiersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            $quartier = new quartier();
+            $quartier->NomQuartier = $request->input('nomquartier');
+            $quartier->IdVille = $request->input('nomville');
+            dd($quartier);
+            $quartier->save();
+        }
+        session()->flash('message', 'Quartier enregistré avec succès!!!');
+        return redirect('/Quartier');
     }
 
     /**
@@ -81,5 +97,12 @@ class QuartiersController extends Controller
     public function destroy(Quartiers $quartiers)
     {
         //
+    }
+    public function delete($id)
+    {
+        $quartier = quartier::findOrFail($id);
+        $quartier->delete($id);
+        session()->flash('message1', 'Quartier Supprimé avec succes!!!');
+        return redirect('/quartier');
     }
 }

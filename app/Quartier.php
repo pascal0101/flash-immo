@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Quartiers extends Model
+class Quartier extends Model
 {
     public function Offre()
     {

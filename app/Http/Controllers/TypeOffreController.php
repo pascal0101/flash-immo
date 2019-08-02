@@ -14,7 +14,9 @@ class TypeOffreController extends Controller
      */
     public function index()
     {
-        //
+        $typeoffres = typeoffre::all();
+
+        return view('admin.typeoffre')->withTypeoffres($typeoffres);
     }
 
     /**
@@ -35,7 +37,16 @@ class TypeOffreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            $typeoffre = new typeoffre();
+
+            $typeoffre->LibelleTypeOffre = $request->input('typeoffre');
+
+            $typeoffre->save();
+        }
+        session()->flash('message', 'Type offre enregistré avec succès!!!');
+        return redirect('/typeoffre');
     }
 
     /**
@@ -81,5 +92,12 @@ class TypeOffreController extends Controller
     public function destroy(TypeOffre $typeOffre)
     {
         //
+    }
+    public function delete($id)
+    {
+        $typeoffre = typeoffre::findOrFail($id);
+        $typeoffre->delete($id);
+        session()->flash('message1', 'Type offre Supprimé avec succes!!!');
+        return redirect('/typeoffre');
     }
 }

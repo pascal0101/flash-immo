@@ -16,7 +16,7 @@ class TypeBienController extends Controller
     {
         $typebiens = TypeBien::all();
 
-        return response()->json($typebiens);
+        return view('admin.typebien')->withTypebiens($typebiens);
     }
 
     /**
@@ -37,7 +37,16 @@ class TypeBienController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            $typebien = new typebien();
+
+            $typebien->LibelleTypeBien = $request->input('typebien');
+
+            $typebien->save();
+        }
+        session()->flash('message', 'Type de Bien enregistré avec succès!!!');
+        return redirect('/typebien');
     }
 
     /**
@@ -83,5 +92,12 @@ class TypeBienController extends Controller
     public function destroy(TypeBien $typeBien)
     {
         //
+    }
+    public function delete($id)
+    {
+        $typebien = typebien::findOrFail($id);
+        $typebien->delete($id);
+        session()->flash('message1', 'Type de Bien Supprimé avec succes!!!');
+        return redirect('/typebien');
     }
 }

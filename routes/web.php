@@ -15,9 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
+Route::get('/admin1', function () {
     return view('admin/acceuil');
 });
+
+
+
+
+
+
 Route::get('/user', function () {
     return view('user/acceuil');
 });
@@ -64,6 +70,25 @@ Route::get('/clients', function () {
 });
 
 Route::post('ajoutbien', 'OffresController@store')->name('ajoutbien');
+
+//typebiens
+Route::get('typebien', 'TypeBienController@index');
+Route::post('typebien', 'TypeBienController@store')->name('typebien');
+Route::get('typebien\{id}', 'TypeBienController@delete')->name('supprtypebien');
+
+//typeoffres
+Route::get('typeoffre', 'TypeOffreController@index');
+Route::post('typeoffre', 'TypeOffreController@store')->name('typeoffre');
+Route::get('typeoffre\{id}', 'TypeOffreController@delete')->name('supprtypeoffre');
+
+//Quartiers
+Route::get('quartier', 'QuartiersController@index');
+Route::post('quartier', 'QuartiersController@store')->name('quartier');
+Route::get('quartier\{id}', 'QuartiersController@delete')->name('supprquartier');
+//villes
+Route::get('ville', 'VillesController@index');
+Route::post('ville', 'VillesController@store')->name('ville');
+Route::get('ville\{id}', 'VillesController@delete')->name('supprville');
 
 Auth::routes();
 

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Villes;
+
 use Illuminate\Http\Request;
+use App\Ville;
 
 class VillesController extends Controller
 {
@@ -14,7 +15,9 @@ class VillesController extends Controller
      */
     public function index()
     {
-        //
+        $villes = ville::all();
+
+        return view('admin.ville')->withVilles($villes);
     }
 
     /**
@@ -35,7 +38,16 @@ class VillesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            $ville = new ville();
+
+            $ville->NomVille = $request->input('nomville');
+
+            $ville->save();
+        }
+        session()->flash('message', 'Ville enregistré avec succès!!!');
+        return redirect('/ville');
     }
 
     /**
@@ -81,5 +93,14 @@ class VillesController extends Controller
     public function destroy(Villes $villes)
     {
         //
+    }
+
+    public function delete($id)
+    {
+
+        $ville = ville::findOrFail($id);
+        $ville->delete($id);
+        session()->flash('message1', 'Ville Supprimé avec succes!!!');
+        return redirect('/ville');
     }
 }
