@@ -15,13 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin1', function () {
-    return view('admin/acceuil');
+Route::get('/agence', function () {
+    return view('User/agence');
 });
-
-
-
-
 
 
 Route::get('/user', function () {
@@ -55,10 +51,11 @@ Route::get('/mesbiens', function () {
 Route::get('/utilisateur', function () {
     return view('User/Utilisateur');
 });
-
-Route::get('/agence', function () {
-    return view('User/agence');
+Route::get('/utilisateur1', function () {
+    return view('User/Utilisateur1');
 });
+
+
 Route::get('/active', function () {
     return view('Admin/active');
 });
@@ -71,6 +68,9 @@ Route::get('/clients', function () {
 
 Route::post('ajoutbien', 'OffresController@store')->name('ajoutbien');
 
+Route::get('/admin1', function () {
+    return view('admin/acceuil');
+})->name('admin');
 //typebiens
 Route::get('typebien', 'TypeBienController@index');
 Route::post('typebien', 'TypeBienController@store')->name('typebien');
@@ -94,7 +94,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/logout', 'Auth\LoginController@userLogout');
+
 
 //admin route for our multi-auth system
 

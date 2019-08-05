@@ -1,110 +1,92 @@
-@extends('UserLayouts.login')
+@extends('UserLayouts.agence')
 
 @section('content')
-<body style="background-image:url(TemplateUser/the-nest/img/testimonial-2.jpg);">
-<div class="content-area-7 submit-property">
-    <div class="container">
-        <div class="details" style="background-color: ghostwhite">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="notification-box" style="background-color: #d5ffba">
-                    <h3>Vous n'avez pas de compte?</h3>
 
-                </div>
+
+<!-- MultiStep Form -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <form id="msform" method="POST" action="">
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active"></li>
+                <li>Social Profiles</li>
+                <li>Account Setup</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">CREER COMPTE</h2>
+                <h3 class="fs-subtitle">Tell us something more about you</h3>
+                                <div class="form-group">
+                                    <label>NOM</label>
+                                    <input type="text" class="form-control" name="nom"  placeholder="NOM">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>PRENOM</label>
+                                    <input type="text" class="form-control" name="nom"  placeholder="PRENOM">
+                                </div>
+                     <div class="form-group">
+                <label for="exampleFormControlSelect1">SEXE</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="nomville">
+                <option value="M">Masculin</option>
+                <option value="F">Feminin</option>
+                </select>
             </div>
-            <div class="col-md-10" style="margin-left:100px">
-                <div class="submit-address">
-                    <form method="GET">
-                        <div class="main-title-2">
-                            <h1 style="text-align: center"><marquee><strong><span>Enregistrer</span> Vos Informations</strong></marquee></h1>
-                        </div>
-                        <div class="search-contents-sidebar mb-30">
 
-                        <div class="row mb-30 ">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">NOM</label>
-                                    <input type="text" class="input-text" name="nom"  placeholder="NOM">
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Social Profiles</h2>
+                <h3 class="fs-subtitle">Your presence on the social network</h3>
+                 <div class="form-group">
+                     <label>NUMERO TELEPHONE</label>
+                                <input type="text" name="logo" class="form-control" placeholder="NUMERO TELEPHONE">
+                            </div>
+                <div class="form-group">
+                        <label>EMAIL</label>
+                                    <input type="email" class="form-control" name="nom"  placeholder="email">
                                 </div>
+                    <div class="form-group">
+                        <label>NUMERO CIN</label>
+                                <input type="text" name="logo" class="form-control" placeholder="NUMERO CIN">
                             </div>
-                             <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">PRENOM</label>
-                                    <input type="text" class="input-text" name="prenom"  placeholder="PRENOM">
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="button" name="next" class="next action-button" value="Next"/>
+            </fieldset>
+            <fieldset>
+                <h2 class="fs-title">Create your account</h2>
+                <h3 class="fs-subtitle">Fill in your credentials</h3>
+                <div class="form-group">
+                    <label>LOGO</label>
+                                <input type="file" name="logo" class="form-control" placeholder="LOGO">
+                            </div>
+                <div class="form-group">
+                    <label>CIN</label>
+                                <input type="file" name="logo" class="form-control" placeholder="LOGO">
+                            </div>
+                <div class="form-group">
+                        <label>MOT DE PASSE</label>
+                                    <input type="password" class="form-control" name="pass"  placeholder="Password">
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">SEXE</label>
-                                    <select class="selectpicker search-fields" name="sexe" data-live-search="true" data-live-search-placeholder="Search value">
-                                        <option>Masculin</option>
-                                        <option>Feminin</option>
-
-                                    </select>
+                 <div class="form-group">
+                    <label>MOT DE PASSE COMFIRMEE</label>
+                                    <input type="password" class="form-control" name="pass"  placeholder="Confirm Password">
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">NUMERO TELEPHONE</label>
-                                    <input type="text" class="input-text" name="numtel"  placeholder="NUMERO TELEPHONE">
-                                </div>
-                            </div>
-
-                         <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">EMAIL</label>
-                                    <input type="email" class="input-text" name="email"  placeholder="EMAIL">
-                                </div>
-                            </div>
-                             <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">NUMERO CIN</label>
-                                    <input type="text" class="input-text" name="numerocin"  placeholder="NUMERO CIN">
-                                </div>
-                            </div>
 
 
-                         <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">LOGIN</label>
-                                    <input type="text" class="input-text" name="login"  placeholder="LOGIN">
-                                </div>
-                            </div>
-                             <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">PASSWORD</label>
-                                    <input type="password" class="input-text" name="password"  placeholder="PASSWORD">
-                                </div>
-                            </div>
-
-
-                         <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">PHOTO</label>
-                                    <input type="file" class="input-text" name="photo"  >
-                                </div>
-                            </div>
-                             <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label style="color:black">CIN</label>
-                                    <input type="file" class="input-text" name="cin">
-                                </div>
-                            </div>
-
-
-  </div>
-
-
-                            <div class="form-group">
-                                <button type="submit" class="button-md button-theme btn-block" style="width: 80%;margin-left:100px" >ENREGISTRER<i class="fa fa-check"></i></button>
-                            </div>
-
-                    </form>
-                </div>
-            </div>
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+            </fieldset>
+        </form>
+        <!-- link to designify.me code snippets -->
+<div class="dme_link">
+            <p><a href="{{url('/login')}}" >revenir à la connexion</a></p>
         </div>
-    </div>
+        <!-- /.link to designify.me code snippets -->
     </div>
 </div>
-</body>
+<!-- /.MultiStep Form -->
+
+
 @endsection
