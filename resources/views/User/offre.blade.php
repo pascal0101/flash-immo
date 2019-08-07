@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
-                                        <label style="color:black">Quartier</label>
+                                        <label style="color:black">Nombre de chambre</label>
                                         <select class="selectpicker search-fields" name="quartier">
                                             <option>Appartement</option>
                                             <option>Maison</option>
@@ -64,18 +64,27 @@
                          </div>
 
                           <div class="row">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-lg-4 col-sm-4 col-xs-12">
                                 <div class="form-group">
-                                        <label style="color:black">Pièces</label>
+                                        <label style="color:black">Salon</label>
                                         <select class="selectpicker search-fields" name="piece">
                                             <option>A Vendre</option>
                                             <option>A Louer</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                        <label style="color:black">Balcon/Terrasse</label>
+                                        <select class="selectpicker search-fields" name="piece">
+                                            <option>A Vendre</option>
+                                            <option>A Louer</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
                                     <div class="form-group">
-                                        <label style="color:black">Etages</label>
+                                        <label style="color:black">WC-Douche</label>
                                         <select class="selectpicker search-fields" name="etage">
                                             <option>Appartement</option>
                                             <option>Maison</option>
@@ -85,93 +94,80 @@
                                         </select>
                                     </div>
                                 </div>
-                         </div>
+
+                     </div>
 
 
          <div class="row">
+             <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Surface</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                </select>
+                                </div>
+                                </div>
   <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                         <label style="color:black">Prix</label>
                                         <input type="number" class="form-control" name="prix" placeholder="Prix">
                                 </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                        <label style="color:black">Surface</label>
-                                        <input type="text" class="form-control" name="surface" placeholder="m²">
-                                </div>
-                                </div>
+
          </div>
 </div>
 
 <div class="tab">
-            <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
-                                        <label style="color:black">Etat</label>
-                                        <select class="selectpicker search-fields" name="etat">
-                                            <option>A Vendre</option>
-                                            <option>A Louer</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label style="color:black">Autre</label>
-                                        <select class="selectpicker search-fields" name="autre">
-                                            <option>Appartement</option>
-                                            <option>Maison</option>
-                                            <option>Commercial</option>
-                                            <option>Garage</option>
-                                            <option>Lot</option>
-                                        </select>
-                                    </div>
-                                </div>
-                         </div>
 
+<div class="row">
+                <div class="col-lg-4 col-sm-4 col-xs-12">
+                <div class="form-group">
+                                      <label for="exampleFormControlSelect1">Garage</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>OUI</option>
+                                        <option>NON</option>
+
+                                        </select>
+                                    </div>
+                </div>
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+               <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Meublé</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                        <option>OUI</option>
+                        <option>NON</option>
+                        </select>
+                                    </div>
+                </div>
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                <div class="form-group">
+                                       <label for="exampleFormControlSelect1">Cuisine</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                             <option>OUI</option>
+                                        <option>NON</option>
+                            </select>
+                                    </div>
+                </div>
+ </div>
 
 
 <div class="form-group">
     <label for="exampleTextarea">Description</label>
     <textarea class="form-control" id="exampleTextarea" rows="3" name="description"></textarea>
   </div>
-<br>
-<div class="row">
-                <div class="col-lg-4 col-sm-4 col-xs-12">
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Garage</label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="garage">
-                    <option selected>Choisir...</option>
-                    <option value="1">OUI</option>
-                    <option value="2">NON</option>
-
-                </select>
-                </div>
-                                <div class="col-lg-4 col-sm-4 col-xs-12">
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Meublé</label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="meuble">
-                    <option selected>Choisir...</option>
-                    <option value="1">OUI</option>
-                    <option value="2">NON</option>
-                </select>
-                </div>
-                                <div class="col-lg-4 col-sm-4 col-xs-12">
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Cuisine</label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="cuisine">
-                    <option selected>Choisir...</option>
-                    <option value="1">OUI</option>
-                    <option value="2">NON</option>
-                </select>
-                </div>
- </div>
-<br>
-</div>
-
-<div class="tab">
 
 <div class="form-group">
                                         <label style="color:black">Adresse</label>
                                         <input type="text" class="form-control" name="adresse" placeholder="Adresse">
                                 </div>
+</div>
+
+<div class="tab">
+
  <div class="row">
 
   <div class="col-md-6 col-sm-6">
@@ -191,6 +187,28 @@
                                     <label style="color: black">Image</label>
                                     <input type="file" class="form-control" name="file[]" multiple>
                                 </div>
+
+            <div class="row">
+
+  <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                        <label style="color:black">Email</label>
+                                        <input type="text" class="form-control" name="longitude" placeholder="Longitude">
+                                </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                        <label style="color:black">Numero de Telephone1</label>
+                                        <input type="text" class="form-control" name="latitude" placeholder="Latitude">
+                                </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                        <label style="color:black">Numero de Telephone1</label>
+                                        <input type="text" class="form-control" name="latitude" placeholder="Latitude">
+                                </div>
+                                </div>
+         </div>
 </div>
 
 <div style="overflow:auto;">
