@@ -24,7 +24,7 @@ class OffresController extends Controller
      */
     public function index()
     {
-        //
+        return view('User/offre');
     }
 
     /**
@@ -46,38 +46,51 @@ class OffresController extends Controller
     public function store(Request $request)
     {
 
-        if($request->isMethod('post')){
+        if ($request->isMethod('post')) {
 
-        $offre = new offre();
+            $offre = new offre();
 
-        $offre ->titre =$request->input('titre');
-        $offre->typeoffre=$request->input('typeoffre');
-        $offre ->typebien = $request->input('typebien');
-        $offre ->prix = $request->input('prix');
-        $offre ->surface = $request->input('surface');
-        $offre ->nombrepiece =$request->input('nombrepiece');
-        $offre->etage=$request->input('etage');
-        $offre ->image = $request->input('image');
-        $offre ->adresse = $request->input('adresse');
-        $offre ->ville = $request->input('ville');
-        $offre ->quartier =$request->input('quartier');
-        $offre->description=$request->input('description');
-        $offre ->etat = $request->input('etat');
-        $offre ->agence =$request->input('agence');
-        $offre->wcdouche=$request->input('wcdouche');
-        $offre ->garage = $request->input('garage');
-        $offre ->meuble = $request->input('meuble');
-        $offre ->cuisine = $request->input('cuisine');
-        $offre ->nom = $request->input('nom');
-        $offre ->email = $request->input('email');
-        $offre ->numtelephone = $request->input('numtelephone');
+            $offre->titre = $request->input('titre');
+            $offre->typeoffre = $request->input('typeoffre');
+            $offre->typebien = $request->input('typebien');
+            $offre->prix = $request->input('prix');
+            $offre->surface = $request->input('surface');
+            $offre->nombrepiece = $request->input('nombrepiece');
+            $offre->etage = $request->input('etage');
+            $offre->image = $request->input('image');
+            $offre->adresse = $request->input('adresse');
+            $offre->ville = $request->input('ville');
+            $offre->quartier = $request->input('quartier');
+            $offre->description = $request->input('description');
+            $offre->etat = $request->input('etat');
+            $offre->agence = $request->input('agence');
+            $offre->wcdouche = $request->input('wcdouche');
+            $offre->garage = $request->input('garage');
+            $offre->meuble = $request->input('meuble');
+            $offre->cuisine = $request->input('cuisine');
+            $offre->nom = $request->input('nom');
+            $offre->email = $request->input('email');
+            $offre->numtelephone = $request->input('numtelephone');
 
-         dd($offre);
+            $image = $request->file('file');
+            $imageName = time() . $image->getClientOriginalName();
+            $upload_success = $image->move(public_path('images'), $imageName);
 
-         $offre->save();
+            if ($upload_success) {
+                return response()->json($upload_success, 200);
+                dd($image);
+            }
+            // Else, return error 400
+            else {
+                return response()->json('error', 400);
+            }
+
+            dd($image);
+
+            $offre->save();
         }
-       //flash('bien ajouté')->success();
-       return redirect('/');
+        //flash('bien ajouté')->success();
+        return redirect('/');
     }
 
     /**
@@ -123,5 +136,23 @@ class OffresController extends Controller
     public function destroy(Offres $offres)
     {
         //
+    }
+
+    function upload(Request $request)
+    {
+        $image_code = '';
+        $images = $request->file('file');
+        foreach ($images as $image) {
+            $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $new_name);
+            $image_code .= '<div class="col-md-3" style="margin-bottom:24px;"><img src="/images/' . $new_name . '" class="img-thumbnail" /></div>';
+        }
+
+        $output = array(
+            'success'  => 'Images uploaded successfully',
+            'image'   => $image_code
+        );
+
+        return response()->json($output);
     }
 }

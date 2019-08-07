@@ -1,4 +1,4 @@
-@extends('UserLayouts.index')
+@extends('UserLayouts.index1')
 
 @section('content')
 <!-- Submit Property start -->
@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-12">
                 <div class="submit-address">
-    <form method="POST"  action="{{ route('ajoutbien') }}" enctype="multipart/form-data">
+    <form method="POST"  action="{{ route('upload') }}" enctype="multipart/form-data">
                 {{csrf_field()}}
                         <div class="main-title-2">
                             <h1 style="color: black"><span >Information</span> de  Base</h1>
@@ -85,12 +85,6 @@
                             </div>
                         </div>
 
-                        <div class="main-title-2">
-                            <h1><span style="color: black">Galerie</span> </h1>
-                        </div>
-                        <div id="myDropZone" class="dropzone dropzone-design mb-50">
-                            <div class="dz-default dz-message" name="image"><span>Déposer des images ici</span></div>
-                        </div>
 
                         <div class="main-title-2">
                             <h1><span style="color: black">Emplacement</span></h1>
@@ -243,11 +237,21 @@
                                     <input type="text" class="input-text" name="numtelephone"  placeholder="Phone">
                                 </div>
                             </div>
+
+
+
+                                <div class="form-group">
+                                    <label style="color: black">Image</label>
+                                    <input type="file" class="input-text" name="file[]" multiple>
+                                </div>
+
+
+
+
                             <div class="col-md-12">
                                 <button type="submit" class="btn button-md button-theme"><i class="fa fa-check"></i>Enregistrer</button>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

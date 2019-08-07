@@ -23,9 +23,7 @@ Route::get('/agence', function () {
 Route::get('/user', function () {
     return view('user/acceuil');
 });
-Route::get('/ajoutbien', function () {
-    return view('user/ajoutbien');
-});
+
 Route::get('/login1', function () {
     return view('user/login');
 });
@@ -66,7 +64,12 @@ Route::get('/clients', function () {
     return view('Admin/clients');
 });
 
-Route::post('ajoutbien', 'OffresController@store')->name('ajoutbien');
+Route::get('offre', 'OffresController@index')->name('offre');
+Route::post('offre', 'OffresController@upload')->name('offre');
+//Route::get('multifileupload', 'TestController@multifileupload')->name('multifileupload');
+
+
+
 
 Route::get('/admin1', function () {
     return view('admin/acceuil');
@@ -111,3 +114,8 @@ Route::prefix('admin')->group(function () {
     Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
     Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 });
+
+
+Route::get('image-view', 'TestController@index');
+
+Route::post('image-view', 'TestController@store');
