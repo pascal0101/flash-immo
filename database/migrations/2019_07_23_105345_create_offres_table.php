@@ -18,18 +18,21 @@ class CreateOffresTable extends Migration
             $table->string('Titre');
             $table->text('Description');
             $table->string('Image');
-            $table->string('Etage');
-            $table->string('Etat');
-            $table->double('Prix', 8, 2);
-            $table->integer('NombrePiece')->unsigned();
+            $table->string('Adresse');
+            $table->string('Email');
+            $table->integer('Numero1')->unsigned();
+            $table->integer('Numero2')->unsigned();
+            $table->double('Prix');
+            $table->integer('NombreChambre')->unsigned();
             $table->integer('Surface')->unsigned();
             $table->boolean('Garage')->default(false);
             $table->boolean('Meuble')->default(false);
             $table->boolean('Cuisine')->default(false);
             $table->boolean('Balcon')->default(false);
-            $table->boolean('Publier')->default(false);
-            $table->unsignedBigInteger('IdQuartier');
-            $table->foreign('IdQuartier')->references('id')->on('Quartiers')->onDelete('cascade');
+            $table->boolean('Salon')->default(false);
+            $table->boolean('WcDouche')->default(false);
+            $table->unsignedBigInteger('IdVille');
+            $table->foreign('IdVille')->references('id')->on('Villes')->onDelete('cascade');
             $table->unsignedBigInteger('IdTypeOffre');
             $table->foreign('IdTypeOffre')->references('id')->on('Type_Offres')->onDelete('cascade');
             $table->unsignedBigInteger('IdTypeBien');
@@ -38,8 +41,7 @@ class CreateOffresTable extends Migration
             $table->foreign('IdAgenceImmobiliere')->references('id')->on('Agence_Immobilieres')->onDelete('cascade');
             $table->unsignedBigInteger('IdUtilisateur');
             $table->foreign('IdUtilisateur')->references('id')->on('Utilisateurs')->onDelete('cascade');
-            $table->date('DateCreation');
-            $table->date('DatePubliction');
+            $table->boolean('Publier')->default(false);
             $table->timestamps();
         });
     }

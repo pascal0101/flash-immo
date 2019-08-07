@@ -17,9 +17,9 @@
                                 <div class="form-group">
                                         <label style="color:black">Type Offre</label>
                                         <select class="selectpicker search-fields" name="typeoffre">
-                                            <option value= '1'>Vente</option>
-                                            <option value= '2'>Location</option>
-                                            <option value= '3'>Colocation</option>
+                                             @foreach($typeoffre as $typeoffre)
+                        <option value="{{$typeoffre->id}}">{{$typeoffre->LibelleTypeOffre}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -27,11 +27,9 @@
                                     <div class="form-group">
                                         <label style="color:black">Type Bien</label>
                                         <select class="selectpicker search-fields" name="typebien">
-                                            <option value= '1'>Appartement</option>
-                                            <option value= '2'>Maison</option>
-                                            <option value= '3'>Commercial</option>
-                                            <option value= '4'>Garage</option>
-                                            <option value= '4'>Lot</option>
+                                            @foreach($typebien as $typebien)
+                        <option value="{{$typebien->id}}">{{$typebien->LibelleTypeBien}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -45,8 +43,9 @@
                                 <div class="form-group">
                                         <label style="color:black">Ville</label>
                                         <select class="selectpicker search-fields" name="ville">
-                                     <option value= '1'>Lome</option>
-                                    <option value= '2'>Aneho</option>
+                                       @foreach($ville as $ville)
+                        <option value="{{$ville->id}}">{{$ville->NomVille}}</option>
+                              @endforeach
                                         </select>
                                     </div>
                                 </div>

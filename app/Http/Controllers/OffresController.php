@@ -10,6 +10,7 @@ use Illuminate\Http\UploadedFile;
 use View;
 use Illuminate\Http\Controllers;
 use App\Offre;
+use App\Ville;
 use App\TypeBien;
 use App\TypeOffre;
 use App\Quartier;
@@ -24,7 +25,11 @@ class OffresController extends Controller
      */
     public function index()
     {
-        return view('User/offre');
+        $ville = ville::all(['id', 'NomVille']);
+        $typebien = typebien::all(['id', 'LibelleTypeBien']);
+        $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
+        //return View('pages.Inscription', compact(['pay', $pay], ['nationalite', $nationalite], ['cycle', $cycle], ['filiere', $filiere]));
+        return view('User/offre', compact(['ville', $ville], ['typeoffre', $typeoffre], ['typebien', $typebien]));
     }
 
     /**
