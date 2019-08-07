@@ -65,7 +65,7 @@ Route::get('/clients', function () {
 });
 
 Route::get('offre', 'OffresController@index')->name('offre');
-Route::post('offre', 'OffresController@upload')->name('offre');
+Route::post('offre', 'OffresController@store')->name('offre');
 //Route::get('multifileupload', 'TestController@multifileupload')->name('multifileupload');
 
 

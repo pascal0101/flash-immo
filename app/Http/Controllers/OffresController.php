@@ -55,42 +55,29 @@ class OffresController extends Controller
             $offre->typebien = $request->input('typebien');
             $offre->prix = $request->input('prix');
             $offre->surface = $request->input('surface');
-            $offre->nombrepiece = $request->input('nombrepiece');
-            $offre->etage = $request->input('etage');
-            $offre->image = $request->input('image');
+            $offre->nbrechambre = $request->input('nbrechambre');
             $offre->adresse = $request->input('adresse');
             $offre->ville = $request->input('ville');
-            $offre->quartier = $request->input('quartier');
             $offre->description = $request->input('description');
-            $offre->etat = $request->input('etat');
-            $offre->agence = $request->input('agence');
+            $offre->salon = $request->input('salon');
+            $offre->balcon = $request->input('balcon');
+            $offre->longitude = $request->input('longitude');
+            $offre->latitude = $request->input('latitude');
             $offre->wcdouche = $request->input('wcdouche');
             $offre->garage = $request->input('garage');
             $offre->meuble = $request->input('meuble');
             $offre->cuisine = $request->input('cuisine');
-            $offre->nom = $request->input('nom');
             $offre->email = $request->input('email');
-            $offre->numtelephone = $request->input('numtelephone');
+            $offre->num1 = $request->input('num1');
+            $offre->num2 = $request->input('num2');
 
-            $image = $request->file('file');
-            $imageName = time() . $image->getClientOriginalName();
-            $upload_success = $image->move(public_path('images'), $imageName);
 
-            if ($upload_success) {
-                return response()->json($upload_success, 200);
-                dd($image);
-            }
-            // Else, return error 400
-            else {
-                return response()->json('error', 400);
-            }
-
-            dd($image);
+            dd($offre);
 
             $offre->save();
         }
         //flash('bien ajouté')->success();
-        return redirect('/');
+        return redirect('/offre');
     }
 
     /**
