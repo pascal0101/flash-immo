@@ -19,12 +19,12 @@
                 <h3 class="fs-subtitle">Tell us something more about you</h3>
                                 <div class="form-group">
                                 <label>NOM AGENCE</label>
-                                    <input type="text" class="form-control" name="nom"  placeholder="NOM AGENCE">
+                                    <input type="text" class="form-control" name="nomagence"  placeholder="NOM AGENCE">
                                 </div>
 
                                 <div class="form-group">
                                     <label>NUMERO D'IDENTIFICATION FISCALE</label>
-                                    <input type="text" class="form-control" name="nom"  placeholder="NIF">
+                                    <input type="text" class="form-control" name="NIF"  placeholder="NUMERO D'IDENTIFICATION FISCALE">
                                 </div>
 
                 <input type="button" name="next" class="next action-button" value="Next"/>
@@ -41,7 +41,7 @@
                             </div>
                 <div class="form-group">
                     <label>CONTACT</label>
-                                    <input type="text" class="form-control" name="nom"  placeholder="Contact">
+                                    <input type="text" class="form-control" name="contact"  placeholder="Contact">
                                 </div>
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                 <input type="button" name="next" class="next action-button" value="Next"/>

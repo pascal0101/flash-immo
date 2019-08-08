@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\AgenceImmobiliere;
+use App\Agence;
 use Illuminate\Http\Request;
 
 class AgenceImmobiliereController extends Controller
@@ -35,7 +35,35 @@ class AgenceImmobiliereController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->isMethod('post')) {
+
+            $agence = new agence();
+
+            $agence->Nom = $request->input('nom');
+            $agence->Prenom = $request->input('prenom');
+            $agence->Sexe = $request->input('sexe');
+            $agence->NumeroTel = $request->input('numtel');
+            $agence->Email = $request->input('email');
+            $agence->NumCIN = $request->input('numerocin');
+            $agence->Login = $request->input('login');
+            $agence->Password = $request->input('password');
+
+            if ($request->hasFile('photo')) {
+                $image = $request->file('photo');
+                $image_ext = $image->getClientOriginalExtension();
+                $new_image_name = rand(123456, 999999) . "." . $image_ext;
+                $destination_path = public_path('/profil');
+                $image->move($destination_path, $new_image_name);
+
+                $agence->Photo =  $new_image_name;
+            }
+
+
+
+            $agence->save();
+        }
+        session()->flash('message', 'Agence crée avec succès!!!');
+        return redirect('/utilisateur');
     }
 
     /**

@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    return view('user/test');
+});
+
+Route::post('/submitdata', 'TestController@testfunction');
+
+
 Route::get('/agence', function () {
     return view('User/agence');
 });

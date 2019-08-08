@@ -6,6 +6,7 @@ use App\Test;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
+use Input;
 
 class TestController extends Controller
 {
@@ -114,5 +115,41 @@ class TestController extends Controller
 
 
         return response()->json(['uploaded' => '/upload/' . $imageName]);
+    }
+
+    public function testfunction(Request $request)
+    {
+
+        $name = $request->input('testname');
+
+        if ($name == 'laravel') {
+            echo "success";
+
+            $notification = array(
+                'message' => 'Successfully get laravel data!',
+                'alert-type' => 'success'
+            );
+        } else if ($name == 'found') {
+            echo "info";
+
+            $notification = array(
+                'message' => 'info found data!',
+                'alert-type' => 'info'
+            );
+        } else if ($name == 'notfound') {
+            echo "warning";
+            $notification = array(
+                'message' => 'Warning get not found data!',
+                'alert-type' => 'warning'
+            );
+        } else {
+            echo "error";
+            $notification = array(
+                'message' => 'Error! input is empty !',
+                'alert-type' => 'error'
+            );
+        }
+
+        return back()->with($notification);
     }
 }
