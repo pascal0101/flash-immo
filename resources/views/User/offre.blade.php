@@ -2,6 +2,10 @@
 
 @section('content')
 
+        <div class="alert alert-primary">
+            salut
+        </div>
+
 <form id="regForm" action="{{ route('offre') }}" method="POST" enctype="multipart/form-data">
              {{csrf_field()}}
 <h1></h1>

@@ -46,9 +46,7 @@ Route::get('/mesbiens', function () {
     return view('user/mesbiens');
 });
 
-Route::get('/utilisateur', function () {
-    return view('User/Utilisateur');
-});
+
 Route::get('/utilisateur1', function () {
     return view('User/Utilisateur1');
 });
@@ -64,6 +62,12 @@ Route::get('/clients', function () {
     return view('Admin/clients');
 });
 
+
+//Utilisateur
+Route::get('utilisateur', 'UtilisateurController@index')->name('utilisateur');
+Route::post('utilisateur', 'UtilisateurController@store')->name('utilisateur');
+
+//Offre
 Route::get('offre', 'OffresController@index')->name('offre');
 Route::post('offre', 'OffresController@store')->name('offre');
 //Route::get('multifileupload', 'TestController@multifileupload')->name('multifileupload');

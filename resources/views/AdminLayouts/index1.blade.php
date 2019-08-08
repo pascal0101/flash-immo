@@ -261,32 +261,7 @@
     <script src="TemplateAdmin/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="TemplateAdmin/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
     <script src="TemplateAdmin/assets/js/init-scripts/data-table/datatables-init.js"></script>
-        <script>
-            $('#example').DataTable( {<font></font>
-    language: {<font></font>
-        processing:     "Traitement en cours...",<font></font>
-        search:         "Rechercher&nbsp;:",<font></font>
-        lengthMenu:    "Afficher _MENU_ &eacute;l&eacute;ments",<font></font>
-        info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",<font></font>
-        infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",<font></font>
-        infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",<font></font>
-        infoPostFix:    "",<font></font>
-        loadingRecords: "Chargement en cours...",<font></font>
-        zeroRecords:    "Aucun &eacute;l&eacute;ment &agrave; afficher",<font></font>
-        emptyTable:     "Aucune donnée disponible dans le tableau",<font></font>
-        paginate: {<font></font>
-            first:      "Premier",<font></font>
-            previous:   "Pr&eacute;c&eacute;dent",<font></font>
-            next:       "Suivant",<font></font>
-            last:       "Dernier"<font></font>
-        },<font></font>
-        aria: {<font></font>
-            sortAscending:  ": activer pour trier la colonne par ordre croissant",<font></font>
-            sortDescending: ": activer pour trier la colonne par ordre décroissant"<font></font>
-        }<font></font>
-    }<font></font>
-} );<font></font>
-        </script>
+
     </body>
 
     </html>

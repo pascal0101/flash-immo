@@ -17,11 +17,10 @@ class CreateOffresTable extends Migration
             $table->bigIncrements('id');
             $table->string('Titre');
             $table->text('Description');
-            $table->string('Image');
             $table->string('Adresse');
             $table->string('Email');
-            $table->integer('Numero1')->unsigned();
-            $table->integer('Numero2')->unsigned();
+            $table->string('Numero1');
+            $table->string('Numero2');
             $table->double('Prix');
             $table->integer('NombreChambre')->unsigned();
             $table->integer('Surface')->unsigned();
@@ -37,11 +36,12 @@ class CreateOffresTable extends Migration
             $table->foreign('IdTypeOffre')->references('id')->on('Type_Offres')->onDelete('cascade');
             $table->unsignedBigInteger('IdTypeBien');
             $table->foreign('IdTypeBien')->references('id')->on('Type_Biens')->onDelete('cascade');
-            $table->unsignedBigInteger('IdAgenceImmobiliere');
+            $table->unsignedBigInteger('IdAgenceImmobiliere')->nullable();
             $table->foreign('IdAgenceImmobiliere')->references('id')->on('Agence_Immobilieres')->onDelete('cascade');
-            $table->unsignedBigInteger('IdUtilisateur');
+            $table->unsignedBigInteger('IdUtilisateur')->nullable();
             $table->foreign('IdUtilisateur')->references('id')->on('Utilisateurs')->onDelete('cascade');
             $table->boolean('Publier')->default(false);
+            $table->String('CordGPS');
             $table->timestamps();
         });
     }

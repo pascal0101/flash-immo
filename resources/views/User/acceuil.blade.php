@@ -17,6 +17,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="area-from" data-live-search="true" data-live-search-placeholder="Search value">
+                                    <option>Type(s) d'offre</option>
                                     <option>Acheter</option>
                                     <option>Location</option>
                                     <option>Colocation</option>
@@ -37,22 +38,27 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="location" placeholder="Search value">
-                                    <option>Pièces</option>
-                                    <option>1 pièce</option>
-                                    <option>2 pièces</option>
-                                    <option>3 pièces</option>
-                                    <option>4 pièces</option>
-                                    <option>5 pièces</option>
-                                    <option>6 pièces et +</option>
+                                    <option>Nombre Chambre</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>+10</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="property-types" data-live-search="true" data-live-search-placeholder="Search value">
-                                    <option>état de la propriété</option>
-                                    <option>Neuf</option>
-                                    <option>Ancien</option>
+                                    <option>Toilette(s)</option>
+                                    <option>Oui</option>
+                                    <option>Non</option>
 
                                 </select>
                             </div>
@@ -89,18 +95,12 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-
-                        <input type="text" class="form-control form-control-lg" name="Quartier"  placeholder="Quartier" style="height: 45px">
-
-
+                        <input type="text" class="form-control form-control-lg" name="prix1"  placeholder="Prix Maximun" style="height: 45px">
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <div class="range-slider">
-                                    <div data-min="0" data-max="150000" data-unit="FCFA" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                    <div class="clearfix"></div>
-                                </div>
+                        <input type="text" class="form-control form-control-lg" name="prix2"  placeholder="Prix Minimum" style="height: 45px">
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">

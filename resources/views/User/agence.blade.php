@@ -1,4 +1,4 @@
-@extends('UserLayouts.agence')
+@extends('UserLayouts.agence1')
 
 @section('content')
 
@@ -28,6 +28,9 @@
                                 </div>
 
                 <input type="button" name="next" class="next action-button" value="Next"/>
+                 <div class="dme_link">
+            <p><a href="{{url('/login')}}" >Revenir à la connexion</a></p>
+        </div>
             </fieldset>
             <fieldset>
                 <h2 class="fs-title">Social Profiles</h2>
@@ -59,12 +62,11 @@
 
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                 <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+
             </fieldset>
         </form>
         <!-- link to designify.me code snippets -->
-<div class="dme_link">
-            <p><a href="{{url('/login')}}" >revenir à la connexion</a></p>
-        </div>
+
         <!-- /.link to designify.me code snippets -->
     </div>
 </div>

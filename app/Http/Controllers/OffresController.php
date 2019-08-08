@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use Illuminate\Http\UploadedFile;
-use View;
 use Illuminate\Http\Controllers;
+use App\Http\Requests;
 use App\Offre;
 use App\Ville;
 use App\TypeBien;
 use App\TypeOffre;
+use App\Image;
 use App\Quartier;
 use App\Utilisateur;
 
@@ -56,32 +56,49 @@ class OffresController extends Controller
             $offre = new offre();
 
             $offre->titre = $request->input('titre');
-            $offre->typeoffre = $request->input('typeoffre');
-            $offre->typebien = $request->input('typebien');
+            $offre->IdTypeOffre = $request->input('typeoffre');
+            $offre->IdTypeBien = $request->input('typebien');
             $offre->prix = $request->input('prix');
             $offre->surface = $request->input('surface');
-            $offre->nbrechambre = $request->input('nbrechambre');
+            $offre->NombreChambre = $request->input('nbrechambre');
             $offre->adresse = $request->input('adresse');
-            $offre->ville = $request->input('ville');
+            $offre->IdVille = $request->input('ville');
             $offre->description = $request->input('description');
             $offre->salon = $request->input('salon');
             $offre->balcon = $request->input('balcon');
-            $offre->longitude = $request->input('longitude');
-            $offre->latitude = $request->input('latitude');
+            $offre->CordGPS = $request->input('longitude');
             $offre->wcdouche = $request->input('wcdouche');
             $offre->garage = $request->input('garage');
             $offre->meuble = $request->input('meuble');
             $offre->cuisine = $request->input('cuisine');
             $offre->email = $request->input('email');
-            $offre->num1 = $request->input('num1');
-            $offre->num2 = $request->input('num2');
-
-
-            dd($offre);
+            $offre->Numero1 = $request->input('num1');
+            $offre->Numero2 = $request->input('num2');
 
             $offre->save();
+
+            if ($request->hasFile('file')) {
+                foreach ($request->file as $file) {
+                    $filename = $file->getClientOriginalName();
+                    //print_r($filename);
+                    //$filesize = $file->getClientSize();
+                    $file->storeAs('public/upload', $filename);
+
+                    $image = new image();
+
+                    $image->image_path = $filename;
+
+                    $image->offre_id = $offre->id;
+
+                    // dd($request->file);
+
+                    $image->save();
+                }
+
+                // return "ok";
+            }
         }
-        //flash('bien ajouté')->success();
+        session()->flash('message', 'Offre crée avec succès!!!');
         return redirect('/offre');
     }
 

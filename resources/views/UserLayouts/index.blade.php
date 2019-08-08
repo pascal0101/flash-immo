@@ -135,8 +135,8 @@ input.invalid {
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="list-inline">
-                    <a href="tel:1-8X0-666-8X88"><i class="fa fa-phone"></i>91428199</a>
-                    <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>flash-immo@africantechlab.com</a>
+                    <a href="#"><i class="fa fa-phone"></i>91428199</a>
+                    <a href="#"><i class="fa fa-envelope"></i>flash-immo@africantechlab.com</a>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -209,7 +209,7 @@ input.invalid {
                             Trouver<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-
+                             <li><a href="{{url('/agence')}}">Créer une agence</a></li>
                             <li><a href="index-2.html">Une Agence Immobilière</a></li>
                             <li><a href="index-3.html">Un professionnel Immobilier</a></li>
 
