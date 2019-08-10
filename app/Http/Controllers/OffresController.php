@@ -37,9 +37,10 @@ class OffresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function offres()
     {
-        //
+        $offres = Offre::get();
+        return view('user/acceuil', compact('offres'));
     }
 
     /**
@@ -82,11 +83,11 @@ class OffresController extends Controller
                     $filename = $file->getClientOriginalName();
                     //print_r($filename);
                     //$filesize = $file->getClientSize();
-                    $file->storeAs('public/upload', $filename);
+                    $file->move('images', $filename);
 
                     $image = new image();
 
-                    $image->image_path = $filename;
+                    $image->image_path = "/images/$filename";
 
                     $image->offre_id = $offre->id;
 
@@ -108,9 +109,14 @@ class OffresController extends Controller
      * @param  \App\Offres  $offres
      * @return \Illuminate\Http\Response
      */
-    public function show(Offres $offres)
+    public function show($id)
     {
-        //
+        //$offres = offre::all()->where('id', $id);
+        $images = image::all()->where('offre_id', $id);
+        $offre =  Offre::findOrFail($id);
+        $offre = DB::table('offres')->join('villes', 'offres.id', '=', 'villes.id')->first();
+
+        return view('user.detail', compact('offre', 'images'));
     }
 
     /**

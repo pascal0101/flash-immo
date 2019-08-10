@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAgenceImmobilieresTable extends Migration
+class CreateAgencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateAgenceImmobilieresTable extends Migration
      */
     public function up()
     {
-        Schema::create('agence_immobilieres', function (Blueprint $table) {
+        Schema::create('agences', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('NomAgence');
             $table->string('NIF');
             $table->string('Logo');
             $table->text('Description');
-            $table->integer('Contact')->unsigned();
+            $table->string('Contact');
+            $table->string('Email');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateAgenceImmobilieresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agence_immobilieres');
+        Schema::dropIfExists('agences');
     }
 }

@@ -22,14 +22,10 @@ Route::get('/test', function () {
 Route::post('/submitdata', 'TestController@testfunction');
 
 
-Route::get('/agence', function () {
-    return view('User/agence');
-});
 
 
-Route::get('/user', function () {
-    return view('user/acceuil');
-});
+
+
 
 Route::get('/login1', function () {
     return view('user/login');
@@ -40,9 +36,7 @@ Route::get('/password', function () {
 Route::get('/favoris', function () {
     return view('user/favoris');
 });
-Route::get('/detail', function () {
-    return view('user/detail');
-});
+
 Route::get('/contact', function () {
     return view('user/contact');
 });
@@ -69,6 +63,14 @@ Route::get('/clients', function () {
     return view('Admin/clients');
 });
 
+//afficher une offre
+Route::get('detail\{id}', 'OffresController@show')->name('detail');
+//afficher offre
+Route::get('user', 'OffresController@offres');
+
+//Agence
+Route::get('agence', 'AgenceController@index')->name('agence');
+Route::post('agence', 'AgenceController@store')->name('agence');
 
 //Utilisateur
 Route::get('utilisateur', 'UtilisateurController@index')->name('utilisateur');

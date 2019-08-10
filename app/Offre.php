@@ -55,4 +55,9 @@ class Offre extends Model
     {
         return $this->belongsToMany('App\Utilisateur');
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }

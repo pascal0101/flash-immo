@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Agence;
 use Illuminate\Http\Request;
 
-class AgenceImmobiliereController extends Controller
+class AgenceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AgenceImmobiliereController extends Controller
      */
     public function index()
     {
-        //
+        return view('User/agence');
     }
 
     /**
@@ -39,31 +39,27 @@ class AgenceImmobiliereController extends Controller
 
             $agence = new agence();
 
-            $agence->Nom = $request->input('nom');
-            $agence->Prenom = $request->input('prenom');
-            $agence->Sexe = $request->input('sexe');
-            $agence->NumeroTel = $request->input('numtel');
+            $agence->NomAgence = $request->input('nomagence');
+            $agence->NIF = $request->input('nif');
+            $agence->Description = $request->input('description');
+            $agence->Contact = $request->input('contact');
             $agence->Email = $request->input('email');
-            $agence->NumCIN = $request->input('numerocin');
-            $agence->Login = $request->input('login');
-            $agence->Password = $request->input('password');
 
-            if ($request->hasFile('photo')) {
-                $image = $request->file('photo');
+            if ($request->hasFile('logo')) {
+                $image = $request->file('logo');
                 $image_ext = $image->getClientOriginalExtension();
                 $new_image_name = rand(123456, 999999) . "." . $image_ext;
-                $destination_path = public_path('/profil');
+                $destination_path = public_path('/logo');
                 $image->move($destination_path, $new_image_name);
-
-                $agence->Photo =  $new_image_name;
+                $agence->Logo =  $new_image_name;
             }
 
-
+            //dd($agence);
 
             $agence->save();
         }
         session()->flash('message', 'Agence crée avec succès!!!');
-        return redirect('/utilisateur');
+        return redirect('/agence');
     }
 
     /**

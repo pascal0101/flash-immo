@@ -6,10 +6,10 @@
     <div class="overlay">
         <div class="container">
             <div class="breadcrumb-area">
-                <h1>Properties Detail</h1>
+                <h1>Detail de la propriété</h1>
                 <ul class="breadcrumbs">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active">Properties Detail</li>
+                <li><a href="{{url('/user')}}">Acceuil</a></li>
+                    <li class="active">Detail de la propriété</li>
                 </ul>
             </div>
         </div>
@@ -18,6 +18,7 @@
 <!-- Sub Banner end -->
 
 <!-- Properties details page start -->
+
 <div class="properties-details-page content-area">
     <div class="container">
         <div class="row mb-50">
@@ -25,15 +26,15 @@
                 <!-- Header -->
                 <div class="heading-properties clearfix sidebar-widget">
                     <div class="pull-left">
-                        <h3>Sweet Family Home</h3>
+                        <h3>{{$offre->Titre}}</h3>
                         <p>
-                            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
+                            <i class="fa fa-map-marker"></i>{{$offre->Adresse}}, {{$offre->NomVille}}
                         </p>
                     </div>
                     <div class="pull-right">
-                        <h3><span>$362,100</span></h3>
+                        <h3><span>{{$offre->Prix}} FCFA</span></h3>
                         <h5>
-                            Per Manth
+
                         </h5>
                     </div>
                 </div>
@@ -44,31 +45,18 @@
                         <div id="carousel-custom" class="carousel slide" data-ride="carousel">
                             <div class="carousel-outer">
                                 <!-- Wrapper for slides -->
+
                                 <div class="carousel-inner">
-                                    <div class="item">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-1.jpg" class="thumb-preview" alt="Chevrolet Impala">
-                                    </div>
-                                    <div class="item">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-3.jpg" class="thumb-preview" alt="Chevrolet Impala">
-                                    </div>
-                                    <div class="item">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-4.jpg" class="thumb-preview" alt="Chevrolet Impala">
-                                    </div>
-                                    <div class="item">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-5.jpg" class="thumb-preview" alt="Chevrolet Impala">
-                                    </div>
-                                    <div class="item">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-6.jpg" class="thumb-preview" alt="Chevrolet Impala">
-                                    </div>
-                                    <div class="item">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-7.jpg" class="thumb-preview" alt="Chevrolet Impala">
-                                    </div>
-                                    <div class="item">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-8.jpg" class="thumb-preview" alt="Chevrolet Impala">
-                                    </div>
+
+
+                                        @foreach ($images as $image)
+
                                     <div class="item active">
-                                        <img src="TemplateUser/the-nest/img/properties/properties-2.jpg" class="thumb-preview" alt="Chevrolet Impala">
+                                        <img src="{{$image->image_path}}" class="thumb-preview" alt="Chevrolet Impala">
                                     </div>
+
+                                     @endforeach
+
                                 </div>
                                 <!-- Controls -->
                                 <a class="left carousel-control" href="#carousel-custom" role="button" data-slide="prev">
@@ -100,123 +88,7 @@
                     <!-- Properties detail slider end -->
 
                     <!-- Advanced search start -->
-                    <div class="advabced-search hidden-lg hidden-md">
-                        <div class="main-title-2">
-                            <h1><span>Advanced</span> Search</h1>
-                        </div>
 
-                        <form method="GET">
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-status" data-live-search="true" data-live-search-placeholder="Search value">
-                                    <option>Property Status</option>
-                                    <option>For Sale</option>
-                                    <option>For Rent</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="location" data-live-search="true" data-live-search-placeholder="Search value">
-                                    <option>Location</option>
-                                    <option>United States</option>
-                                    <option>United Kingdom</option>
-                                    <option>American Samoa</option>
-                                    <option>Belgium</option>
-                                    <option>Cameroon</option>
-                                    <option>Canada</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-types" data-live-search="true" data-live-search-placeholder="Search value" >
-                                    <option>Property Types</option>
-                                    <option>Residential</option>
-                                    <option>Commercial</option>
-                                    <option>Land</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <select class="selectpicker search-fields" name="area-from" data-live-search="true" data-live-search-placeholder="Search value" >
-                                    <option>Area From</option>
-                                    <option>1000</option>
-                                    <option>800</option>
-                                    <option>600</option>
-                                    <option>400</option>
-                                    <option>200</option>
-                                    <option>100</option>
-                                </select>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="bedrooms">
-                                            <option>Bedrooms</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="bathroom">
-                                            <option>Bathroom</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="balcony">
-                                            <option>Balcony</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" data-live-search="true" name="garage">
-                                            <option>Garage</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="range-slider">
-                                <label>Area</label>
-                                <div data-min="0" data-max="10000" data-unit="Sq ft" data-min-name="min_area" data-max-name="max_area" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="range-slider">
-                                <label>Price</label>
-                                <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="form-group">
-                                <button class="search-button">Search</button>
-                            </div>
-                        </form>
-                    </div>
                     <!-- Advanced search end -->
 
                     <!-- Properties description start -->
@@ -224,9 +96,8 @@
                         <div class="main-title-2">
                             <h1><span>Description</span></h1>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra</p>
-                        <br>
-                        <p>Nam mattis lobortis felis eu blandit. Morbi tellus ligula, interdum sit amet ipsum et, viverra hendrerit lectus. Nunc efficitur sem vel est laoreet, sed bibendum eros viverra. Vestibulum finibus, ligula sed euismod tincidunt, lacus libero lobortis ligula, sit amet molestie ipsum purus ut tortor. Nunc varius, dui et sollicitudin facilisis, erat felis imperdiet felis, et iaculis dui magna vitae diam. Donec mattis diam nisl, quis ullamcorper enim malesuada non. Curabitur lobortis eu mauris nec vestibulum. Nam efficitur, ex ac semper malesuada nisi odio consequat dui, hendrerit vulputate odio dui </p>
+                        <p>{{$offre->Description}}</p>
+
                     </div>
                     <!-- Properties description end -->
 
@@ -239,30 +110,37 @@
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <ul class="condition">
                                     <li>
-                                        <i class="flaticon-bed"></i>3 Beds
+                                        <i class="flaticon-bed"></i>Chambre(s)
                                     </li>
                                     <li>
-                                        <i class="flaticon-holidays"></i>Bathroom
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <ul class="condition">
-                                    <li>
-                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>4800 sq ft
+                                        <i class="flaticon-holidays"></i>Salon
                                     </li>
                                     <li>
-                                        <i class="flaticon-monitor"></i>TV
+                                        <i class="flaticon-holidays"></i>Toilette(s)
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <ul class="condition">
                                     <li>
-                                        <i class="flaticon-vehicle"></i>1 Garage
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Meuble
                                     </li>
                                     <li>
-                                        <i class="flaticon-building"></i>Balcony
+                                        <i class="flaticon-monitor"></i>Cuisine
+                                    </li>
+                                     <li>
+                                        <i class="flaticon-monitor"></i>Surface
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <ul class="condition">
+                                    <li>
+                                        <i class="flaticon-vehicle"></i>Garage
+                                    </li>
+                                    <li>
+                                        <i class="flaticon-building"></i>Balcon
                                     </li>
                                 </ul>
                             </div>
@@ -271,95 +149,20 @@
                     <!-- Properties condition end -->
 
                     <!-- Properties amenities start -->
-                    <div class="properties-amenities">
-                        <div class="main-title-2">
-                            <h1><span>Amenities</span></h1>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <ul class="amenities">
-                                    <li>
-                                        <i class="flaticon-air-conditioner"></i>Air conditioning
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-bars"></i>Balcony
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-people-2"></i>Pool
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i>TV
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-weightlifting"></i>Gym
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <ul class="amenities">
-                                    <li>
-                                        <i class="flaticon-wifi"></i>Wifi
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-transport"></i>Parking
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-bed"></i>Double Bed
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-machine"></i>Iron
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <ul class="amenities">
-                                    <li>
-                                        <i class="flaticon-old-telephone-ringing"></i>Telephone
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-person-enjoying-jacuzzi-hot-water-bath"></i>Jacuzzi
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-clock"></i>Alarm
-                                    </li>
-                                    <li>
-                                        <i class="flaticon-vehicle"></i>Garage
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- Properties amenities end -->
                 </div>
                 <!-- Properties details section end -->
 
                 <!-- Floor plans start -->
-                <div class="floor-plans sidebar-widget">
-                    <div class="main-title-2">
-                        <h1><span>Floor Plans</span></h1>
-                    </div>
-                    <table>
-                        <tbody><tr>
-                            <td><strong>Size</strong></td>
-                            <td><strong>Rooms</strong></td>
-                            <td><strong>2 Bathrooms</strong></td>
-                        </tr>
-                        <tr>
-                            <td>1600</td>
-                            <td>3</td>
-                            <td>2</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                   
-                </div>
+
                 <!-- Floor plans end -->
 
                 <!-- Location start -->
                 <div class="location sidebar-widget">
                     <div class="map">
                         <div class="main-title-2">
-                            <h1><span>Location</span></h1>
+                            <h1><span>LOCALISATION DU BIEN</span></h1>
                         </div>
                         <div id="map" class="contact-map"></div>
                     </div>
@@ -372,19 +175,20 @@
                     <!-- Search contents sidebar start -->
                     <div class="sidebar-widget hidden-sm hidden-xs">
                         <div class="main-title-2">
-                            <h1><span>Advanced</span> Search</h1>
+                            <h1><span>Recherche</span> Avancée</h1>
                         </div>
 
                         <form method="GET">
+                            <div class="row">
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-status" data-live-search="true" data-live-search-placeholder="Search value">
+                                <select class="form-control" name="property-status">
                                     <option>Property Status</option>
                                     <option>For Sale</option>
                                     <option>For Rent</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="location" data-live-search="true" data-live-search-placeholder="Search value">
+                                <select class="form-control" name="property-status">
                                     <option>Location</option>
                                     <option>United States</option>
                                     <option>United Kingdom</option>
@@ -396,7 +200,7 @@
                             </div>
 
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-types" data-live-search="true" data-live-search-placeholder="Search value" >
+                                <select class="form-control" name="property-status">
                                     <option>Property Types</option>
                                     <option>Residential</option>
                                     <option>Commercial</option>
@@ -405,7 +209,19 @@
                             </div>
 
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="area-from" data-live-search="true" data-live-search-placeholder="Search value" >
+                               <select class="form-control" name="property-status">
+                                    <option>Area From</option>
+                                    <option>1000</option>
+                                    <option>800</option>
+                                    <option>600</option>
+                                    <option>400</option>
+                                    <option>200</option>
+                                    <option>100</option>
+                                </select>
+                            </div>
+
+                              <div class="form-group">
+                               <select class="form-control" name="property-status">
                                     <option>Area From</option>
                                     <option>1000</option>
                                     <option>800</option>
@@ -419,153 +235,94 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group">
-                                        <select class="selectpicker search-fields" name="bedrooms">
-                                            <option>Bedrooms</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+ <input type="number" class="form-control" placeholder="Prix min">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group">
-                                        <select class="selectpicker search-fields" name="bathroom">
-                                            <option>Bathroom</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+ <input type="number" class="form-control" placeholder="Prix max">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" name="balcony">
-                                            <option>Balcony</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <select class="selectpicker search-fields" data-live-search="true" name="garage">
-                                            <option>Garage</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="range-slider">
-                                <label>Area</label>
-                                <div data-min="0" data-max="10000" data-unit="Sq ft" data-min-name="min_area" data-max-name="max_area" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="range-slider">
-                                <label>Price</label>
-                                <div data-min="0" data-max="150000" data-unit="USD" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                <div class="clearfix"></div>
-                            </div>
+</div>
 
                             <div class="form-group mb-0">
-                                <button class="search-button">Search</button>
+                                <button class="search-button">Chercher</button>
                             </div>
                         </form>
                     </div>
                     <!-- Search contents sidebar end -->
 
                     <!-- Social media start -->
-                    <div class="social-media sidebar-widget clearfix">
-                        <!-- Main Title 2 -->
-                        <div class="main-title-2">
-                            <h1><span>Social</span> Media</h1>
-                        </div>
-                        <!-- Social list -->
-                        <ul class="social-list">
-                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
+
 
                     <!-- Inside properties start  -->
-                    <div class="inside-properties sidebar-widget">
-                        <!-- Main Title 2 -->
-                        <div class="main-title-2">
-                            <h1><span>Property</span> Video</h1>
-                        </div>
-                        <iframe src="https://www.youtube.com/embed/5e0LxrLSzok" allowfullscreen=""></iframe>
-                    </div>
+
 
                     <!-- Helping center start -->
                     <div class="sidebar-widget helping-box clearfix">
                         <div class="main-title-2">
-                            <h1><span>Helping</span> Center</h1>
+                            <h1><span>CONTACTS</span> </h1>
                         </div>
                         <div class="helping-center">
                             <div class="icon"><i class="fa fa-map-marker"></i></div>
-                            <h4>Address</h4>
-                            <span>123 Kathal St. Tampa City,</span>
+                            <h4>Adresse</h4>
+                            <span>{{$offre->Adresse}}, {{$offre->NomVille}}</span>
+                        </div>
+                         <div class="helping-center">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Adresse mail</h4>
+                            <span>{{$offre->Email}}</span>
                         </div>
                         <div class="helping-center">
                             <div class="icon"><i class="fa fa-phone"></i></div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+55-417-634-7071">+55 417 634 7071</a> </p>
+                            <h4>Numero Telephone</h4>
+                            <p><a href="#">{{$offre->Numero1}} / {{$offre->Numero2}}</a> </p>
                         </div>
                     </div>
 
                     <!-- Mortgage calculator start -->
                     <div class="sidebar-widget contact-1 mortgage-calculator">
                         <div class="main-title-2">
-                            <h1><span>Mortgage</span> Calculator</h1>
+                            <h1><span>un message à</span> l'offreur</h1>
                         </div>
                         <div class="contact-form">
                             <form id="agent_form" action="https://storage.googleapis.com/themevessel-products/the-nest/index.html" method="GET" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-label">Property Price</label>
-                                            <input type="text" class="input-text" placeholder="$87.000">
+
+                                            <input type="text" class="form-control" placeholder="Nom & Prenom">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-label">Interest Rate (%)</label>
-                                            <input type="text" class="input-text" placeholder="10%">
+
+                                            <input type="text" class="form-control" placeholder="Entrer Email">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-label">Period In Months</label>
-                                            <input type="text" class="input-text" placeholder="10 Months">
+
+                                            <input type="text" class="form-control" placeholder="Objet">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label class="form-label">Down Payment</label>
-                                            <input type="text" class="input-text" placeholder="$36,300">
+
+                                            <input type="text" class="form-control" placeholder="Numero Telephone">
                                         </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                      <div class="form-group">
+
+                                    <textarea class="form-control" id="exampleTextarea" rows="3" name="description" placeholder="Message"></textarea>
+                                </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group mb-0">
-                                            <button class="search-button">Search</button>
+                                            <button class="search-button">Envoyer votre message</button>
                                         </div>
                                     </div>
                                 </div>
@@ -575,20 +332,26 @@
 
 
                     <!-- Latest tweet start -->
-                    <div class="sidebar-widget latest-tweet">
+                    <div class="sidebar-widget category-posts">
                         <div class="main-title-2">
-                            <h1><span>Latest</span> Tweet</h1>
+                            <h1><span>Catégorie</span> Populaire</h1>
                         </div>
-                        <p><a href="#">@Lorem ipsum dolor</a> sit amet, consectetur adipiscing elit. Aenean id dignissim justo. Maecenas urna lacus, bibendum </p>
-                        <p>@Lorem ipsum dolor<a href="#">sit amet, consectetur</a> adipiscing elit. Aenean id dignissim justo. Maecenas urna lacus, bibendum quis orci </p>
+                        <ul class="list-unstyled list-cat">
+                            <li><a href="#">Maison </a> <span>(45)  </span></li>
+                            <li><a href="#">Apartment  </a> <span>(21)  </span></li>
+                            <li><a href="#">Bureuax </a> <span>(23)  </span></li>
+                            <li><a href="#">Terrains </a> <span>(19)  </span></li>
+
+                        </ul>
                     </div>
+
                 </div>
                 <!-- Sidebar end -->
             </div>
         </div>
 
         <div class="main-title-2">
-            <h1><span>Related Properties</span></h1>
+            <h1><span>Propriétés Connexes</span></h1>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
