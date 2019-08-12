@@ -3,55 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User;
 
 class Offre extends Model
 {
-    //
-    public function Quartier()
-    {
-        return $this->hasOne('App\Quartier');
-    }
-    public function Quartiers()
-    {
-        return $this->belongsTo('App\Quartier');
-    }
 
-    //Type offre
-    public function TypeOffre()
-    {
-        return $this->hasOne('App\TypeOffre');
-    }
-    public function TypeOffres()
-    {
-        return $this->belongsTo('App\TypeOffre');
-    }
 
-    //Type bien
-    public function TypeBien()
-    {
-        return $this->hasOne('App\TypeBien');
-    }
-    public function TypeBiens()
-    {
-        return $this->belongsTo('App\TypeBien');
-    }
-
-    //Agence Immobiliere
-    public function AgenceImmobiliere()
-    {
-        return $this->hasOne('App\AgenceImmobiliere');
-    }
-    public function AgenceImmobilieres()
-    {
-        return $this->belongsTo('App\AgenceImmobiliere');
-    }
 
     //utilisateur
-    public function Utilisateur()
+    public function utilisateurs()
     {
-        return $this->hasOne('App\Utilisateur');
+        return $this->belongsTo(utilisateur::class);
     }
-    public function Utilisateurs()
+    public function Utilisateur()
     {
         return $this->belongsToMany('App\Utilisateur');
     }
@@ -59,5 +23,10 @@ class Offre extends Model
     public function images()
     {
         return $this->hasMany(Image::class);
+    }
+
+    public function image()
+    {
+        return $this->belongsTo('App\Image', 'offre_id', 'id');
     }
 }

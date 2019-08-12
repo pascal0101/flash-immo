@@ -49,13 +49,16 @@
                                 <div class="carousel-inner">
 
 
-                                        @foreach ($images as $image)
-
+                                @foreach ($images as $image)
+                                   @if($loop->first)
                                     <div class="item active">
+                                    @else
+                                     <div class="item">
+                                     @endif
                                         <img src="{{$image->image_path}}" class="thumb-preview" alt="Chevrolet Impala">
                                     </div>
 
-                                     @endforeach
+                                 @endforeach
 
                                 </div>
                                 <!-- Controls -->
@@ -74,14 +77,9 @@
                             </div>
                             <!-- Indicators -->
                             <ol class="carousel-indicators thumbs visible-lg visible-md">
-                                <li data-target="#carousel-custom" data-slide-to="0" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-1.jpg" alt="Chevrolet Impala"></li>
-                                <li data-target="#carousel-custom" data-slide-to="1" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-3.jpg" alt="Chevrolet Impala"></li>
-                                <li data-target="#carousel-custom" data-slide-to="2" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-4.jpg" alt="Chevrolet Impala"></li>
-                                <li data-target="#carousel-custom" data-slide-to="3" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-5.jpg" alt="Chevrolet Impala"></li>
-                                <li data-target="#carousel-custom" data-slide-to="4" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-6.jpg" alt="Chevrolet Impala"></li>
-                                <li data-target="#carousel-custom" data-slide-to="5" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-7.jpg" alt="Chevrolet Impala"></li>
-                                <li data-target="#carousel-custom" data-slide-to="6" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-8.jpg" alt="Chevrolet Impala"></li>
-                                <li data-target="#carousel-custom" data-slide-to="7" class=""><img src="TemplateUser/the-nest/img/properties/properties-small-2.jpg" alt="Chevrolet Impala"></li>
+                                @foreach ($images as $key =>$image)
+                            <li data-target="#carousel-custom" data-slide-to="{{$key}}" class=""><img src="{{$image->image_path}}" alt="Chevrolet Impala"></li>
+                               @endforeach
                             </ol>
                         </div>
                     </div>

@@ -73,8 +73,6 @@ class UtilisateurController extends Controller
             }
 
 
-            $utilisateur->save();
-
             $user = new user();
 
 
@@ -82,10 +80,11 @@ class UtilisateurController extends Controller
             $user->email = $request->input('email');
             $user->password = bcrypt($request->input('password'));
             $user->remember_token = Null;
-
-            //dd($user);
-
             $user->save();
+            //dd($user);
+            $utilisateur->user_id = $user->id;
+
+            $utilisateur->save();
         }
         session()->flash('message', 'Compte crée avec succès!!!');
         return redirect('/utilisateur');

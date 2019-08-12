@@ -63,7 +63,10 @@ Route::get('/clients', function () {
     return view('Admin/clients');
 });
 
-//afficher une offre
+//afficher les offres d'un utilisateur
+Route::get('mesoffres\{id}', 'OffresController@mesoffres')->name('mesoffres');
+
+//afficher les detail d'une offre une offre
 Route::get('detail\{id}', 'OffresController@show')->name('detail');
 //afficher offre
 Route::get('user', 'OffresController@offres');

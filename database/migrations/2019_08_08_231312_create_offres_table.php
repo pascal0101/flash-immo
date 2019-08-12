@@ -36,10 +36,10 @@ class CreateOffresTable extends Migration
             $table->foreign('IdTypeOffre')->references('id')->on('Type_Offres')->onDelete('cascade');
             $table->unsignedBigInteger('IdTypeBien');
             $table->foreign('IdTypeBien')->references('id')->on('Type_Biens')->onDelete('cascade');
-            $table->unsignedBigInteger('IdAgenceImmobiliere')->nullable();
-            $table->foreign('IdAgenceImmobiliere')->references('id')->on('Agence_Immobilieres')->onDelete('cascade');
-            $table->unsignedBigInteger('IdUtilisateur')->nullable();
-            $table->foreign('IdUtilisateur')->references('id')->on('Utilisateurs')->onDelete('cascade');
+            $table->unsignedBigInteger('agence_id')->nullable();
+            $table->foreign('agence_id')->references('id')->on('agences')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('utilisateurs')->onDelete('cascade');
             $table->boolean('Publier')->default(false);
             $table->String('CordGPS');
             $table->timestamps();

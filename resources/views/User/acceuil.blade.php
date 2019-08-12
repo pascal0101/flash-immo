@@ -141,17 +141,24 @@
                             <div class="property-tag button alt featured">En Vente</div>
                             <div class="property-tag button sale">For Sale</div>
                             <div class="property-price">{{$offre->Prix}} FCFA</div>
-                            <img src="TemplateUser/the-nest/img/properties/properties-1.jpg" alt="fp" class="img-responsive">
+                              @foreach ($offre->images as $image)
+                                @if ($loop->first)
+                                     <img src="{{$image->image_path}}" alt="fp" class="img-responsive">
+                                @endif
+
+                              @endforeach
                             <div class="property-overlay">
 
                                 <a href="{{ route('detail',[$offre->id])}}" class="overlay-link">
                                     <i class="fa fa-link"></i>
                                 </a>
-                                <a class="overlay-link property-video" title="Lexus GS F">
-                                    <i class="fa fa-video-camera"></i>
-                                </a>
+
                                 <div class="property-magnify-gallery">
-                                    <a href="TemplateUser/the-nest/img/properties/properties-1.jpg" class="overlay-link">
+                                    @foreach ($offre->images as $image)
+                                @if ($loop->first)
+                                    <a href="{{$image->image_path}}" class="overlay-link">
+                                        @endif
+                                        @endforeach
                                         <i class="fa fa-expand"></i>
                                     </a>
 
@@ -244,30 +251,31 @@
                 <div class="content">
                     <i class="flaticon-apartment"></i>
                     <h4>Appartements</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
                 <div class="content">
                     <i class="flaticon-internet"></i>
                     <h4>Maisons</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
                 <div class="content">
                     <i class="flaticon-vehicle"></i>
-                    <h4>Garages</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+                    <h4>Bureaux</h4>
+
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
                 <div class="content">
                     <i class="flaticon-symbol"></i>
-                    <h4>Commercial</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et</P>
+                    <h4>Terrains</h4>
+
                 </div>
             </div>
+
         </div>
         <a href="#" class="btn button-md button-theme">LIRE LA SUITE</a>
     </div>

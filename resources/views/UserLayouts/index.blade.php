@@ -40,7 +40,7 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/ie10-viewport-bug-workaround.css">
-
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script type="text/javascript" src="js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="TemplateUser/the-nest/js/ie-emulation-modes-warning.js"></script>
@@ -99,6 +99,7 @@ input.invalid {
 .step.finish {
   background-color: #4CAF50;
 }
+
     </style>
 </head>
 <body>
@@ -223,8 +224,9 @@ input.invalid {
                         </a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="index-2.html">Mes propriétés</a></li>
-                            <li><a href="index-3.html">Ajouter Bien</a></li>
+                            <li><a href="{{ route('mesoffres',[Auth::user()->id])}}">Mes propriétés</a></li>
+
+
                             <li><a href="index-4.html">Déconnexion</a></li>
 
                         </ul>
@@ -306,7 +308,7 @@ input.invalid {
 <!-- Partners block end -->
 
 <!-- Footer start -->
-<footer class="main-footer clearfix">
+<footer class="main-footer clearfix" style="padding: 9px 0 30px">
     <div class="container">
         <!-- Footer info-->
         <div class="footer-info">
@@ -347,10 +349,10 @@ input.invalid {
                         </div>
                         <ul class="links">
                             <li>
-                                <a href="index.html">Acceuil</a>
+                            <a href="{{url('/user')}}">Acceuil</a>
                             </li>
                             <li>
-                    <a href="about.html">
+                    <a href="#">
                                     À propos de nous</a>
                             </li>
 
@@ -358,55 +360,7 @@ input.invalid {
                     </div>
                 </div>
                 <!-- Recent cars -->
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="footer-item popular-posts">
-                        <div class="main-title-2">
-                            <h1>ANNONCES POPULAIRES</h1>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="TemplateUser/the-nest/img/properties/small-properties-1.jpg" alt="small-properties-1">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Sweet Family Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="TemplateUser/the-nest/img/properties/small-properties-2.jpg" alt="small-properties-2">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Modern Family Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="TemplateUser/the-nest/img/properties/small-properties-3.jpg" alt="small-properties-3">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Beautiful Single Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- Subscribe -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="footer-item">
@@ -431,6 +385,11 @@ input.invalid {
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                     <div class="footer-item">
+                         <img src="TemplateUser/the-nest/img/ATLlogo.png" alt="LOGO ATL" class="img-responsive">
+                     </div>
                 </div>
             </div>
         </div>
@@ -662,6 +621,28 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
+	@if(Session::has('message'))
+		var type="{{Session::get('alert-type','info')}}"
+		switch(type){
+			case 'info':
+		         toastr.info("{{ Session::get('message') }}");
+		         break;
+	        case 'success':
+	            toastr.success("{{ Session::get('message') }}");
+	            break;
+         	case 'warning':
+	            toastr.warning("{{ Session::get('message') }}");
+	            break;
+	        case 'error':
+		        toastr.error("{{ Session::get('message') }}");
+		        break;
+		}
+	@endif
 </script>
 <script src="TemplateUser/the-nest/js/jquery-2.2.0.min.js"></script>
 <script src="TemplateUser/the-nest/js/bootstrap.min.js"></script>

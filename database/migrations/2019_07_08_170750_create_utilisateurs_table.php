@@ -25,6 +25,8 @@ class CreateUtilisateursTable extends Migration
             $table->string('Email');
             $table->string('Login');
             $table->string('Password');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

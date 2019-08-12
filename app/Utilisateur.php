@@ -27,4 +27,14 @@ class Utilisateur extends Model
     {
         return $this->belongsToMany('App\Utilisateur');
     }
+    //users
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id');
+    }
+
+    public function offres()
+    {
+        return $this->hasMany(utilisateur::class);
+    }
 }

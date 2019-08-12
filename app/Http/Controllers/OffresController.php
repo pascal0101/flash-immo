@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Controllers;
 use App\Http\Requests;
@@ -12,6 +13,7 @@ use App\Offre;
 use App\Ville;
 use App\TypeBien;
 use App\TypeOffre;
+use App\User;
 use App\Image;
 use App\Quartier;
 use App\Utilisateur;
@@ -39,8 +41,15 @@ class OffresController extends Controller
      */
     public function offres()
     {
+        //$offre =  Offre::findOrFail($id);
+
         $offres = Offre::get();
-        return view('user/acceuil', compact('offres'));
+        //$images = image::all();
+        //$images = image::all();
+        $images = Image::get();
+        //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
+
+        return view('user/acceuil', compact('offres', 'images'));
     }
 
     /**
@@ -75,6 +84,9 @@ class OffresController extends Controller
             $offre->email = $request->input('email');
             $offre->Numero1 = $request->input('num1');
             $offre->Numero2 = $request->input('num2');
+            $offre->user_id = Auth::user()->id;
+
+            //dd(Auth::user()->id);
 
             $offre->save();
 
@@ -99,8 +111,12 @@ class OffresController extends Controller
                 // return "ok";
             }
         }
-        session()->flash('message', 'Offre crée avec succès!!!');
-        return redirect('/offre');
+        $notification = array(
+            'message' => 'Offre crée avec succès!',
+            'alert-type' => 'success'
+        );
+        //session()->flash('message', 'Offre crée avec succès!!!');
+        return redirect('/offre')->with($notification);
     }
 
     /**
@@ -153,21 +169,14 @@ class OffresController extends Controller
         //
     }
 
-    function upload(Request $request)
+    public function mesoffres($id)
     {
-        $image_code = '';
-        $images = $request->file('file');
-        foreach ($images as $image) {
-            $new_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $new_name);
-            $image_code .= '<div class="col-md-3" style="margin-bottom:24px;"><img src="/images/' . $new_name . '" class="img-thumbnail" /></div>';
-        }
+        //$offres = offre::all();
+        //$images = image::all()->where('offre_id', $id);
+        $user =  User::findOrFail($id);
+        //$utilisateurs = DB::table('utilisateurs')->where('user_id', 'Auth::user()->id')->first();
+        $offres = DB::table('offres')->where('user_id', '=', 'Auth::user()->id')->get();
 
-        $output = array(
-            'success'  => 'Images uploaded successfully',
-            'image'   => $image_code
-        );
-
-        return response()->json($output);
+        return view('user.mesoffres', compact('offres', 'user'));
     }
 }
