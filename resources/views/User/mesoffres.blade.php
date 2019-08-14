@@ -25,7 +25,13 @@
                 <div class="user-account-box">
                     <div class="header clearfix">
                         <div class="edit-profile-photo">
-
+                            <img src="{{Auth::user()->utilisateurs->Photo}}" alt="agent-1" class="img-responsive">
+                            <div class="change-photo-btn">
+                                <div class="photoUpload">
+                                    <span><i class="fa fa-upload"></i> Upload Photo</span>
+                                    <input type="file" class="upload">
+                                </div>
+                            </div>
                         </div>
                     <h3>{{Auth::user()->name}}</h3>
                         <p>{{Auth::user()->email}}</p>
@@ -82,11 +88,7 @@
                                 </a>
                             </li>
 
-                            <li>
-                            <a href="{{url('/logout')}}">
-                                    <i class="flaticon-sign-out-option"></i>Deconnexion
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -106,15 +108,16 @@
                             <img src="TemplateUser/the-nest/img/my-properties/my-properties-1.jpg" alt="my-properties-1" class="img-responsive hidden-xs">
                             <div class="title">
                                 <h4><a href="#">{{$offre->Titre}}</a></h4>
-                                <span><i class="fa fa-map-marker"></i> 123 Kathal St. Tampa City, </span>
-                                <span class="table-property-price">$900 / monthly</span>
+                                <span><i class="fa fa-map-marker"></i> {{$offre->Adresse}} </span>
+                                <span class="table-property-price">{{$offre->Prix}} FCFA</span>
+
                             </div>
                         </td>
-                        <td class="expire-date hidden-xs">December 17 2017</td>
+                        <td class="expire-date hidden-xs">{{$offre->created_at}}</td>
                         <td class="action">
                             <a href="#"><i class="fa fa-pencil"></i> Modifier</a>
-                            <a href="#"><i class="fa  fa-eye"></i> Voir</a>
-                            <a href="#" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
+                            <a href="{{ route('detail',[$offre->id])}}"><i class="fa  fa-eye"></i> Voir</a>
+                            <a href="{{ route('supprimeoffre',[$offre->id])}}" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
                         </td>
                     </tr>
                     @endforeach

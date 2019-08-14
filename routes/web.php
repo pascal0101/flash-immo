@@ -63,8 +63,9 @@ Route::get('/clients', function () {
     return view('Admin/clients');
 });
 
+Route::get('mesoffres\{id}', 'OffresController@delete')->name('supprimeoffre');
 //afficher les offres d'un utilisateur
-Route::get('mesoffres\{id}', 'OffresController@mesoffres')->name('mesoffres');
+Route::get('mesoffres', 'OffresController@mesoffres')->name('mesoffres');
 
 //afficher les detail d'une offre une offre
 Route::get('detail\{id}', 'OffresController@show')->name('detail');
@@ -112,8 +113,8 @@ Route::get('ville\{id}', 'VillesController@delete')->name('supprville');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-Route::get('/logout', 'Auth\LoginController@userLogout');
+//Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+//Route::get('/logout', 'Auth\LoginController@userLogout');
 
 
 //admin route for our multi-auth system

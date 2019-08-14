@@ -169,14 +169,27 @@ class OffresController extends Controller
         //
     }
 
-    public function mesoffres($id)
+    public function mesoffres()
     {
-        //$offres = offre::all();
+        $utilisateurs = Utilisateur::all();
         //$images = image::all()->where('offre_id', $id);
-        $user =  User::findOrFail($id);
+        //$user =  User::findOrFail($id);
         //$utilisateurs = DB::table('utilisateurs')->where('user_id', 'Auth::user()->id')->first();
-        $offres = DB::table('offres')->where('user_id', '=', 'Auth::user()->id')->get();
+        //$offres = DB::table('offres')->where('user_id', '=', 'Auth::user()->id')->get();
+        $offres = Auth::user()->offres;
 
-        return view('user.mesoffres', compact('offres', 'user'));
+        return view('user.mesoffres', compact('offres', 'utilisateurs'));
+    }
+
+    public function delete($id)
+    {
+        $offre = offre::findOrFail($id);
+        $offre->delete($id);
+        //session()->flash('message', 'Offre Supprimé avec succes!!!');
+        $notification = array(
+            'message' => 'Offre Supprimé avec succes!',
+            'alert-type' => 'info'
+        );
+        return redirect('/mesoffres')->with($notification);
     }
 }

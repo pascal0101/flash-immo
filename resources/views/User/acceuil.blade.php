@@ -138,8 +138,15 @@
                     <div class="property">
                         <!-- Property img -->
                         <div class="property-img">
-                            <div class="property-tag button alt featured">En Vente</div>
-                            <div class="property-tag button sale">For Sale</div>
+                            @if($offre->IdTypeOffre == 2)
+                            <div class="property-tag button alt featured">Vente</div>
+                            @elseif($offre->IdTypeOffre == 1)
+                            <div class="property-tag button alt featured">Location</div>
+                            @else
+                            <div class="property-tag button alt featured">Collocation</div>
+                            @endif
+
+                            <div class="property-tag button sale">En cours</div>
                             <div class="property-price">{{$offre->Prix}} FCFA</div>
                               @foreach ($offre->images as $image)
                                 @if ($loop->first)
@@ -181,38 +188,33 @@
                             </h3>
                             <!-- Facilities List -->
                             <ul class="facilities-list clearfix">
-                                <li>
+                                 <li>
                                     <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
-                                    <span>4800 sq ft</span>
+                                    <span>{{$offre->NombreChambre}} Chambre</span>
                                 </li>
-                                <li>
-                                    <i class="flaticon-bed"></i>
-                                    <span>3 Beds</span>
-                                </li>
-                                <li>
-                                    <i class="flaticon-monitor"></i>
-                                    <span>TV </span>
-                                </li>
+                                @if($offre->WcDouche == 1)
                                 <li>
                                     <i class="flaticon-holidays"></i>
-                                    <span> 2 Baths</span>
+                                    <span>OUI</span>
                                 </li>
-
+                                @else
+                                <li>
+                                    <i class="flaticon-holidays"></i>
+                                    <span>NON</span>
+                                </li>
+                                 @endif
                                 @if($offre->Garage == 1)
                                 <li>
                                     <i class="flaticon-vehicle"></i>
-                                    <span>1 Garage</span>
+                                    <span>OUI</span>
                                 </li>
                                 @else
                                 <li>
                                     <i class="flaticon-vehicle"></i>
-                                    <span>0 Garage</span>
+                                    <span>NON</span>
                                 </li>
                                 @endif
-                                <li>
-                                    <i class="flaticon-building"></i>
-                                    <span> 3 Balcony</span>
-                                </li>
+
                             </ul>
                             <!-- Property footer -->
                             <div class="property-footer">
@@ -239,47 +241,12 @@
 <!-- Featured properties end -->
 
 <!-- Our service start -->
-<div class="mb-100 our-service">
-    <div class="container">
-        <!-- Main title -->
-        <div class="main-title">
-            <h1><span>Que cherchez-vous?</span> </h1>
-        </div>
 
-        <div class="row mgn-btm wow">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
-                <div class="content">
-                    <i class="flaticon-apartment"></i>
-                    <h4>Appartements</h4>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInLeft delay-04s">
-                <div class="content">
-                    <i class="flaticon-internet"></i>
-                    <h4>Maisons</h4>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
-                <div class="content">
-                    <i class="flaticon-vehicle"></i>
-                    <h4>Bureaux</h4>
-
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInRight delay-04s">
-                <div class="content">
-                    <i class="flaticon-symbol"></i>
-                    <h4>Terrains</h4>
-
-                </div>
-            </div>
-
-        </div>
+        <div style="text-align:center">
         <a href="#" class="btn button-md button-theme">LIRE LA SUITE</a>
-    </div>
-</div>
+        </div>
+
+<br>
 <!-- Our service end -->
 
 <!-- Recently properties start -->

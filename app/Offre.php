@@ -8,8 +8,6 @@ use Illuminate\Foundation\Auth\User;
 class Offre extends Model
 {
 
-
-
     //utilisateur
     public function utilisateurs()
     {

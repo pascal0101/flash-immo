@@ -136,23 +136,31 @@ input.invalid {
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="list-inline">
-                    <a href="#"><i class="fa fa-phone"></i>91428199</a>
-                    <a href="#"><i class="fa fa-envelope"></i>flash-immo@africantechlab.com</a>
+                    <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Deconnexion') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <ul class="top-social-media pull-right">
-                    <li>
-                        <a href="{{url('/login')}}" class="sign-in"><i class="fa fa-sign-in"></i> S'Identifier</a>
-                    </li>
-                    <li>
-                        <a href="{{url('/utilisateur')}}" class="sign-in"><i class="fa fa-user"></i> S'enregistrer</a>
-                    </li>
-                     <li>
-
-                       <a href="{{url('/logout')}}" class="sign-in"><i class="fa fa-lock"></i> Deconnexion</a>
-                    </li>
-
+                    <div class="list-inline">
+                    <a href="#"><i class="fa fa-phone"></i>91428199</a>
+                    <a href="#"><i class="fa fa-envelope"></i>flash-immo@africantechlab.com</a></div>
                 </ul>
 
             </div>
@@ -224,7 +232,7 @@ input.invalid {
                         </a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="{{ route('mesoffres',[Auth::user()->id])}}">Mes propriétés</a></li>
+                        <li><a href="{{url('mesoffres')}}">Mes propriétés</a></li>
 
 
                             <li><a href="index-4.html">Déconnexion</a></li>
