@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('user/test');
 });
+Route::get('/test1', function () {
+    return view('user/test1');
+});
 
 Route::post('/submitdata', 'TestController@testfunction');
 

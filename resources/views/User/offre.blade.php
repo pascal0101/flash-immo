@@ -36,6 +36,31 @@
                                     </div>
                                 </div>
                          </div>
+                         <div class="row">
+             <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Surface</label>
+                                <select class="form-control" id="exampleFormControlSelect1" name="surface">
+                                <option value='1'>Quart de lot</option>
+                                <option value='2'>Demi lot</option>
+                                <option value='3'>1 lot</option>
+                                <option value='4'>2 lot</option>
+                                <option value='5'>3 lot</option>
+                                <option value='6'>4 lot</option>
+                                <option value='7'>5 lot</option>
+                                <option value='8'>+5 lot</option>
+
+                                </select>
+                                </div>
+                                </div>
+  <div class="col-md-6 col-sm-6">
+                                <div class="form-group">
+                                        <label style="color:black">Prix</label>
+                                        <input type="number" class="form-control" name="prix" placeholder="Prix">
+                                </div>
+                                </div>
+
+         </div>
 
 </div>
 
@@ -103,32 +128,33 @@
 
                      </div>
 
+             <div class="form-group">
+                                    <label style="color: black">Image</label>
+                                    <input type="file" class="form-control" name="file[]" multiple>
+                                </div>
 
-         <div class="row">
-             <div class="col-md-6 col-sm-6">
+            <div class="row">
+
+  <div class="col-lg-4 col-sm-4 col-xs-12">
                                 <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Surface</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="surface">
-                                <option value='1'>Quart de lot</option>
-                                <option value='2'>Demi lot</option>
-                                <option value='3'>1 lot</option>
-                                <option value='4'>2 lot</option>
-                                <option value='5'>3 lot</option>
-                                <option value='6'>4 lot</option>
-                                <option value='7'>5 lot</option>
-                                <option value='8'>+5 lot</option>
-
-                                </select>
+                                        <label style="color:black">Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder="Longitude">
                                 </div>
                                 </div>
-  <div class="col-md-6 col-sm-6">
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
                                 <div class="form-group">
-                                        <label style="color:black">Prix</label>
-                                        <input type="number" class="form-control" name="prix" placeholder="Prix">
+                                        <label style="color:black">Numero de Telephone1</label>
+                                        <input type="number" class="form-control" min="0" name="num1" placeholder="Numero de Telephone1">
                                 </div>
                                 </div>
-
+                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                        <label style="color:black">Numero de Telephone2</label>
+                                        <input type="number" class="form-control" min="0" name="num2" placeholder="Numero de Telephone2">
+                                </div>
+                                </div>
          </div>
+
 </div>
 
 <div class="tab">
@@ -179,46 +205,24 @@
 <div class="tab">
 
  <div class="row">
-
+  <div id="MapLocation" style="height: 350px"></div>
   <div class="col-md-6 col-sm-6">
                     <div class="form-group">
                             <label style="color:black">Longitude</label>
-                            <input type="text" class="form-control" name="longitude" placeholder="Longitude">
+                            <input type="text" class="form-control" name="Longitude" placeholder="Longitude" id="Longitude">
                     </div>
             </div>
                                 <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                         <label style="color:black">Latitude</label>
-                                        <input type="text" class="form-control" name="latitude" placeholder="Latitude">
+                                        <input type="text" class="form-control" name="Latitude" placeholder="Latitude" id="Latitude">
                                 </div>
-                                </div>
-         </div>
-          <div class="form-group">
-                                    <label style="color: black">Image</label>
-                                    <input type="file" class="form-control" name="file[]" multiple>
                                 </div>
 
-            <div class="row">
 
-  <div class="col-lg-4 col-sm-4 col-xs-12">
-                                <div class="form-group">
-                                        <label style="color:black">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Longitude">
-                                </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4 col-xs-12">
-                                <div class="form-group">
-                                        <label style="color:black">Numero de Telephone1</label>
-                                        <input type="number" class="form-control" min="0" name="num1" placeholder="Numero de Telephone1">
-                                </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4 col-xs-12">
-                                <div class="form-group">
-                                        <label style="color:black">Numero de Telephone2</label>
-                                        <input type="number" class="form-control" min="0" name="num2" placeholder="Numero de Telephone2">
-                                </div>
-                                </div>
+
          </div>
+
 </div>
 
 <div style="overflow:auto;">

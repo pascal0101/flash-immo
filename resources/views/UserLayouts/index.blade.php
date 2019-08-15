@@ -19,8 +19,8 @@
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/bootstrap-submenu.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="TemplateUser/the-nest/css/leaflet.css" type="text/css">
-    <link rel="stylesheet" href="TemplateUser/the-nest/css/map.css" type="text/css">
+
+
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/fonts/linearicons/style.css">
@@ -34,7 +34,10 @@
 
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="TemplateUser/the-nest/img/favicon.ico" type="image/x-icon" >
-
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <link rel="stylesheet" type="text/css"  href="TemplateUser/the-nest/css/monmap.css">
     <!-- Google fonts -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
 
@@ -100,6 +103,43 @@ input.invalid {
   background-color: #4CAF50;
 }
 
+
+.example-container {
+  background: white;
+  width: 640px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: helvetica;
+  font-size: 16px;
+  padding: 1.5em;
+  -webkit-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
+  box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+.example-container * {
+  box-sizing: inherit;
+  font-size: inherit;
+}
+
+.example-container .header {
+  margin: 1em 0;
+}
+
+.example-container #MapLocation {
+  margin-bottom: 0.75em;
+}
+
+.example-container input {
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border: 1px solid #569ae3;
+}
     </style>
 </head>
 <body>
@@ -653,6 +693,11 @@ function fixStepIndicator(n) {
 	@endif
 </script>
 <script src="TemplateUser/the-nest/js/jquery-2.2.0.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+<script src="TemplateUser/the-nest/js/monmap.js"></script>
 <script src="TemplateUser/the-nest/js/bootstrap.min.js"></script>
 <script src="TemplateUser/the-nest/js/bootstrap-submenu.js"></script>
 <script src="TemplateUser/the-nest/js/rangeslider.js"></script>
@@ -662,13 +707,11 @@ function fixStepIndicator(n) {
 <script src="TemplateUser/the-nest/js/jquery.easing.1.3.js"></script>
 <script src="TemplateUser/the-nest/js/jquery.scrollUp.js"></script>
 <script src="TemplateUser/the-nest/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="TemplateUser/the-nest/js/leaflet.js"></script>
-<script src="TemplateUser/the-nest/js/leaflet-providers.js"></script>
-<script src="TemplateUser/the-nest/js/leaflet.markercluster.js"></script>
+
 
 <script src="TemplateUser/the-nest/js/jquery.filterizr.js"></script>
 <script src="TemplateUser/the-nest/js/jquery.magnific-popup.min.js"></script>
-<script src="TemplateUser/the-nest/js/maps.js"></script>
+
 <script src="TemplateUser/the-nest/js/app.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
