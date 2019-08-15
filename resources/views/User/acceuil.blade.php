@@ -1,5 +1,5 @@
 
-@extends('UserLayouts.index')
+@extends('UserLayouts.index1')
 
 @section('content')
 <!-- Banner start -->

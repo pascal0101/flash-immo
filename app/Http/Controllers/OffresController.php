@@ -76,7 +76,7 @@ class OffresController extends Controller
             $offre->description = $request->input('description');
             $offre->salon = $request->input('salon');
             $offre->balcon = $request->input('balcon');
-            $offre->CordGPS = $request->input('longitude');
+            $offre->CordGPS = ($request->input('Longitude') . "," . $request->input('Latitude'));
             $offre->wcdouche = $request->input('wcdouche');
             $offre->garage = $request->input('garage');
             $offre->meuble = $request->input('meuble');
@@ -86,7 +86,7 @@ class OffresController extends Controller
             $offre->Numero2 = $request->input('num2');
             $offre->user_id = Auth::user()->id;
 
-            //dd(Auth::user()->id);
+            //dd($offre);
 
             $offre->save();
 

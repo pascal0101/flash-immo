@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- Mirrored from storage.googleapis.com/themevessel-products/the-nest/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Jul 2019 11:16:48 GMT -->
+<
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P5MJCCG');</script>
-    <!-- End Google Tag Manager -->
+
     <title>FLASH-IMMO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -19,8 +13,8 @@
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/bootstrap-submenu.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="TemplateUser/the-nest/css/leaflet.css" type="text/css">
-    <link rel="stylesheet" href="TemplateUser/the-nest/css/map.css" type="text/css">
+
+
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/fonts/linearicons/style.css">
@@ -199,7 +193,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right rightside-navbar">
                     <li>
-                        <a href="{{url('/ajoutbien')}}" class="button">
+                        <a href="{{url('/offre')}}" class="button">
                             <i class="glyphicon glyphicon-bullhorn"></i>
                             Publier une offre
                         </a>
@@ -565,13 +559,11 @@
 <script src="TemplateUser/the-nest/js/jquery.easing.1.3.js"></script>
 <script src="TemplateUser/the-nest/js/jquery.scrollUp.js"></script>
 <script src="TemplateUser/the-nest/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="TemplateUser/the-nest/js/leaflet.js"></script>
-<script src="TemplateUser/the-nest/js/leaflet-providers.js"></script>
-<script src="TemplateUser/the-nest/js/leaflet.markercluster.js"></script>
+
 
 <script src="TemplateUser/the-nest/js/jquery.filterizr.js"></script>
 <script src="TemplateUser/the-nest/js/jquery.magnific-popup.min.js"></script>
-<script src="TemplateUser/the-nest/js/maps.js"></script>
+
 <script src="TemplateUser/the-nest/js/app.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -580,26 +572,7 @@
 
 
 
-    <script type="text/javascript">
-        $("#file-1").fileinput({
-            theme: 'fa',
-            uploadUrl: "/upload",
-            uploadExtraData: function() {
-                return {
-                    _token: $("input[name='_token']").val(),
-                };
-            },
-            allowedFileExtensions: ['jpg', 'png', 'gif'],
-            overwriteInitial: false,
-            maxFileSize:2000,
-            maxFilesNum: 10,
-            slugCallback: function (filename) {
-                return filename.replace('(', '_').replace(']', '_');
-            }
-        });
-    </script>
-
 </body>
 
-<!-- Mirrored from storage.googleapis.com/themevessel-products/the-nest/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Jul 2019 11:18:13 GMT -->
+
 </html>

@@ -21,6 +21,12 @@ Route::get('/test', function () {
 Route::get('/test1', function () {
     return view('user/test1');
 });
+Route::get('/test2', function () {
+    return view('user/test2');
+});
+Route::get('/test3', function () {
+    return view('user/test3');
+});
 
 Route::post('/submitdata', 'TestController@testfunction');
 
