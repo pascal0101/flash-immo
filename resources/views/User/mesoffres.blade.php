@@ -1,4 +1,4 @@
-@extends('UserLayouts.index')
+@extends('UserLayouts.index1')
 
 @section('content')
 <div class="sub-banner overview-bgi">
@@ -25,13 +25,7 @@
                 <div class="user-account-box">
                     <div class="header clearfix">
                         <div class="edit-profile-photo">
-                            <img src="{{Auth::user()->utilisateurs->Photo}}" alt="agent-1" class="img-responsive">
-                            <div class="change-photo-btn">
-                                <div class="photoUpload">
-                                    <span><i class="fa fa-upload"></i> Upload Photo</span>
-                                    <input type="file" class="upload">
-                                </div>
-                            </div>
+
                         </div>
                     <h3>{{Auth::user()->name}}</h3>
                         <p>{{Auth::user()->email}}</p>

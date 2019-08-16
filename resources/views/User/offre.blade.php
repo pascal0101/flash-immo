@@ -12,13 +12,13 @@
 <div class="tab">
                 <div class="form-group">
                     <label style="color:black">Veuillez renseignez un nom a votre projet</label>
-                    <input type="text" class="input-text" name="titre" placeholder="Nom du projet">
+                    <input type="text" class="form-control" name="titre" placeholder="Nom du projet">
                 </div>
                 <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                         <label style="color:black">Type Offre</label>
-                                        <select class="selectpicker search-fields" name="typeoffre">
+                                        <select class="form-control" name="typeoffre">
                                              @foreach($typeoffre as $typeoffre)
                         <option value="{{$typeoffre->id}}">{{$typeoffre->LibelleTypeOffre}}</option>
                                             @endforeach
@@ -28,7 +28,7 @@
                                 <div class="col-md-6 col-sm<-6">
                                     <div class="form-group">
                                         <label style="color:black">Type Bien</label>
-                                        <select class="selectpicker search-fields" name="typebien">
+                                        <select class="form-control" name="typebien">
                                             @foreach($typebien as $typebien)
                         <option value="{{$typebien->id}}">{{$typebien->LibelleTypeBien}}</option>
                                             @endforeach
@@ -101,7 +101,7 @@
                             <div class="col-lg-4 col-sm-4 col-xs-12">
                                 <div class="form-group">
                                         <label style="color:black">Salon</label>
-                                        <select class="selectpicker search-fields" name="salon">
+                                        <select class="form-control" name="salon">
                                             <option value= '0'>NON</option>
                                             <option value= '1'>OUI</option>
                                         </select>
@@ -110,7 +110,7 @@
                         <div class="col-lg-4 col-sm-4 col-xs-12">
                                 <div class="form-group">
                                         <label style="color:black">Balcon/Terrasse</label>
-                                        <select class="selectpicker search-fields" name="balcon">
+                                        <select class="form-control" name="balcon">
                                             <option value= '0'>NON</option>
                                             <option value= '1'>OUI</option>
                                         </select>
@@ -119,7 +119,7 @@
                                 <div class="col-lg-4 col-sm-4 col-xs-12">
                                     <div class="form-group">
                                         <label style="color:black">WC-Douche</label>
-                                        <select class="selectpicker search-fields" name="wcdouche">
+                                        <select class="form-control" name="wcdouche">
                                            <option value= '0'>NON</option>
                                             <option value= '1'>OUI</option>
                                         </select>
@@ -138,7 +138,7 @@
   <div class="col-lg-4 col-sm-4 col-xs-12">
                                 <div class="form-group">
                                         <label style="color:black">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Longitude">
+                                        <input type="email" class="form-control" name="email" placeholder="Email">
                                 </div>
                                 </div>
                                 <div class="col-lg-4 col-sm-4 col-xs-12">

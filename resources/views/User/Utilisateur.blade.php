@@ -2,6 +2,7 @@
 
 @section('content')
 
+<body style="background-image:url(TemplateUser/the-nest/img/testimonial-2.jpg);">
   @if(session()->has('message'))
 
         <div class="alert alert-success">
@@ -16,13 +17,13 @@
             <!-- progressbar -->
             <ul id="progressbar">
                 <li class="active"></li>
-                <li>Social Profiles</li>
-                <li>Account Setup</li>
+                <li></li>
+                <li></li>
             </ul>
             <!-- fieldsets -->
             <fieldset>
                 <h2 class="fs-title">CREER COMPTE</h2>
-                <h3 class="fs-subtitle">Tell us something more about you</h3>
+                <h3 class="fs-subtitle"></h3>
                                 <div class="form-group">
                                     <label>NOM</label>
                                     <input type="text" class="form-control" name="nom"  placeholder="NOM">
@@ -46,8 +47,8 @@
         </div>
             </fieldset>
             <fieldset>
-                <h2 class="fs-title">Social Profiles</h2>
-                <h3 class="fs-subtitle">Your presence on the social network</h3>
+                <h2 class="fs-title">CREER COMPTE</h2>
+                <h3 class="fs-subtitle"></h3>
                  <div class="form-group">
                      <label>NUMERO TELEPHONE</label>
                                 <input type="text" name="numtel" class="form-control" placeholder="NUMERO TELEPHONE">
@@ -70,8 +71,8 @@
                 <input type="button" name="next" class="next action-button" value="Suivant"/>
             </fieldset>
             <fieldset>
-                <h2 class="fs-title">Create your account</h2>
-                <h3 class="fs-subtitle">Fill in your credentials</h3>
+                <h2 class="fs-title">CREER COMPTE</h2>
+                <h3 class="fs-subtitle"></h3>
                 <div class="form-group">
                     <label>PHOTO</label>
                                 <input type="file" name="photo" class="form-control" placeholder="PHOTO">
@@ -104,5 +105,5 @@
 </div>
 <!-- /.MultiStep Form -->
 
-
+</body>
 @endsection

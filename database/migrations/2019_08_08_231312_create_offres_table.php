@@ -41,7 +41,8 @@ class CreateOffresTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('utilisateurs')->onDelete('cascade');
             $table->boolean('Publier')->default(false);
-            $table->String('CordGPS');
+            $table->String('Longitude');
+            $table->String('Latitude');
             $table->timestamps();
         });
     }

@@ -52,6 +52,14 @@ class OffresController extends Controller
         return view('user/acceuil', compact('offres', 'images'));
     }
 
+    public function acceuil()
+    {
+        $offres = Offre::get();
+
+        $images = Image::get();
+
+        return view('/welcome', compact('offres', 'images'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -76,7 +84,8 @@ class OffresController extends Controller
             $offre->description = $request->input('description');
             $offre->salon = $request->input('salon');
             $offre->balcon = $request->input('balcon');
-            $offre->CordGPS = ($request->input('Longitude') . "," . $request->input('Latitude'));
+            $offre->Longitude = $request->input('Longitude');
+            $offre->Latitude = $request->input('Latitude');
             $offre->wcdouche = $request->input('wcdouche');
             $offre->garage = $request->input('garage');
             $offre->meuble = $request->input('meuble');
@@ -129,8 +138,10 @@ class OffresController extends Controller
     {
         //$offres = offre::all()->where('id', $id);
         $images = image::all()->where('offre_id', $id);
+        $ville = Ville::all();
+
         $offre =  Offre::findOrFail($id);
-        $offre = DB::table('offres')->join('villes', 'offres.id', '=', 'villes.id')->first();
+        //$offre = DB::table('offres')->join('villes', 'offres.id', '=', 'villes.id')->first();
 
         return view('user.detail', compact('offre', 'images'));
     }

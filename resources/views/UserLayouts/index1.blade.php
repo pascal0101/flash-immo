@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<
 <head>
 
     <title>FLASH-IMMO</title>
@@ -29,8 +28,7 @@
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="TemplateUser/the-nest/img/favicon.ico" type="image/x-icon" >
 
-    <!-- Google fonts -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/ie10-viewport-bug-workaround.css">
@@ -61,10 +59,7 @@
     <![endif]-->
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MJCCG"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <div class="page_loader"></div>
 
 <!-- Option Panel -->
@@ -94,23 +89,15 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="list-inline">
-                     <a href="#"><i class="fa fa-phone"></i>91428199</a>
-                    <a href="#"><i class="fa fa-envelope"></i>flash-immo@africantechlab.com</a>
+
+
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <ul class="top-social-media pull-right">
-                    <li>
-                        <a href="{{url('/login')}}" class="sign-in"><i class="fa fa-sign-in"></i> S'Identifier</a>
-                    </li>
-                    <li>
-                        <a href="{{url('/utilisateur')}}" class="sign-in"><i class="fa fa-user"></i> S'enregistrer</a>
-                    </li>
-                     <li>
-
-                       <a href="{{url('/logout')}}" class="sign-in"><i class="fa fa-user"></i> S'enregistrer</a>
-                    </li>
-
+                    <div class="list-inline">
+                    <a href="#"><i class="fa fa-phone"></i>91428199</a>
+                    <a href="#"><i class="fa fa-envelope"></i>flash-immo@africantechlab.com</a></div>
                 </ul>
 
             </div>
@@ -135,57 +122,44 @@
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="navbar-collapse collapse" role="navigation" aria-expanded="true" id="app-navigation">
+             <div class="navbar-collapse collapse" role="navigation" aria-expanded="true" id="app-navigation">
                 <ul class="nav navbar-nav">
                     <li class="dropdown active">
                         <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Acheter<span class="caret"></span>
+                            Offres<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="index.html">Appartement</a></li>
-                            <li><a href="index-2.html">Maison</a></li>
-                            <li><a href="index-3.html">Terrain</a></li>
-                            <li><a href="index-4.html">Bureau</a></li>
+                            <li><a href="#">Appartements</a></li>
+                            <li><a href="#">Maisons</a></li>
+                            <li><a href="#">Terrains</a></li>
+                            <li><a href="#">Bureaux</a></li>
 
                         </ul>
                     </li>
+
+
 
                     <li class="dropdown">
                         <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Louer<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                             <li><a href="index.html">Appartement</a></li>
-                            <li><a href="index-2.html">Maison</a></li>
-                            <li><a href="index-3.html">Terrain</a></li>
-                            <li><a href="index-4.html">Bureau</a></li>
-                             <li><a href="index-4.html">Collocation</a></li>
-                        </ul>
-                    </li>
 
-                     <li class="dropdown">
-                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Trouver<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-
-                            <li><a href="index-2.html">Une Agence Immobilière</a></li>
-                            <li><a href="index-3.html">Un professionnel Immobilier</a></li>
-
-
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
                             Mon Compte<span class="caret"></span>
+
+
                         </a>
                         <ul class="dropdown-menu">
 
-                            <li><a href="index-2.html">Mes propriétés</a></li>
-                            <li><a href="index-3.html">Ajouter Bien</a></li>
-                            <li><a href="index-4.html">Déconnexion</a></li>
+                        <li><a href="{{url('mesoffres')}}">Mes propriétés</a></li>
 
+
+<li><a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Deconnexion') }}
+                                    </a></li>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                         </ul>
                     </li>
 
@@ -193,10 +167,15 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right rightside-navbar">
                     <li>
+
                         <a href="{{url('/offre')}}" class="button">
                             <i class="glyphicon glyphicon-bullhorn"></i>
                             Publier une offre
                         </a>
+                    </li>
+
+                    <li>
+                        <a class="button" href="{{url('/user')}}"><i class="fa fa-home"></i>Acceuil</a>
                     </li>
                 </ul>
 
@@ -265,7 +244,7 @@
 <!-- Partners block end -->
 
 <!-- Footer start -->
-<footer class="main-footer clearfix">
+<footer class="main-footer clearfix" style="padding: 9px 0 30px">
     <div class="container">
         <!-- Footer info-->
         <div class="footer-info">
@@ -306,10 +285,10 @@
                         </div>
                         <ul class="links">
                             <li>
-                                <a href="index.html">Acceuil</a>
+                            <a href="{{url('/user')}}">Acceuil</a>
                             </li>
                             <li>
-                    <a href="about.html">
+                    <a href="#">
                                     À propos de nous</a>
                             </li>
 
@@ -317,55 +296,7 @@
                     </div>
                 </div>
                 <!-- Recent cars -->
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="footer-item popular-posts">
-                        <div class="main-title-2">
-                            <h1>ANNONCES POPULAIRES</h1>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="TemplateUser/the-nest/img/properties/small-properties-1.jpg" alt="small-properties-1">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Sweet Family Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="TemplateUser/the-nest/img/properties/small-properties-2.jpg" alt="small-properties-2">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Modern Family Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <img class="media-object" src="TemplateUser/the-nest/img/properties/small-properties-3.jpg" alt="small-properties-3">
-                            </div>
-                            <div class="media-body">
-                                <h3 class="media-heading">
-                                    <a href="properties-details.html">Beautiful Single Home</a>
-                                </h3>
-                                <p>February 27, 2018</p>
-                                <div class="price">
-                                    $734,000
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- Subscribe -->
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="footer-item">
@@ -390,6 +321,11 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                     <div class="footer-item">
+                         <img src="TemplateUser/the-nest/img/ATLlogo.png" alt="LOGO ATL" class="img-responsive">
+                     </div>
                 </div>
             </div>
         </div>
@@ -474,7 +410,7 @@
                                             <img src="TemplateUser/the-nest/img/properties/properties-6.jpg" alt="Hyundai Santa">
                                         </div>
                                         <div class="item active">
-                                            <iframe class="modalIframe" src="https://www.youtube.com/embed/5e0LxrLSzok" allowfullscreen></iframe>
+                                            <iframe class="modalIframe" src="" allowfullscreen></iframe>
                                         </div>
                                     </div>
 

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -80,6 +80,9 @@ Route::get('mesoffres', 'OffresController@mesoffres')->name('mesoffres');
 Route::get('detail\{id}', 'OffresController@show')->name('detail');
 //afficher offre
 Route::get('user', 'OffresController@offres');
+
+//afficher page acceuil
+Route::get('/', 'OffresController@acceuil')->name('acceuil');
 
 //Agence
 Route::get('agence', 'AgenceController@index')->name('agence');

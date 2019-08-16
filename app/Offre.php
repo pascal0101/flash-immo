@@ -9,6 +9,10 @@ class Offre extends Model
 {
 
     //utilisateur
+    public function ville()
+    {
+        return $this->belongsTo(Ville::class);
+    }
     public function utilisateurs()
     {
         return $this->belongsTo(utilisateur::class);

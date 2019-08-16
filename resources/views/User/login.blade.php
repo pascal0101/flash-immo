@@ -32,12 +32,12 @@
                         @csrf
                         <div class="form-group">
 
-                                 <input id="email" type="email" placeholder="login" class="input-text @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                 <input id="email" type="email" placeholder="Identifient" class="input-text @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
 
                             </div>
                             <div class="form-group">
-                                <input id="password" type="password" placeholder="password" class="input-text @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" placeholder="Mot de passe" class="input-text @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
 
                             </div>

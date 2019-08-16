@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+<body style="background-image:url(TemplateUser/the-nest/img/testimonial-2.jpg);">
 <!-- MultiStep Form -->
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -11,13 +11,13 @@
             <!-- progressbar -->
             <ul id="progressbar">
                 <li class="active"></li>
-                <li>Social Profiles</li>
-                <li>Account Setup</li>
+                <li></li>
+                <li></li>
             </ul>
             <!-- fieldsets -->
             <fieldset>
-                <h2 class="fs-title">AGENCE IMMOBILIERE</h2>
-                <h3 class="fs-subtitle">Tell us something more about you</h3>
+                <h2 class="fs-title">CREER VOTRE AGENCE IMMOBILIERE</h2>
+                <h3 class="fs-subtitle"></h3>
                                 <div class="form-group">
                                 <label>NOM AGENCE</label>
                                     <input type="text" class="form-control" name="nomagence"  placeholder="NOM AGENCE">
@@ -28,12 +28,12 @@
                                     <input type="text" class="form-control" name="nif"  placeholder="NUMERO D'IDENTIFICATION FISCALE">
                                 </div>
 
-                <input type="button" name="next" class="next action-button" value="Next"/>
+                <input type="button" name="next" class="next action-button" value="Suivant"/>
 
             </fieldset>
             <fieldset>
-                <h2 class="fs-title">Social Profiles</h2>
-                <h3 class="fs-subtitle">Your presence on the social network</h3>
+                <h2 class="fs-title">CREER VOTRE AGENCE IMMOBILIERE</h2>
+                <h3 class="fs-subtitle"></h3>
 
                 <div class="form-group">
     <label for="exampleTextarea">Description de votre agence immobilière</label>
@@ -45,12 +45,12 @@
                                 <input type="file" name="logo" class="form-control" placeholder="LOGO">
                             </div>
 
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="button" name="next" class="next action-button" value="Next"/>
+                <input type="button" name="previous" class="previous action-button-previous" value="Précedent"/>
+                <input type="button" name="next" class="next action-button" value="Suivant"/>
             </fieldset>
             <fieldset>
-                <h2 class="fs-title">Create your account</h2>
-                <h3 class="fs-subtitle">Fill in your credentials</h3>
+                <h2 class="fs-title">CREER VOTRE AGENCE IMMOBILIERE</h2>
+                <h3 class="fs-subtitle"></h3>
                  <div class="form-group">
                     <label>CONTACT</label>
                                     <input type="text" class="form-control" name="contact"  placeholder="Contact">
@@ -60,7 +60,7 @@
                                     <input type="email" class="form-control" name="email"  placeholder="Agence email">
                                 </div>
 
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                <input type="button" name="previous" class="previous action-button-previous" value="Précedent"/>
                 <input type="submit" name="submit" class="submit action-button"/>
 
             </fieldset>
@@ -72,5 +72,5 @@
 </div>
 <!-- /.MultiStep Form -->
 
-
+</body>
 @endsection

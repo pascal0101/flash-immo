@@ -5,7 +5,6 @@
 <!-- Banner start -->
 <div class="banner">
 
-
 <!-- Search area start -->
 <div class="content-area featured-properties">
 <div class="search-area">
