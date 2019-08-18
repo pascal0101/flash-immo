@@ -15,6 +15,7 @@
         </div>
     </div>
 </div>
+
 <!-- Sub Banner end -->
 
 <!-- Properties details page start -->
@@ -26,9 +27,10 @@
                 <!-- Header -->
                 <div class="heading-properties clearfix sidebar-widget">
                     <div class="pull-left">
+
                         <h3>{{$offre->Titre}}</h3>
                         <p>
-                            <i class="fa fa-map-marker"></i>{{$offre->Adresse}}, {{$offre->NomVille}}
+                            <i class="fa fa-map-marker"></i>{{$offre->Adresse}}, {{$offre->ville->NomVille}}
                         </p>
                     </div>
                     <div class="pull-right">
@@ -173,80 +175,40 @@
                     <!-- Search contents sidebar start -->
                     <div class="sidebar-widget hidden-sm hidden-xs">
                         <div class="main-title-2">
-                            <h1><span>Recherche</span> Avancée</h1>
+                            <h1><span>un message à</span> l'offreur</h1>
+                            </span>
                         </div>
 
-                        <form method="GET">
+                    <form  action="{{route('message')}}" method="POST">
+                         {{csrf_field()}}
                             <div class="row">
-                            <div class="form-group">
-                                <select class="form-control" name="property-status">
-                                    <option>Property Status</option>
-                                    <option>For Sale</option>
-                                    <option>For Rent</option>
-                                </select>
+                            <input type="hidden" value="{{$offre->Email}}" name="propemail">
+                            <div class="form-group {{$errors->has('nom') ? 'has-error' : ''}}">
+                               <input type="text" class="form-control" placeholder="Nom & Prenom" name="nom">
+                               {!!$errors->first('nom','<span class="help-block">:message</span>')!!}
                             </div>
-                            <div class="form-group">
-                                <select class="form-control" name="property-status">
-                                    <option>Location</option>
-                                    <option>United States</option>
-                                    <option>United Kingdom</option>
-                                    <option>American Samoa</option>
-                                    <option>Belgium</option>
-                                    <option>Cameroon</option>
-                                    <option>Canada</option>
-                                </select>
+                            <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
+                               <input type="text" class="form-control" placeholder="Entrer Email" name="email">
+                               {!!$errors->first('email','<span class="help-block">:message</span>')!!}
                             </div>
 
-                            <div class="form-group">
-                                <select class="form-control" name="property-status">
-                                    <option>Property Types</option>
-                                    <option>Residential</option>
-                                    <option>Commercial</option>
-                                    <option>Land</option>
-                                </select>
+                            <div class="form-group {{$errors->has('objet') ? 'has-error' : ''}}">
+                               <input type="text" class="form-control" placeholder="Objet" name="objet">
+                               {!!$errors->first('objet','<span class="help-block">:message</span>')!!}
                             </div>
 
-                            <div class="form-group">
-                               <select class="form-control" name="property-status">
-                                    <option>Area From</option>
-                                    <option>1000</option>
-                                    <option>800</option>
-                                    <option>600</option>
-                                    <option>400</option>
-                                    <option>200</option>
-                                    <option>100</option>
-                                </select>
+                            <div class="form-group {{$errors->has('numero') ? 'has-error' : ''}}">
+                              <input type="text" class="form-control" placeholder="Numero Telephone" name="numero">
+                              {!!$errors->first('numero','<span class="help-block">:message</span>')!!}
                             </div>
 
-                              <div class="form-group">
-                               <select class="form-control" name="property-status">
-                                    <option>Area From</option>
-                                    <option>1000</option>
-                                    <option>800</option>
-                                    <option>600</option>
-                                    <option>400</option>
-                                    <option>200</option>
-                                    <option>100</option>
-                                </select>
+                              <div class="form-group {{$errors->has('msg') ? 'has-error' : ''}}">
+                              <textarea class="form-control" id="exampleTextarea" rows="3" name="msg" placeholder="Message"></textarea>
+                              {!!$errors->first('msg','<span class="help-block">:message</span>')!!}
                             </div>
-
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
- <input type="number" class="form-control" placeholder="Prix min">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
- <input type="number" class="form-control" placeholder="Prix max">
-                                    </div>
-                                </div>
-                            </div>
-
 </div>
-
                             <div class="form-group mb-0">
-                                <button class="search-button">Chercher</button>
+                                <button class="btn btn-primary" type="submit">Envoyer votre message</button>
                             </div>
                         </form>
                     </div>
@@ -266,7 +228,7 @@
                         <div class="helping-center">
                             <div class="icon"><i class="fa fa-map-marker"></i></div>
                             <h4>Adresse</h4>
-                            <span>{{$offre->Adresse}}, {{$offre->NomVille}}</span>
+                            <span>{{$offre->Adresse}}, {{$offre->ville->NomVille}}</span>
                         </div>
                          <div class="helping-center">
                             <div class="icon"><i class="fa fa-envelope"></i></div>
@@ -282,52 +244,7 @@
 <input  type="hidden" id="long" value="<?php echo $offre->Longitude ?>"/>
 <input  type="hidden" id="lat" value="<?php echo $offre->Latitude ?>"/>
                     <!-- Mortgage calculator start -->
-                    <div class="sidebar-widget contact-1 mortgage-calculator">
-                        <div class="main-title-2">
-                            <h1><span>un message à</span> l'offreur</h1>
-                        </div>
-                        <div class="contact-form">
-                            <form id="agent_form" action="https://storage.googleapis.com/themevessel-products/the-nest/index.html" method="GET" enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
 
-                                            <input type="text" class="form-control" placeholder="Nom & Prenom">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-
-                                            <input type="text" class="form-control" placeholder="Entrer Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-
-                                            <input type="text" class="form-control" placeholder="Objet">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-
-                                            <input type="text" class="form-control" placeholder="Numero Telephone">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                      <div class="form-group">
-
-                                    <textarea class="form-control" id="exampleTextarea" rows="3" name="description" placeholder="Message"></textarea>
-                                </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-0">
-                                            <button class="search-button">Envoyer votre message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
 
 
                     <!-- Latest tweet start -->

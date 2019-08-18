@@ -8,10 +8,15 @@ use Illuminate\Foundation\Auth\User;
 class Offre extends Model
 {
 
+    //user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     //utilisateur
     public function ville()
     {
-        return $this->belongsTo(Ville::class);
+        return $this->belongsTo(Ville::class, 'IdVille');
     }
     public function utilisateurs()
     {

@@ -71,7 +71,9 @@ Route::get('/desactive', function () {
 Route::get('/clients', function () {
     return view('Admin/clients');
 });
-
+//envoi de mail
+Route::post('message', 'MessageController@store')->name('message');
+//
 Route::get('mesoffres\{id}', 'OffresController@delete')->name('supprimeoffre');
 //afficher les offres d'un utilisateur
 Route::get('mesoffres', 'OffresController@mesoffres')->name('mesoffres');

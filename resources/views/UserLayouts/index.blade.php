@@ -208,7 +208,7 @@ input.invalid {
                 <ul class="nav navbar-nav">
                     <li class="dropdown active">
                         <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Offres<span class="caret"></span>
+                            OFFRES<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Appartements</a></li>
@@ -251,7 +251,7 @@ input.invalid {
                     <li>
                         <a href="{{url('/offre')}}" class="button">
                             <i class="glyphicon glyphicon-bullhorn"></i>
-                            Publier une offre
+                            DEPOSER UNE ANNONCE
                         </a>
                     </li>
                     <li>

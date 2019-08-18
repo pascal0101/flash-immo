@@ -79,6 +79,9 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <ul class="top-social-media pull-right">
+                     <li>
+                       <a href="{{url('/')}}" class="sign-in"><i class="fa fa-home"></i> Acceuil</a>
+                    </li>
                     <li>
                         <a href="{{url('/login')}}" class="sign-in"><i class="fa fa-sign-in"></i> S'Identifier</a>
                     </li>

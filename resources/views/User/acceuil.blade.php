@@ -218,10 +218,10 @@
                             <!-- Property footer -->
                             <div class="property-footer">
                                 <span class="left">
-                                    <a href="#"><i class="fa fa-user"></i>Jhon Doe</a>
+                                    <a href="#"><i class="fa fa-user"></i>Publié par {{$offre->user->name}}</a>
                                 </span>
                                 <span class="right">
-                                    <i class="fa fa-calendar"></i>{{$offre->created_at}}
+                                    <i class="fa fa-calendar"></i>{{$offre->created_at->diffForHumans()}}
                                 </span>
                             </div>
                         </div>
@@ -244,7 +244,9 @@
         <div style="text-align:center">
         <a href="#" class="btn button-md button-theme">LIRE LA SUITE</a>
         </div>
-
+                  <div align="center">
+            {{$offres->links()}}
+                    </div>
 <br>
 <!-- Our service end -->
 

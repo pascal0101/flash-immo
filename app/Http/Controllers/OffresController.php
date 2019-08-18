@@ -43,7 +43,7 @@ class OffresController extends Controller
     {
         //$offre =  Offre::findOrFail($id);
 
-        $offres = Offre::get();
+        $offres = Offre::paginate(6);
         //$images = image::all();
         //$images = image::all();
         $images = Image::get();
@@ -54,8 +54,8 @@ class OffresController extends Controller
 
     public function acceuil()
     {
-        $offres = Offre::get();
-
+        $offres = Offre::paginate(6);
+        //dd($offres);
         $images = Image::get();
 
         return view('/welcome', compact('offres', 'images'));
