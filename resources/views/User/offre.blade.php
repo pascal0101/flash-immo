@@ -205,7 +205,7 @@
 <div class="tab">
 
  <div class="row">
-  <div id="MapLocation" style="height: 350px"></div>
+  <div id="mapid" style="width: 900px; height: 480px;"></div>
   <div class="col-md-6 col-sm-6">
                     <div class="form-group">
                             <label style="color:black">Longitude</label>

@@ -27,6 +27,9 @@ Route::get('/test2', function () {
 Route::get('/test3', function () {
     return view('user/test3');
 });
+Route::get('/test4', function () {
+    return view('user/test4');
+});
 
 Route::post('/submitdata', 'TestController@testfunction');
 
