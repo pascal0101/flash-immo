@@ -136,6 +136,7 @@ class OffresController extends Controller
      */
     public function show($id)
     {
+        //dd("toto");
         //$offres = offre::all()->where('id', $id);
         $images = image::all()->where('offre_id', $id);
         $ville = Ville::all();

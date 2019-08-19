@@ -2,7 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Offre;
+use App\Ville;
 use App\TypeBien;
+use App\TypeOffre;
+use App\User;
+use App\Image;
+use App\Quartier;
+use App\Utilisateur;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Request;
 
 class TypeBienController extends Controller
@@ -24,9 +35,13 @@ class TypeBienController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function maison()
     {
-        //
+        $offres = Offre::paginate(6);
+        //dd($offres);
+        $images = Image::get();
+
+        return view('user/maison', compact('offres', 'images'));
     }
 
     /**

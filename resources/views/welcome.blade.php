@@ -182,7 +182,7 @@
                             <!-- Property address -->
                             <h3 class="property-address">
                                 <a href="properties-details.html">
-                                    <i class="fa fa-map-marker"></i>{{$offre->Adresse}}. Tampa City,
+                                    <i class="fa fa-map-marker"></i>{{$offre->Adresse}}
                                 </a>
                             </h3>
                             <!-- Facilities List -->

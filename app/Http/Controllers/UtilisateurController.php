@@ -79,6 +79,7 @@ class UtilisateurController extends Controller
             $user->name = $request->input('nom');
             $user->email = $request->input('email');
             $user->password = bcrypt($request->input('password'));
+            $user->avatar = $new_image_name;
             $user->remember_token = Null;
             $user->save();
             //dd($user);

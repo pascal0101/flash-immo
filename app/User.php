@@ -41,8 +41,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Offre');
     }
-    public function utilisateurs()
+    public function utilisateur()
     {
-        return $this->belongsTo('App\utilisateur');
+        return $this->belongsTo(Utilisateur::class);
     }
 }

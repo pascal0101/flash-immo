@@ -211,8 +211,9 @@ input.invalid {
                             OFFRES<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a href="{{url('/maison')}}">Maisons</a></li>
                             <li><a href="#">Appartements</a></li>
-                            <li><a href="#">Maisons</a></li>
+
                             <li><a href="#">Terrains</a></li>
                             <li><a href="#">Bureaux</a></li>
 

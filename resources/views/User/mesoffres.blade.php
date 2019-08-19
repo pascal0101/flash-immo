@@ -25,7 +25,7 @@
                 <div class="user-account-box">
                     <div class="header clearfix">
                         <div class="edit-profile-photo">
-
+                            <img src="/profil/{{auth()->user()->avatar}}" alt="avatar" class="img-responsive">
                         </div>
                     <h3>{{Auth::user()->name}}</h3>
                         <p>{{Auth::user()->email}}</p>
@@ -96,7 +96,7 @@
                 <!-- table start -->
                 <table class="manage-table responsive-table">
                     <tbody>
-                        @foreach($offres as $offre)
+                        @forelse($offres as $offre)
                     <tr>
                         <td class="title-container">
                             <img src="TemplateUser/the-nest/img/my-properties/my-properties-1.jpg" alt="my-properties-1" class="img-responsive hidden-xs">
@@ -107,14 +107,16 @@
 
                             </div>
                         </td>
-                        <td class="expire-date hidden-xs">{{$offre->created_at}}</td>
+                        <td class="expire-date hidden-xs">{{$offre->created_at->diffForHumans()}}</td>
                         <td class="action">
                             <a href="#"><i class="fa fa-pencil"></i> Modifier</a>
                             <a href="{{ route('detail',[$offre->id])}}"><i class="fa  fa-eye"></i> Voir</a>
                             <a href="{{ route('supprimeoffre',[$offre->id])}}" class="delete"><i class="fa fa-remove"></i>Supprimer</a>
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <h3>Vous n'avez publié aucune annonce sur la plateforme</h3>
+                    @endforelse
 
 
 

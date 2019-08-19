@@ -71,6 +71,10 @@ Route::get('/desactive', function () {
 Route::get('/clients', function () {
     return view('Admin/clients');
 });
+//les different type de bien
+Route::get('maison', 'TypeBienController@maison')->name('maison');
+
+
 //envoi de mail
 Route::post('message', 'MessageController@store')->name('message');
 //

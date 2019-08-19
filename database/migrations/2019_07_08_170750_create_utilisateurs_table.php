@@ -19,9 +19,9 @@ class CreateUtilisateursTable extends Migration
             $table->string('Prenom');
             $table->enum('Sexe', array('M', 'F'));
             $table->integer('NumeroTel')->unsigned();
-            $table->string('Photo');
+            $table->string('Photo')->nullable();
             $table->string('NumCIN');
-            $table->string('PhotoCIN');
+            $table->string('PhotoCIN')->nullable();
             $table->string('Email');
             $table->string('Login');
             $table->string('Password');
