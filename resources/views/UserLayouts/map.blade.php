@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- Mirrored from storage.googleapis.com/themevessel-products/the-nest/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Jul 2019 11:16:48 GMT -->
+
 <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P5MJCCG');</script>
+
     <!-- End Google Tag Manager -->
     <title>FLASH-IMMO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +35,7 @@
    crossorigin=""/>
    <link rel="stylesheet" type="text/css"  href="TemplateUser/the-nest/css/monmap.css">
     <!-- Google fonts -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/ie10-viewport-bug-workaround.css">
@@ -143,10 +139,7 @@ input.invalid {
     </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MJCCG"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
 <div class="page_loader"></div>
 
 <!-- Option Panel -->
@@ -177,21 +170,7 @@ input.invalid {
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="list-inline">
                     <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Deconnexion') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
                             </li>
 
                 </div>
@@ -229,54 +208,41 @@ input.invalid {
                 <ul class="nav navbar-nav">
                     <li class="dropdown active">
                         <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Acheter<span class="caret"></span>
+                            OFFRES<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="index.html">Appartement</a></li>
-                            <li><a href="index-2.html">Maison</a></li>
-                            <li><a href="index-3.html">Terrain</a></li>
-                            <li><a href="index-4.html">Bureau</a></li>
+                            <li><a href="{{url('/maison')}}">Maisons</a></li>
+                            <li><a href="#">Appartements</a></li>
+
+                            <li><a href="#">Terrains</a></li>
+                            <li><a href="#">Bureaux</a></li>
 
                         </ul>
                     </li>
+
+
 
                     <li class="dropdown">
                         <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Louer<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                             <li><a href="index.html">Appartement</a></li>
-                            <li><a href="index-2.html">Maison</a></li>
-                            <li><a href="index-3.html">Terrain</a></li>
-                            <li><a href="index-4.html">Bureau</a></li>
-                             <li><a href="index-4.html">Collocation</a></li>
-                        </ul>
-                    </li>
 
-                     <li class="dropdown">
-                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Trouver<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                             <li><a href="{{url('/agence')}}">Créer une agence</a></li>
-                            <li><a href="index-2.html">Une Agence Immobilière</a></li>
-                            <li><a href="index-3.html">Un professionnel Immobilier</a></li>
-
-
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
                             Mon Compte<span class="caret"></span>
+
+
                         </a>
                         <ul class="dropdown-menu">
 
                         <li><a href="{{url('mesoffres')}}">Mes propriétés</a></li>
 
 
-                            <li><a href="index-4.html">Déconnexion</a></li>
+<li><a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Deconnexion') }}
+                                    </a></li>
 
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                         </ul>
                     </li>
 
@@ -286,8 +252,11 @@ input.invalid {
                     <li>
                         <a href="{{url('/offre')}}" class="button">
                             <i class="glyphicon glyphicon-bullhorn"></i>
-                            Publier une offre
+                            DEPOSER UNE ANNONCE
                         </a>
+                    </li>
+                    <li>
+                        <a class="button" href="{{url('/user')}}"><i class="fa fa-home"></i>Acceuil</a>
                     </li>
                 </ul>
 
@@ -692,12 +661,12 @@ function fixStepIndicator(n) {
 		}
 	@endif
 </script>
-<script src="TemplateUser/the-nest/js/jquery-2.2.0.min.js"></script>
+
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin=""></script>
 
-<script src="TemplateUser/the-nest/js/monmap.js"></script>
+
 <script src="TemplateUser/the-nest/js/bootstrap.min.js"></script>
 <script src="TemplateUser/the-nest/js/bootstrap-submenu.js"></script>
 <script src="TemplateUser/the-nest/js/rangeslider.js"></script>
@@ -718,7 +687,8 @@ function fixStepIndicator(n) {
 <script src="TemplateUser/the-nest/js/ie10-viewport-bug-workaround.js"></script>
 <!-- Custom javascript -->
 
+
 </body>
 
-<!-- Mirrored from storage.googleapis.com/themevessel-products/the-nest/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 11 Jul 2019 11:18:13 GMT -->
+
 </html>

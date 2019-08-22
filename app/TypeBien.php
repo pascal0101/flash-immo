@@ -11,7 +11,7 @@ class TypeBien extends Model
 
     public function Offres()
     {
-        return $this->hasMany('App\Offre');
+        return $this->hasMany(Offre::class);
     }
     public function Offre()
     {

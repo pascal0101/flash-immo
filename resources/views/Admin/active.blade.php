@@ -20,39 +20,43 @@
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Titre</th>
-                                            <th>Etat</th>
+                                              <th>Titre</th>
                                             <th>TypeBien</th>
                                             <th>TypeOffre</th>
-                                            <th>Agence</th>
                                             <th>Offreur</th>
+
+                                            <th>Contacts</th>
+                                            <th>Date</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                       @foreach($offres as $offre)
+                                        @if ($offre->Publier == 1)
+
+
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td><span class="badge badge-success">Success</span></td>
-                                            <td><span class="badge badge-danger">Danger</span></td>
-                                            <td>Location</td>
-                                            <td>Pas immo</td>
-                                            <td>pascal</td>
+                                            <td>{{$offre->Titre}}</td>
+                                              <td><span class="badge badge-success">{{$offre->typebien->LibelleTypeBien}}</span></td>
+                                            <td><span class="badge badge-success">{{$offre->typeoffre->LibelleTypeOffre}}</span></td>
+
+                                            <td>{{$offre->user->name}}</td>
+                                             <td>{{$offre->Numero1}}/{{$offre->Numero2}}</td>
+                                                <td>{{$offre->created_at->diffForHumans()}}</td>
+
                                             <td>
-                <a href="#" class="btn btn-success btn-circle">
-                    <i class="fa fa-check"></i>
-                  </a>
-                  <a href="#" class="btn btn-info btn-circle">
-                    <i class="fa fa-info-circle"></i>
-                  </a>
-                  <a href="#" class="btn btn-warning btn-circle">
-                    <i class="fa fa-exclamation-triangle"></i>
-                  </a>
-                  <a href="#" class="btn btn-danger btn-circle">
-                    <i class="fa fa-trash"></i>
-                  </a>
+
+                                <a href="{{ route('voir',[$offre->id])}}" class="btn btn-info btn-circle">
+                                    <i class="fa fa-info-circle"></i>
+                                </a>
+
+                                <a href="{{ route('deleteoffre',[$offre->id])}}" class="btn btn-danger btn-circle">
+                                    <i class="fa fa-trash"></i>
+                                </a>
                                             </td>
                                         </tr>
-
+                                        @endif
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

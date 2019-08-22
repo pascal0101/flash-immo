@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Immobilier</title>
+    <title>flash-immo</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,7 +27,7 @@
 
     <link rel="stylesheet" href="TemplateAdmin/assets/css/style.css">
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
     <style>
     .navbar .menu-title {
         padding: 0px;
@@ -56,19 +56,13 @@
                         <a href="{{url('/admin')}}"> <i class="menu-icon fa fa-dashboard"></i>Acceuil </a>
                     </li>
                     <h3 class="menu-title">Administrateur</h3><!-- /.menu-title -->
-                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon  fa fa-list-alt"></i>OFFRES</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{url('/active')}}">Biens Activés</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{url('/desactive')}}">Biens Désactivés</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{url('/offres')}}">Les Offres</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{url('/active')}}">Activés</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{url('/desactive')}}">Désactivés</a></li>
                         </ul>
                     </li>
 
@@ -84,22 +78,16 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-wrench"></i>PARAMETRES</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="{{url('/ville')}}">Villes</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{url('/quartier')}}">Quartiers</a></li>
+
                             <li><i class="fa fa-table"></i><a href="{{url('/typebien')}}">Type Biens</a></li>
                             <li><i class="fa fa-table"></i><a href="{{url('/typeoffre')}}">Type Offres</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-print"></i>ETATS </a>
+                    <a href="{{url('/messages')}}"> <i class="menu-icon fa fa-envelope"></i>MESSAGES </a>
                     </li>
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-bar-chart-o"></i>STATISTIQUES </a>
-                    </li>
-
-
-
-                    <li>
-                        <a href=""> <i class="menu-icon fa  fa-credit-card"></i>PAYEMENTS </a>
+                    <a href="{{url('/statistiques')}}"> <i class="menu-icon fa fa-bar-chart-o"></i>STATISTIQUES </a>
                     </li>
 
                     <h3 class="menu-title"></h3><!-- /.menu-title -->
@@ -160,7 +148,7 @@
                             <div class="dropdown-menu" aria-labelledby="message">
                                 <p class="red">You have 4 Mails</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Jonathan Smith</span>
                                     <span class="time float-right">Just now</span>
@@ -168,7 +156,7 @@
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Jack Sanders</span>
                                     <span class="time float-right">5 minutes ago</span>
@@ -176,7 +164,7 @@
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Cheryl Wheeler</span>
                                     <span class="time float-right">10 minutes ago</span>
@@ -184,7 +172,7 @@
                                 </span>
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
-                                <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
+                                <span class="photo media-left"><img alt="avatar"></span>
                                 <span class="message media-body">
                                     <span class="name float-left">Rachel Santos</span>
                                     <span class="time float-right">15 minutes ago</span>
@@ -199,7 +187,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="TemplateAdmin/images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="TemplateAdmin/images/pascal.png" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">

@@ -18,9 +18,11 @@
 
 <div id="mapid"  style="width: 640px; height: 480px;"></div>
         <!-- Make sure you put this AFTER Leaflet's CSS -->
-   <input type="text"  placeholder="Longitude" id="Longitude">
-    <input type="text" placeholder="Latitude" id="Latitude">
+   <input type="text"  placeholder="Longitude" id="Longitude"/>
 
+
+    <input type="text" placeholder="Latitude" id="Latitude">
+    <button id="myLocation" class="mylocation">Ma position</button>
 <script>
   console.log('ok');
 
@@ -37,7 +39,25 @@
         var marker = L.marker([6.212069, 1.1875334], {
             draggable: "true"
         });
-
+        function currentLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((function (position) {
+                alert(position.coords.latitude)
+                document.getElementById("Latitude").value=position.coords.latitude;
+                document.getElementById("Longitude").value=position.coords.longitude;
+                var marker = L.marker([position.coords.latitude, position.coords.longitude], {
+            draggable: "true"
+        });
+                //marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+            }));
+        } else {
+            alert("La géolocalisation n'est pas supportée par ce navigateur.");
+        }
+}
+//marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+$('#myLocation').click(function (e) {
+    currentLocation();
+});
 marker.on("dragend", function(event) {
         var position = marker.getLatLng();
         marker

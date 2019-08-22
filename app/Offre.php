@@ -13,6 +13,14 @@ class Offre extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function typebien()
+    {
+        return $this->belongsTo(TypeBien::class, 'IdTypeBien');
+    }
+    public function typeoffre()
+    {
+        return $this->belongsTo(TypeOffre::class, 'IdTypeOffre');
+    }
     //utilisateur
     public function ville()
     {

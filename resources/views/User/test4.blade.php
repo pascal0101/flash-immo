@@ -69,14 +69,24 @@ a {
 
 <script>
 var map = L.map('map', {
-            center: ['14.6276432', '-60.98892379999995'],
+            center: ['6.212069', '1.1875334'],
             zoom: 11
         });
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
    attribution: 'Données de la carte &copy; <a href="http://www.openstreetmap.org/#map=5/51.500/-0.100">Open Street Map</a>',
    maxZoom: 18
 }).addTo(map);
-marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+function currentLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((function (position) {
+                var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+                marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+            }));
+        } else {
+            alert("La géolocalisation n'est pas supportée par ce navigateur.");
+        }
+}
+//marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
 $('#myLocation').click(function (e) {
     currentLocation();
 });

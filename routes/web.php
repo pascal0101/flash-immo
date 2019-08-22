@@ -63,30 +63,38 @@ Route::get('/mesbiens', function () {
 Route::get('/utilisateur1', function () {
     return view('User/Utilisateur1');
 });
+//admin
 
+//activer une offres
+Route::get('offresupdateoffre\{id}', 'BienController@update')->name('updateoffre');
 
-Route::get('/active', function () {
-    return view('Admin/active');
-});
-Route::get('/desactive', function () {
-    return view('Admin/desactive');
-});
-Route::get('/clients', function () {
-    return view('Admin/clients');
-});
+Route::get('offres', 'BienController@offres');
+Route::get('statistiques', 'BienController@statistique');
+
+Route::get('active', 'BienController@active')->name('active');
+
+Route::get('desactive', 'BienController@desactive')->name('desactive');
+
+Route::get('clients', 'BienController@client')->name('client');
 //les different type de bien
 Route::get('maison', 'TypeBienController@maison')->name('maison');
 
+//suprimer un utilisateur
+Route::get('clients\{id}', 'BienController@deleteuser')->name('deleteuser');
 
 //envoi de mail
 Route::post('message', 'MessageController@store')->name('message');
+Route::get('messages', 'BienController@message');
+Route::get('messages\{id}', 'BienController@deletemsg')->name('deletemsg');
 //
 Route::get('mesoffres\{id}', 'OffresController@delete')->name('supprimeoffre');
+Route::get('offres\{id}', 'BienController@delete')->name('deleteoffre');
 //afficher les offres d'un utilisateur
 Route::get('mesoffres', 'OffresController@mesoffres')->name('mesoffres');
 
 //afficher les detail d'une offre une offre
 Route::get('detail\{id}', 'OffresController@show')->name('detail');
+Route::get('voir\{id}', 'BienController@show')->name('voir');
 //afficher offre
 Route::get('user', 'OffresController@offres');
 
@@ -109,9 +117,7 @@ Route::post('offre', 'OffresController@store')->name('offre');
 
 
 
-Route::get('/admin1', function () {
-    return view('admin/acceuil');
-})->name('admin');
+
 //typebiens
 Route::get('typebien', 'TypeBienController@index');
 Route::post('typebien', 'TypeBienController@store')->name('typebien');

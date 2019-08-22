@@ -1,10 +1,10 @@
 @extends('AdminLayouts.index1')
 
 @section('content')
-@if(session()->has('message1'))
+@if(session()->has('message2'))
 
         <div class="alert alert-primary">
-            {{ session()->get('message1')}}
+            {{ session()->get('message2')}}
         </div>
       @endif
         <div class="content mt-3">
@@ -16,7 +16,7 @@
                             <div class="card-header">
                                 <i class="fa fa-table"></i>
 
-                                <strong class="card-title">CLIENTS</strong>
+                                <strong class="card-title">MESSAGES</strong>
                                 <button class="btn btn-primary btn-sm btn-rounded w-md waves-effect waves-light" style="border-radius: 2em;"><i class="fa fa-print"></i> Imprimer</button>
 
                             </div>
@@ -26,28 +26,28 @@
                                     <thead>
                                         <tr>
                                             <th>Nom</th>
-                                            <th>Prenoms</th>
-                                            <th>Numero de Téléphone</th>
                                             <th>Email</th>
-                                            <th>Sexe</th>
+                                            <th>Objet</th>
+                                            <th>Numero</th>
+                                            <th>Date</th>
 
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($utilisateurs as $utilisateur)
+                                        @foreach ($messages as $message)
 
 
                                         <tr>
-                                            <td>{{$utilisateur->Nom}}</td>
-                                            <td>{{$utilisateur->Prenom}}</td>
-                                        <td>{{$utilisateur->NumeroTel}}</td>
-                                            <td>{{$utilisateur->Email}}</td>
-                                            <td>{{$utilisateur->Sexe}}</td>
+                                            <td>{{$message->Nom}}</td>
+                                            <td>{{$message->Email}}</td>
+                                        <td>{{$message->Objet}}</td>
+                                            <td>{{$message->Numero}}</td>
+                                    <td>{{$message->created_at->diffForHumans()}}</td>
 
                                             <td>
 
-                  <a href="{{ route('deleteuser',[$utilisateur->id])}}" class="btn btn-danger btn-circle">
+                  <a href="{{ route('deletemsg',[$message->id])}}" class="btn btn-danger btn-circle">
                     <i class="fa fa-trash"></i>
                   </a>
                                             </td>
