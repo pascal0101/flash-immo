@@ -21,6 +21,9 @@ Route::get('/test', function () {
 Route::get('/test1', function () {
     return view('user/test1');
 });
+Route::get('/test5', function () {
+    return view('user/test5');
+});
 Route::get('/test2', function () {
     return view('user/test2');
 });
