@@ -15,7 +15,7 @@
         </div>
     </div>
 </div>
-<body>
+<body onload="initialize()">
 
 
 <!-- Sub Banner end -->

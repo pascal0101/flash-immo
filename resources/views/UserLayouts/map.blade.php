@@ -666,7 +666,7 @@ function fixStepIndicator(n) {
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin=""></script>
 
-<script src="TemplateUser/the-nest/js/monmap1.js"></script>
+<script src="TemplateUser/the-nest/js/monmap2.js"></script>
 <script src="TemplateUser/the-nest/js/bootstrap.min.js"></script>
 <script src="TemplateUser/the-nest/js/bootstrap-submenu.js"></script>
 <script src="TemplateUser/the-nest/js/rangeslider.js"></script>

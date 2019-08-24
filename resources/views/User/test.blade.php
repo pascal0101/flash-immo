@@ -14,7 +14,7 @@
    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
    crossorigin=""></script>
 </head>
-<body>
+<body onload="initialize()">
 
 <div id="mapid"  style="width: 640px; height: 480px;"></div>
         <!-- Make sure you put this AFTER Leaflet's CSS -->
@@ -24,25 +24,27 @@
     <input type="text" placeholder="Latitude" id="Latitude">
     <button id="myLocation" class="mylocation">Ma position</button>
 <script>
-  console.log('ok');
 
-   var mymap = L.map('mapid').setView([6.212069, 1.1875334], 13);
+    function initialize() {
+        console.log('ok');
+    var mymap = L.map("mapid").setView([6.212069, 1.1875334], 15);
 
-    var tileStreets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-	maxZoom: 18,
-	id: 'mapbox.streets',
-	accessToken: 'pk.eyJ1IjoicGFzY2FsMjAxOSIsImEiOiJjanpjcnd0Y28wOGlkM25wc2d4djN0NWQ4In0.SXGYho5rGGYtJBs8Yf--8A'
+    var osmLayer = L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+        maxZoom: 19
     });
-    tileStreets.addTo(mymap);
 
-        var marker = L.marker([6.212069, 1.1875334], {
+    mymap.addLayer(osmLayer);
+
+    var marker = L.marker([6.212069, 1.1875334], {
             draggable: "true"
         });
+    marker.addTo(mymap);
+
         function currentLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((function (position) {
-                alert(position.coords.latitude)
+                //alert(position.coords.latitude)
                 document.getElementById("Latitude").value=position.coords.latitude;
                 document.getElementById("Longitude").value=position.coords.longitude;
                 var marker = L.marker([position.coords.latitude, position.coords.longitude], {
@@ -87,6 +89,7 @@ marker.on("dragend", function(event) {
                 });
 
     mymap.addLayer(marker);
+}
 </script>
 
 

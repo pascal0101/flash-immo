@@ -25,7 +25,7 @@ var tileStreet = L.tileLayer(
 );
 var long = $("#long").val();
 var lat = $("#lat").val();
-
+alert(long);
 var mymap = L.map("mapid", {
     center: [long, lat],
     zoom: 13,
