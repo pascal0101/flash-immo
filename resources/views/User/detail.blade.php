@@ -93,73 +93,175 @@
 
                     <!-- Advanced search end -->
 
-                    <!-- Properties description start -->
-                    <div class="properties-description mb-40 ">
-                        <div class="main-title-2">
-                            <h1><span>Description</span></h1>
-                        </div>
-                        <p>{{$offre->Description}}</p>
+                    <div class="panel-box properties-panel-box Property-description">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab" aria-expanded="true">DESCRIPTION</a></li>
+                            <li class=""><a href="#tab2default" data-toggle="tab" aria-expanded="false">EQUIPEMENTS</a></li>
+                            <li class=""><a href="#tab3default" data-toggle="tab" aria-expanded="false">CONTACTS PROPRIETAIRE</a></li>
 
-                    </div>
-                    <!-- Properties description end -->
 
-                    <!-- Properties condition start -->
-                    <div class="properties-condition mb-40 ">
-                        <div class="main-title-2">
-                            <h1><span>Condition</span></h1>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <ul class="condition">
-                                    <li>
-                                        <i class="flaticon-bed"></i>Chambre(s)
+                        </ul>
+                        <div class="panel with-nav-tabs panel-default">
+                            <div class="panel-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="tab1default">
+                                        <div class="main-title-2">
+                                            <h1><span>Description du bien</span></h1>
+                                        </div>
+                                       <p>{{$offre->Description}}</p>
+
+                                    </div>
+                                    <div class="tab-pane fade features" id="tab2default">
+                                        <!-- Properties condition start -->
+                                        <div class="properties-condition">
+                                            <div class="main-title-2">
+                                                <h1><span>Equipements</span></h1>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <ul class="condition">
+                                                        <li>
+                                        <i class="flaticon-bed"></i>{{$offre->NombreChambre}} Chambre(s)
                                     </li>
+                                                        @if($offre->Salon == 1)
                                     <li>
-                                        <i class="flaticon-holidays"></i>Salon
+                                        <i class="fa fa-check-square"></i>Salon : OUI
                                     </li>
+                                @else
+                                 <li>
+                                        <i class="fa fa-check-square"></i>Salon : NON
+                                    </li>
+                        @endif
+                         @if($offre->WcDouche == 1)
+                                <li>
+                                    <i class="flaticon-holidays"></i>Toilette(s) : OUI
+                                </li>
+                                @else
+                                <li>
+                                    <i class="flaticon-holidays"></i>Toilette(s) : NON
+                                </li>
+                        @endif
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <ul class="condition">
+                                                        @if($offre->Meuble == 1)
                                     <li>
-                                        <i class="flaticon-holidays"></i>Toilette(s)
+                                        <i class="fa fa-check-square"></i>Meuble : OUI
                                     </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <ul class="condition">
+                                @else
+                                 <li>
+                                        <i class="fa fa-check-square"></i>Meuble : NON
+                                    </li>
+                        @endif
+
+                        @if($offre->Cuisine == 1)
                                     <li>
-                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Meuble
+                                        <i class="fa fa-check-square"></i>Cuisine : OUI
                                     </li>
-                                    <li>
-                                        <i class="flaticon-monitor"></i>Cuisine
-                                    </li>
+                                @else
+                                <li>
+                                    <i class="fa fa-check-square"></i>Cuisine : NON
+                                </li>
+                        @endif
+
+                        @if($offre->Surface == 1)
                                      <li>
-                                        <i class="flaticon-monitor"></i>Surface
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : Quart de lot
                                     </li>
+                            @elseif($offre->Surface == 2)
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : Demi lot
+                                    </li>
+                            @elseif($offre->Surface == 3)
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : 1 lot
+                                    </li>
+                            @elseif($offre->Surface == 4)
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : 2 lot
+                                    </li>
+                            @elseif($offre->Surface == 5)
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : 3 lot
+                                    </li>
+                            @elseif($offre->Surface == 6)
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : 4 lot
+                                    </li>
+                            @elseif($offre->Surface == 7)
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : 5 lot
+                                    </li>
+                            @else
+                                    <li>
+                                        <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>Surface : +5 lot
+                                    </li>
+                        @endif
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                                    <ul class="condition">
+                                                         @if($offre->Garage == 1)
+                                    <li>
+                                        <i class="flaticon-vehicle"></i>Garage : OUI
+                                    </li>
+                                    @else
+                                     <li>
+                                        <i class="flaticon-vehicle"></i>Garage : NON
+                                    </li>
+                                @endif
 
-                                </ul>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <ul class="condition">
+                                @if($offre->Balcon == 1)
                                     <li>
-                                        <i class="flaticon-vehicle"></i>Garage
+                                        <i class="flaticon-building"></i>Balcon : OUI
                                     </li>
-                                    <li>
-                                        <i class="flaticon-building"></i>Balcon
+                                    @else
+                                     <li>
+                                        <i class="flaticon-building"></i>Balcon : NON
                                     </li>
-                                </ul>
+                                @endif
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Properties condition end -->
+                                    </div>
+                                    <div class="tab-pane fade technical" id="tab3default">
+                                        <!-- Properties amenities start -->
+                                        <div class="properties-amenities">
+                                            <div class="main-title-2">
+                                                <h1><span>CONTACTS PROPRIETAIRE</span></h1>
+                                            </div>
+                                            <div class="sidebar-widget helping-box clearfix">
+
+                        <div class="helping-center">
+                            <div class="icon"><i class="fa fa-map-marker"></i></div>
+                            <h4>Adresse</h4>
+                            <span>{{$offre->Adresse}}, {{$offre->ville->NomVille}}</span>
+                        </div>
+                         <div class="helping-center">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Adresse mail</h4>
+                            <span>{{$offre->Email}}</span>
+                        </div>
+                        <div class="helping-center">
+                            <div class="icon"><i class="fa fa-phone"></i></div>
+                            <h4>Numero Telephone</h4>
+                            <p><a href="#">{{$offre->Numero1}} / {{$offre->Numero2}}</a> </p>
+                        </div>
+                    </div>
+                                        </div>
+                                        <!-- Properties amenities end -->
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Properties condition end -->
-
-                    <!-- Properties amenities start -->
-
-                    <!-- Properties amenities end -->
+                    <!-- Property description end -->
                 </div>
-                <!-- Properties details section end -->
-
-                <!-- Floor plans start -->
-
-                <!-- Floor plans end -->
-
                 <!-- Location start -->
                 <div class="location sidebar-widget">
                     <div class="map">
@@ -225,22 +327,18 @@
                     <!-- Helping center start -->
                     <div class="sidebar-widget helping-box clearfix">
                         <div class="main-title-2">
-                            <h1><span>CONTACTS</span> </h1>
+                            <h1><span>CENTRE D'AIDE</span> </h1>
                         </div>
-                        <div class="helping-center">
-                            <div class="icon"><i class="fa fa-map-marker"></i></div>
-                            <h4>Adresse</h4>
-                            <span>{{$offre->Adresse}}, {{$offre->ville->NomVille}}</span>
-                        </div>
+
                          <div class="helping-center">
                             <div class="icon"><i class="fa fa-envelope"></i></div>
                             <h4>Adresse mail</h4>
-                            <span>{{$offre->Email}}</span>
+                            <span>flash-immo@africantechlab.com</span>
                         </div>
                         <div class="helping-center">
                             <div class="icon"><i class="fa fa-phone"></i></div>
                             <h4>Numero Telephone</h4>
-                            <p><a href="#">{{$offre->Numero1}} / {{$offre->Numero2}}</a> </p>
+                            <p><a href="#">91 42 81 99</a> </p>
                         </div>
                     </div>
 <input  type="hidden" id="long" value="<?php echo $offre->Longitude ?>"/>

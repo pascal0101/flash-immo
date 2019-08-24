@@ -11,53 +11,48 @@
     <div class="container">
         <div class="search-area-inner">
             <div class="search-contents ">
-                <form method="GET">
+<form action="{{ route('rechercher') }}" method="POST">
+                         {{csrf_field()}}
+
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="area-from" data-live-search="true" data-live-search-placeholder="Search value">
-                                    <option>Type(s) d'offre</option>
-                                    <option>Acheter</option>
-                                    <option>Location</option>
-                                    <option>Colocation</option>
+                                <select class="selectpicker search-fields" id="typeoffre" name="typeoffre" data-live-search="true" data-live-search-placeholder="Search value">
+                                    <option value="0">Type(s) d'offre</option>
+                                    <option value="1">Acheter</option>
+                                    <option value="2">Location</option>
+                                    <option value="3">Colocation</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-status" data-live-search="true" data-live-search-placeholder="Search value">
-                                    <option>Type(s) de bien</option>
-                                     <option>Maison</option>
-                                    <option>Appartement</option>
-                                    <option>Terrain</option>
-                                    <option>Bureau</option>
+                                <select class="selectpicker search-fields" id="typebien" name="typebien" data-live-search="true" data-live-search-placeholder="Search value">
+                                    <option value="0">Type(s) de bien</option>
+                                     <option value="1">Maison</option>
+                                    <option value="2">Appartement</option>
+                                    <option value="3">Terrain</option>
+                                    <option value="4">Bureau</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="location" placeholder="Search value">
-                                    <option>Nombre Chambre</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>+10</option>
+                                <select class="selectpicker search-fields" name="nbrechambre" placeholder="Search value">
+                                    <option value="0">Nombre Chambre</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="property-types" data-live-search="true" data-live-search-placeholder="Search value">
-                                    <option>Toilette(s)</option>
-                                    <option>Oui</option>
-                                    <option>Non</option>
+                                <select class="selectpicker search-fields" name="toilette" data-live-search="true" data-live-search-placeholder="Search value">
+                                    <option value="0">Toilette(s)</option>
+                                    <option value="1">Oui</option>
+                                    <option value="2">Non</option>
 
                                 </select>
                             </div>
@@ -66,28 +61,13 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="bedrooms" data-live-search="true" data-live-search-placeholder="Search value" >
-                                    <option>Ville</option>
-                                    <option>Aného</option>
-                                    <option>Atakpamé</option>
-                                    <option>Badou</option>
-                                    <option>Bafilo</option>
-                                    <option>Bassar</option>
-                                    <option>Dapaong</option>
-                                    <option>Kandé</option>
-                                    <option>Kpagouda</option>
-                                    <option>Kpalimé</option>
-                                    <option>Mango</option>
-                                    <option>Niamtougou</option>
-                                    <option>Notsé</option>
-                                    <option>Sokodé</option>
-                                    <option>Sotouboua</option>
-                                    <option>Tabligbo</option>
-                                    <option>Tchamba</option>
-                                    <option>Tsévié</option>
-                                    <option>Vogan</option>
-                                    <option>Lomé</option>
-                                    <option>Cinkassé</option>
+                                <select class="selectpicker search-fields" name="ville" data-live-search="true" data-live-search-placeholder="Search value" >
+                                    <option value="0">Ville</option>
+                                    <option value="1">Aného</option>
+                                    <option value="2">Atakpamé</option>
+                                    <option value="3">Badou</option>
+                                    <option value="4">Bafilo</option>
+
 
                                 </select>
                             </div>
@@ -108,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+</form>
             </div>
         </div>
     </div>
@@ -132,7 +112,8 @@
         </ul>
         <div class="row">
             <div class="filtr-container">
-                @foreach($offres as $offre)
+
+                @forelse($offres as $offre)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  filtr-item" data-category="1, 2, 3">
                     <div class="property">
                         <!-- Property img -->
@@ -227,7 +208,10 @@
                         </div>
                     </div>
                 </div>
-@endforeach
+
+                @empty
+                <h1>RIEN</h1>
+@endforelse
 
 
 

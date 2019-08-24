@@ -158,4 +158,36 @@ class BienController extends Controller
 
         return view('Admin/statistique');
     }
+
+
+    public function rechercher(Request $request)
+    {
+        dd("toto");
+        if ($request->isMethod('post')) {
+            dd($request->all());
+            $typeoffre = $request->input('typeoffre');
+            $typebien = $request->input('typebien');
+            //print_r(explode("-", $typebien));
+            /*$nbrechambre = $request->input('nbrechambre');
+            $toilette = $request->input('toilette');
+            $ville = $request->input('ville');
+            $prix1 = $request->input('prix1');
+            $prix2 = $request->input('prix2');
+
+            dd($request->all());
+            */
+            $offres = Offre::paginate(6);
+
+            $images = Image::get();
+
+
+            $offres = DB::table('offres')
+                ->join('type_offres', 'type_offres.id', 'offres.IdTypeOffre')
+                ->where('offres.IdTypeOffre', $typeoffre)
+                ->where('offres.IdTypeBien', $typebien)
+                ->get();
+
+            return view('/', compact('offres', 'images'));
+        }
+    }
 }

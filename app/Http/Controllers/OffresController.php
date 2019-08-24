@@ -52,13 +52,54 @@ class OffresController extends Controller
         return view('user/acceuil', compact('offres', 'images'));
     }
 
-    public function acceuil()
+    public function acceuil(Request $request)
     {
+        /*$nbrechambre = $request->input('nbrechambre');
+            $toilette = $request->input('toilette');
+            $ville = $request->input('ville');
+            $prix1 = $request->input('prix1');
+            $prix2 = $request->input('prix2');
+            $typeoffre = $request->input('typeoffre');
+            $typebien = $request->input('typebien');
+            dd($request->all());
+            */
         $offres = Offre::paginate(6);
-        //dd($offres);
+
+
         $images = Image::get();
 
-        return view('/welcome', compact('offres', 'images'));
+        //return view('user/acceuil', compact('offres', 'images'));
+
+
+        return view('welcome', compact('offres', 'images'));
+    }
+
+    public function rechercher(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            //dd($request->all());
+
+            $typebien = $request->input('typebien');;
+            $typeoffre = $request->input('typeoffre');
+            $nbrechambre = $request->input('nbrechambre');
+            $toilette = $request->input('toilette');
+            $ville = $request->input('ville');
+            $prix1 = $request->input('prix1');
+            $prix2 = $request->input('prix2');
+
+            //dd($request->all());
+
+            $offres = offre::where('IdTypeBien', '=', $typebien)
+                ->orwhere('IdTypeOffre', '=', $typeoffre)
+                ->orwhere('NombreChambre', '=', $nbrechambre)
+                ->orwhere('WcDouche', '=', $toilette)
+                ->where('IdVille', '=', $ville)
+                ->whereBetween('Prix', [$prix1, $prix2])
+
+                ->paginate(6);
+            //dd($offres);
+            return view('welcome', compact('offres', 'images'));
+        }
     }
     /**
      * Store a newly created resource in storage.

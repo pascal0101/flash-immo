@@ -100,7 +100,9 @@ Route::get('user', 'OffresController@offres');
 
 //afficher page acceuil
 Route::get('/', 'OffresController@acceuil')->name('acceuil');
-
+//Route::post('/', 'OffresController@acceuil')->name('acceuil');
+Route::post('/', 'OffresController@rechercher')->name('rechercher');
+//Route::post('/', 'BienController@rechercher')->name('rechercher');
 //Agence
 Route::get('agence', 'AgenceController@index')->name('agence');
 Route::post('agence', 'AgenceController@store')->name('agence');

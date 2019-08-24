@@ -126,12 +126,11 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown active">
                         <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            OFFRES<span class="caret"></span>
+                            Offres<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{url('/maison')}}">Maisons</a></li>
                             <li><a href="#">Appartements</a></li>
-
+                            <li><a href="#">Maisons</a></li>
                             <li><a href="#">Terrains</a></li>
                             <li><a href="#">Bureaux</a></li>
 
@@ -148,8 +147,8 @@
                     <li>
 
                         <a href="{{url('/login')}}" class="button">
-                            <i class="glyphicon glyphicon-user"></i>
-                            Se connecter
+                            <i class="glyphicon glyphicon-bullhorn"></i>
+                            Publier une offre
                         </a>
                     </li>
 
