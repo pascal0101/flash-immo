@@ -137,6 +137,10 @@ input.invalid {
   border: 1px solid #569ae3;
 }
     </style>
+    <!—- ShareThis BEGIN -—>
+<script async src="https://platform-api.sharethis.com/js/sharethis.js#property=5d62ee3b53db1200121ccfe9&product="sticky-share-buttons"></script>
+<!—- ShareThis END -—>
+
 </head>
 <body>
 
