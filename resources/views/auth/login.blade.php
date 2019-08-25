@@ -13,7 +13,8 @@
                     <div class="details">
                         <!-- Main title -->
                         <div class="main-title">
-                            <h1><span>S'identifier</span></h1>
+                             <img src="TemplateUser/the-nest/img/logos/logo.png" alt="logo">
+                            <br>
                              @error('email')
                                     <span class="alert alert-danger" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -32,12 +33,12 @@
                         @csrf
                         <div class="form-group">
 
-                                 <input id="email" type="email" placeholder="login" class="input-text @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                 <input id="email" type="email" placeholder="login" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
 
                             </div>
                             <div class="form-group">
-                                <input id="password" type="password" placeholder="password" class="input-text @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" placeholder="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
 
                             </div>
@@ -52,7 +53,8 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="button-md button-theme btn-block">Connexion</button>
+
+                                <button type="submit" class="button-md button-theme btn-block"><i class="fa fa-lock"></i> Connexion</button>
                             </div>
                             @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

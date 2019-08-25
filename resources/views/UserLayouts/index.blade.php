@@ -405,7 +405,7 @@ input.invalid {
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                      <div class="footer-item">
-                         <img src="TemplateUser/the-nest/img/ATLlogo.png" alt="LOGO ATL" class="img-responsive">
+                         <img src="TemplateUser/the-nest/img/logos/logo.png" alt="LOGO ATL" class="img-responsive">
                      </div>
                 </div>
             </div>

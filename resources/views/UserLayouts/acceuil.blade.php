@@ -126,7 +126,7 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown active">
                         <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
-                            Offres<span class="caret"></span>
+                            OFFRES<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Appartements</a></li>
@@ -148,7 +148,7 @@
 
                         <a href="{{url('/login')}}" class="button">
                             <i class="glyphicon glyphicon-bullhorn"></i>
-                            Publier une offre
+                            DEPOSER UNE ANNONCE
                         </a>
                     </li>
 
@@ -302,7 +302,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                      <div class="footer-item">
-                         <img src="TemplateUser/the-nest/img/ATLlogo.png" alt="LOGO ATL" class="img-responsive">
+                         <img src="TemplateUser/the-nest/img/logos/logo.png" alt="LOGO ATL" class="img-responsive">
                      </div>
                 </div>
             </div>

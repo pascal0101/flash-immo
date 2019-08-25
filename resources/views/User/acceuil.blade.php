@@ -242,11 +242,9 @@
 <!-- Our service start -->
 
         <div style="text-align:center">
-        <a href="#" class="btn button-md button-theme">LIRE LA SUITE</a>
+       {{$offres->links()}}
         </div>
-                  <div align="center">
-            {{$offres->links()}}
-                    </div>
+
 <br>
 <!-- Our service end -->
 
