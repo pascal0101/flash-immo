@@ -32,13 +32,20 @@
                        <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+         <input id="email" type="email" placeholder="login" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+  </div>
 
-                                 <input id="email" type="email" placeholder="login" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
 
                             </div>
                             <div class="form-group">
-                                <input id="password" type="password" placeholder="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+       <input id="password" type="password" placeholder="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+  </div>
+
 
 
                             </div>

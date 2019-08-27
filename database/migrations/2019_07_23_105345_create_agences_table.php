@@ -19,8 +19,11 @@ class CreateAgencesTable extends Migration
             $table->string('NIF');
             $table->string('Logo');
             $table->text('Description');
-            $table->string('Contact');
+            $table->string('Contact1');
             $table->string('Email');
+            $table->string('SiteWeb');
+            $table->string('Adresse');
+            $table->string('Contact2');
             $table->timestamps();
         });
     }

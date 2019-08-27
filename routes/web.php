@@ -24,6 +24,9 @@ Route::get('/test1', function () {
 Route::get('/test5', function () {
     return view('user/test5');
 });
+Route::get('/test6', function () {
+    return view('user/test6');
+});
 Route::get('/test2', function () {
     return view('user/test2');
 });
@@ -107,6 +110,9 @@ Route::get('/', 'OffresController@acceuil')->name('acceuil');
 Route::post('/', 'OffresController@rechercher')->name('rechercher');
 //Route::post('/', 'BienController@rechercher')->name('rechercher');
 //Agence
+Route::get('lesagences', 'AgenceController@agences')->name('agences');
+Route::get('detailagence\{id}', 'AgenceController@show')->name('detailagence');
+
 Route::get('agence', 'AgenceController@index')->name('agence');
 Route::post('agence', 'AgenceController@store')->name('agence');
 

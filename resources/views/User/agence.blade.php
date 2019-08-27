@@ -24,6 +24,11 @@
                                 </div>
 
                                 <div class="form-group">
+                                <label>SITE WEB</label>
+                                    <input type="text" class="form-control" name="siteweb"  placeholder="SITE WEB">
+                                </div>
+
+                                <div class="form-group">
                                     <label>NUMERO D'IDENTIFICATION FISCALE</label>
                                     <input type="text" class="form-control" name="nif"  placeholder="NUMERO D'IDENTIFICATION FISCALE">
                                 </div>
@@ -45,6 +50,12 @@
                                 <input type="file" name="logo" class="form-control" placeholder="LOGO">
                             </div>
 
+                 <div class="form-group">
+                                <label>ADRESSE</label>
+                                    <input type="text" class="form-control" name="adresse"  placeholder="ADRESSE">
+                                </div>
+
+
                 <input type="button" name="previous" class="previous action-button-previous" value="Précedent"/>
                 <input type="button" name="next" class="next action-button" value="Suivant"/>
             </fieldset>
@@ -52,12 +63,17 @@
                 <h2 class="fs-title">CREER VOTRE AGENCE IMMOBILIERE</h2>
                 <h3 class="fs-subtitle"></h3>
                  <div class="form-group">
-                    <label>CONTACT</label>
-                                    <input type="text" class="form-control" name="contact"  placeholder="Contact">
+                    <label>CONTACT 1</label>
+                                    <input type="text" class="form-control" name="contact1"  placeholder="Contact1">
                                 </div>
+                     <div class="form-group">
+                                <label>CONTACT 2</label>
+                                    <input type="text" class="form-control" name="contact2"  placeholder="Contact2">
+                                </div>
+
                 <div class="form-group">
                     <label>email</label>
-                                    <input type="email" class="form-control" name="email"  placeholder="Agence email">
+                                    <input type="email" class="form-control" name="email"  placeholder="Email de l'Agence">
                                 </div>
 
                 <input type="button" name="previous" class="previous action-button-previous" value="Précedent"/>

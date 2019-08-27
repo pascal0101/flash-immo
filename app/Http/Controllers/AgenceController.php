@@ -16,6 +16,11 @@ class AgenceController extends Controller
     {
         return view('User/agence');
     }
+    public function agences()
+    {
+        $agences = agence::paginate(10);
+        return view('User/lesagences', compact('agences'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -42,7 +47,10 @@ class AgenceController extends Controller
             $agence->NomAgence = $request->input('nomagence');
             $agence->NIF = $request->input('nif');
             $agence->Description = $request->input('description');
-            $agence->Contact = $request->input('contact');
+            $agence->Contact1 = $request->input('contact1');
+            $agence->Contact2 = $request->input('contact2');
+            $agence->SiteWeb = $request->input('siteweb');
+            $agence->Adresse = $request->input('adresse');
             $agence->Email = $request->input('email');
 
             if ($request->hasFile('logo')) {
@@ -58,8 +66,13 @@ class AgenceController extends Controller
 
             $agence->save();
         }
-        session()->flash('message', 'Agence crée avec succès!!!');
-        return redirect('/agence');
+        $notification = array(
+            'message' => 'Agence crée avec succès!',
+            'alert-type' => 'success'
+        );
+
+        //session()->flash('message', 'Agence crée avec succès!!!');
+        return redirect('/agence')->with($notification);;
     }
 
     /**
@@ -68,11 +81,14 @@ class AgenceController extends Controller
      * @param  \App\AgenceImmobiliere  $agenceImmobiliere
      * @return \Illuminate\Http\Response
      */
-    public function show(AgenceImmobiliere $agenceImmobiliere)
-    {
-        //
-    }
 
+    public function show($id)
+    {
+
+        $agences =  Agence::findOrFail($id);
+
+        return view('user.detailagence', compact('agences'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
