@@ -38,7 +38,3 @@ Vue.component("ajout-bien", require("./components/AjoutBien.vue").default);
 const app = new Vue({
     el: "#app"
 });
-
-likePost(id){
-    alert("ok");
-}
