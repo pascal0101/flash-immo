@@ -13,6 +13,10 @@ class Offre extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function favoris()
+    {
+        return $this->belongsTo(Favoris::class);
+    }
     public function typebien()
     {
         return $this->belongsTo(TypeBien::class, 'IdTypeBien');

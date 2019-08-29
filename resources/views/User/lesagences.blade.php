@@ -26,9 +26,10 @@
             <div class="row">
 
             <div class="col-lg-12">
-                <form class="form-search view-search" method="GET">
+                <form class="form-search view-search" action="/lesagences" method="POST" role="search">
+                    {{ csrf_field() }}
                     <div class="form-group mb-0">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Search" name="q">
                     </div>
                     <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                 </form>

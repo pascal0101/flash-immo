@@ -15,13 +15,11 @@ class CreateFavorisTable extends Migration
     {
         Schema::create('favoris', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('IdOffre');
-
-            $table->foreign('IdOffre')->references('id')->on('Offres')->onDelete('cascade');
-
-            $table->unsignedBigInteger('IdUser');
-
-            $table->foreign('IdUser')->references('id')->on('Users')->onDelete('cascade');
+            $table->unsignedBigInteger('offre_id');
+            $table->foreign('offre_id')->references('id')->on('Offres')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('Users')->onDelete('cascade');
+            $table->boolean('like');
             $table->timestamps();
         });
     }

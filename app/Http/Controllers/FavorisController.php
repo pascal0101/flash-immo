@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Favoris;
+use App\Offre;
+use App\User;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 use Illuminate\Http\Request;
 
 class FavorisController extends Controller
@@ -14,7 +20,8 @@ class FavorisController extends Controller
      */
     public function index()
     {
-        //
+        $offres = Offre::all();
+        return view('user/test6', compact('offres'));
     }
 
     /**
@@ -35,7 +42,28 @@ class FavorisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $user = Auth::user();
+        $like = new favoris();
+        $like->like = 1;
+        $like->user_id = $user->id;
+        $like->offre_id = 1;
+        $like->save();
+        return "ok";
+    }
+
+    public function favoris($id)
+    {
+        $user = Auth::user();
+        $favoris = new favoris();
+        $offre = offre::findOrFail($id);
+        $favoris->user_id = $user->id;
+        $favoris->offre_id = $offre->id;
+        $favoris->save();
+
+        $offres = Offre::all();
+        return view('user/test6', compact('offres'));
+        //$offre = DB::table('offres')->where('id', $id)->update(array('like' => 1)); 
     }
 
     /**

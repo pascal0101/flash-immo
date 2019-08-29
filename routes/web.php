@@ -24,9 +24,7 @@ Route::get('/test1', function () {
 Route::get('/test5', function () {
     return view('user/test5');
 });
-Route::get('/test6', function () {
-    return view('user/test6');
-});
+
 Route::get('/test2', function () {
     return view('user/test2');
 });
@@ -54,6 +52,8 @@ Route::get('/password', function () {
 Route::get('/favoris', function () {
     return view('user/favoris');
 });
+Route::get('favoris', 'FavorisController@index');
+Route::get('favoris\{id}', 'FavorisController@favoris')->name('favoris');
 
 Route::get('/contact', function () {
     return view('user/contact');
@@ -111,6 +111,7 @@ Route::post('/', 'OffresController@rechercher')->name('rechercher');
 //Route::post('/', 'BienController@rechercher')->name('rechercher');
 //Agence
 Route::get('lesagences', 'AgenceController@agences')->name('agences');
+Route::post('lesagences', 'AgenceController@recherche')->name('agences');
 Route::get('detailagence\{id}', 'AgenceController@show')->name('detailagence');
 
 Route::get('agence', 'AgenceController@index')->name('agence');

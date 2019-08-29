@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use App\Agence;
 use Illuminate\Http\Request;
 
@@ -20,6 +22,20 @@ class AgenceController extends Controller
     {
         $agences = agence::paginate(10);
         return view('User/lesagences', compact('agences'));
+    }
+
+    public function recherche(Request $request)
+    {
+        // $agences = agence::all();
+        $q = $request->input('q');
+        //$agences = Agence::where('NomAgence', $q)->get();
+        $agences = DB::table('agences')
+            ->where('agences.NomAgence', $q)
+            ->get();
+
+        //if (count($agences) > 0)
+        return view('User/lesagences', compact('agences'));
+        //else return view('User/lesagences')->withMessage('No Details found. Try to search again !');
     }
 
     /**

@@ -7,10 +7,7 @@
 
     <div>
 
-    <p>
-        {{$offre->Titre}} <a href="{{ route('favoris',[$offre->id])}}"><i class="fa fa-heart-o"></i></a>
-    </p>
-
+    <p>{{$offre->Titre}}</p>
 
      </div>
 
