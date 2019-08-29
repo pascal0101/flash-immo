@@ -111,7 +111,9 @@ Route::post('/', 'OffresController@rechercher')->name('rechercher');
 //Route::post('/', 'BienController@rechercher')->name('rechercher');
 //Agence
 Route::get('lesagences', 'AgenceController@agences')->name('agences');
-Route::post('lesagences', 'AgenceController@recherche')->name('agences');
+Route::get('/lesagences/action', 'AgenceController@action')->name('recherche');
+
+
 Route::get('detailagence\{id}', 'AgenceController@show')->name('detailagence');
 
 Route::get('agence', 'AgenceController@index')->name('agence');

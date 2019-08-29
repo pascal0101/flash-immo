@@ -138,4 +138,69 @@ class AgenceController extends Controller
     {
         //
     }
+
+    function action(Request $request)
+    {
+        if ($request->ajax()) {
+            $output = '';
+            $query = $request->get('query');
+            if ($query != '') {
+                $data = DB::table('agences')
+                    ->where('NomAgence', 'like', '%' . $query . '%')
+                    ->get();
+            } else {
+                $data = DB::table('agences')->get();
+            }
+            $total_row = $data->count();
+            if ($total_row > 0) {
+                foreach ($data as $row) {
+                    $output .= '  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <!-- Agent box 2start -->
+                <div class="agent-2 clearfix">
+                    <div class="col-lg-5 col-md-5 col-sm-4 agent-theme-2">
+                        <img src="/logo/' . $row->Logo . '" alt="Logo" class="img-responsive">
+                        <!-- social list -->
+
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-8 agent-content">
+
+                        <h3>
+                            <a href="' . route('detailagence', $row->id) . '" style="color: red">' . $row->NomAgence . '</a>
+                        </h3>
+                        <ul>
+                            <li>
+                                <strong>Adresse:</strong><a href="#"> ' . $row->Adresse . '</a>
+                            </li>
+                            <li>
+                                <strong>Email:</strong><a href="#"> ' . $row->Email . '</a>
+                            </li>
+                            <li>
+                                <strong>Contacts:</strong><a href="#"> ' . $row->Contact1 / $row->Contact2 . '</a>
+                            </li>
+                            <li>
+                                <strong>Site Web:</strong><a href="#" style="color: blue"> ' . $row->SiteWeb . '</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- Agent box 2 end -->
+            </div>
+        ';
+                }
+            } else {
+                $output = '
+       <tr>
+        <td align="center" colspan="5">Aucune donnée disponible</td>
+       </tr>
+       ';
+            }
+            $data = array(
+                'table_data'  => $output,
+                'total_data'  => $total_row
+            );
+
+            echo json_encode($data);
+        }
+    }
 }
