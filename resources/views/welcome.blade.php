@@ -119,11 +119,11 @@
                         <!-- Property img -->
                         <div class="property-img">
                             @if($offre->IdTypeOffre == 2)
-                            <div class="property-tag button alt featured">Vente</div>
+                            <div class="property-tag button alt featured" style="background: red;">Vente</div>
                             @elseif($offre->IdTypeOffre == 1)
-                            <div class="property-tag button alt featured">Location</div>
+                            <div class="property-tag button alt featured"  style="background: blue;">Location</div>
                             @else
-                            <div class="property-tag button alt featured">Collocation</div>
+                            <div class="property-tag button alt featured" style="background: green;">Collocation</div>
                             @endif
 
                             <div class="property-tag button sale">En cours</div>
@@ -149,8 +149,7 @@
                                         <i class="fa fa-expand"></i>
                                     </a>
 
-                                    <a href="TemplateUser/the-nest/img/properties/properties-2.jpg" class="hidden"></a>
-                                    <a href="TemplateUser/the-nest/img/properties/properties-3.jpg" class="hidden"></a>
+
                                 </div>
                             </div>
                         </div>
@@ -158,7 +157,7 @@
                         <div class="property-content">
                             <!-- title -->
                             <h1 class="title">
-                            <a href="properties-details.html">{{$offre->Titre}}</a>
+                            <a href="{{ route('detail',[$offre->id])}}">{{$offre->Titre}}</a>
                             </h1>
                             <!-- Property address -->
                             <h3 class="property-address">
@@ -210,7 +209,7 @@
                 </div>
 
                 @empty
-                <h1>RIEN</h1>
+                <h3>Aucune offre disponible</h3>
 @endforelse
 
 

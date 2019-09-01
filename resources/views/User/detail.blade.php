@@ -248,7 +248,7 @@
                         <div class="helping-center">
                             <div class="icon"><i class="fa fa-phone"></i></div>
                             <h4>Numero Telephone</h4>
-                            <p><a href="#">{{$offre->Numero1}} / {{$offre->Numero2}}</a> </p>
+                            <p><a href="#">{{$offre->Telephone}}</a> </p>
                         </div>
                     </div>
                                         </div>
@@ -347,20 +347,7 @@
 
 
                     <!-- Social media start -->
-                    <div class="social-media sidebar-widget clearfix">
-                        <!-- Main Title 2 -->
-                        <div class="main-title-2">
-                            <h1><span>Social</span> Media</h1>
-                        </div>
-                        <!-- Social list -->
-                        <ul class="social-list">
-                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" class="rss-bg"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
+
 
                     <!-- Latest tweet start -->
                     <div class="sidebar-widget category-posts">

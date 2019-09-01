@@ -20,10 +20,10 @@ class CreateUtilisateursTable extends Migration
             $table->enum('Sexe', array('M', 'F'));
             $table->integer('NumeroTel')->unsigned();
             $table->string('Photo')->nullable();
-            $table->string('NumCIN');
+            $table->string('NumCIN')->nullable();
             $table->string('PhotoCIN')->nullable();
             $table->string('Email');
-            $table->string('Login');
+            $table->string('Login')->nullable();
             $table->string('Password');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

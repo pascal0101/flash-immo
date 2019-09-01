@@ -47,6 +47,7 @@
 
                                             <td>
 
+
                   <a href="{{ route('deleteuser',[$utilisateur->id])}}" class="btn btn-danger btn-circle">
                     <i class="fa fa-trash"></i>
                   </a>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<body style="background-image:url(TemplateUser/the-nest/img/testimonial-2.jpg);">
 
 <div class="container">
     <div class="row justify-content-center">
@@ -71,5 +72,5 @@
         </div>
     </div>
 </div>
-
+</body>
 @endsection

@@ -1,5 +1,5 @@
 <!-- Main header end -->
-@extends('UserLayouts.map')
+@extends('UserLayouts.index1')
 
 @section('content')
 <!-- Sub banner start -->

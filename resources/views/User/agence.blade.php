@@ -63,17 +63,16 @@
                 <h2 class="fs-title">CREER VOTRE AGENCE IMMOBILIERE</h2>
                 <h3 class="fs-subtitle"></h3>
                  <div class="form-group">
-                    <label>CONTACT 1</label>
-                                    <input type="text" class="form-control" name="contact1"  placeholder="Contact1">
+                    <label>Téléphone</label>
+                                    <input type="text" class="form-control" name="telephone"  placeholder="Numero de téléphone">
                                 </div>
-                     <div class="form-group">
-                                <label>CONTACT 2</label>
-                                    <input type="text" class="form-control" name="contact2"  placeholder="Contact2">
-                                </div>
-
                 <div class="form-group">
                     <label>email</label>
                                     <input type="email" class="form-control" name="email"  placeholder="Email de l'Agence">
+                                </div>
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                                    <input type="password" class="form-control" name="password"  placeholder="Saisir le mot de passe">
                                 </div>
 
                 <input type="button" name="previous" class="previous action-button-previous" value="Précedent"/>

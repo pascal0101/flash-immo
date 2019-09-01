@@ -16,14 +16,16 @@ class CreateAgencesTable extends Migration
         Schema::create('agences', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('NomAgence');
-            $table->string('NIF');
-            $table->string('Logo');
+            $table->string('NIF')->nullable();
+            $table->string('Logo')->nullable();
             $table->text('Description');
-            $table->string('Contact1');
+            $table->string('telephone');
             $table->string('Email');
-            $table->string('SiteWeb');
+            $table->string('SiteWeb')->nullable();
             $table->string('Adresse');
-            $table->string('Contact2');
+            $table->string('password');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

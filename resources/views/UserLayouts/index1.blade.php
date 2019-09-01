@@ -129,14 +129,23 @@
                            OFFRES<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                        <li><a href="{{url('/maison')}}">Maisons</a></li>
-                            <li><a href="#">Appartements</a></li>
-                            <li><a href="#">Terrains</a></li>
-                            <li><a href="#">Bureaux</a></li>
+                         <li><a href="{{url('/appartement')}}">Appartements</a></li>
+                            <li><a href="{{url('/maison')}}">Maisons</a></li>
+                            <li><a href="{{url('/terrain')}}">Terrains</a></li>
+                            <li><a href="{{url('/bureau')}}">Bureaux</a></li>
 
                         </ul>
                     </li>
+                     <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
+                            AGENCES<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a href="{{url('/lesagences')}}">Les agences</a></li>
 
+
+                        </ul>
+                    </li>
 
 
                     <li class="dropdown">
@@ -259,20 +268,21 @@
                         <ul class="personal-info">
                             <li>
                                 <i class="fa fa-map-marker"></i>
-                                Adresse: 20/F Green Road, Dhanmondi, Dhaka
+                                Adresse: 45 Rue Accablant, Agoè anomé
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                Email:<a href="mailto:sales@hotelempire.com">info@themevessel.com</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                Téléphone: <a href="tel:+55-417-634-7071">+55 4XX-634-7071</a>
+                                Email:<a href="mailto:flash-immo@africantechlab.com">flash-immo@africantechlab.com</a>
                             </li>
                             <li>
                                 <i class="fa fa-fax"></i>
-                                Fax: +55 4XX-634-7071
+                                05 BP: 816 Lomé-Togo
                             </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                Tèl: <a href="tel:+55-417-634-7071">+(228) 92 03 77 99 / 97 67 97 00 / 22 25 33 11</a>
+                            </li>
+
 
                         </ul>
                     </div>
@@ -285,7 +295,7 @@
                         </div>
                         <ul class="links">
                             <li>
-                            <a href="{{url('/user')}}">Acceuil</a>
+                            <a href="#">Acceuil</a>
                             </li>
                             <li>
                     <a href="#">
@@ -306,7 +316,7 @@
                         </div>
                         <div class="newsletter clearfix">
                             <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                Souscrire a la newsletter
                             </p>
 
                             <form action="#" method="post">
@@ -507,6 +517,33 @@
 <!-- Custom javascript -->
 
 
+
+<script>
+$(document).ready(function(){
+
+ fetch_customer_data();
+
+ function fetch_customer_data(query = '')
+ {
+  $.ajax({
+   url:"{{ route('recherche') }}",
+   method:'GET',
+   data:{query:query},
+   dataType:'json',
+   success:function(data)
+   {
+    $('#rech').html(data.table_data);
+    $('#total_records').text(data.total_data);
+   }
+  })
+ }
+
+ $(document).on('keyup', '#search', function(){
+  var query = $(this).val();
+  fetch_customer_data(query);
+ });
+});
+</script>
 
 </body>
 

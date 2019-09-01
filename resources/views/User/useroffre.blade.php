@@ -112,17 +112,10 @@
                                 <span class="expire-date hidden-xs">{{$offre->created_at->diffForHumans()}}</span>
                             </div>
                         </td>
-                        <td><a href="{{ route('detail',[$offre->id])}}"><button  class="btn btn-warning" style="margin-bottom: -70%">Voir</button></a>
-                        </td>
 
-                        <td class="action">
-
-                            <a href="{{ route('supprimeoffre',[$offre->id])}}"><button  class="btn btn-danger">Supprimer</button></a>
-                            <a href=""><button  class="btn btn-primary">Modifier</button></a>
-                        </td>
                     </tr>
                     @empty
-                    <h3>Vous n'avez publié aucune annonce sur la plateforme</h3>
+                    <h3>Cette personne n'a publié aucune annonce sur la plateforme</h3>
                     @endforelse
 
 

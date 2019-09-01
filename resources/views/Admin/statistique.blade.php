@@ -2,6 +2,6 @@
 
 @section('content')
 
-
+{!! $chart->render() !!}
 
 @endsection

@@ -19,8 +19,7 @@ class CreateOffresTable extends Migration
             $table->text('Description');
             $table->string('Adresse');
             $table->string('Email');
-            $table->string('Numero1');
-            $table->string('Numero2');
+            $table->string('Telephone');
             $table->double('Prix');
             $table->integer('NombreChambre')->unsigned();
             $table->integer('Surface')->unsigned();
@@ -36,10 +35,8 @@ class CreateOffresTable extends Migration
             $table->foreign('IdTypeOffre')->references('id')->on('Type_Offres')->onDelete('cascade');
             $table->unsignedBigInteger('IdTypeBien');
             $table->foreign('IdTypeBien')->references('id')->on('Type_Biens')->onDelete('cascade');
-            $table->unsignedBigInteger('agence_id')->nullable();
-            $table->foreign('agence_id')->references('id')->on('agences')->onDelete('cascade');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('utilisateurs')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('Publier')->default(false);
             $table->String('Longitude');
             $table->String('Latitude');

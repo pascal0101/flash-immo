@@ -10,6 +10,8 @@ use App\Image;
 use App\Utilisateur;
 use App\Ville;
 use App\Message;
+use PDF;
+use Charts;
 use Illuminate\Http\Request;
 
 class BienController extends Controller
@@ -24,6 +26,16 @@ class BienController extends Controller
         $offres = offre::all();
         $typebien = typebien::all();
         return view('Admin/offres', compact('offres', 'typebien'));
+    }
+
+    public function offrespdf()
+    {
+        $offres = offre::all();
+        $typebien = typebien::all();
+
+
+        $pdf = PDF::loadView('Admin.offres', compact('offres', 'typebien'))->setPaper('a4', 'portrait');
+        return $pdf->download('admintest.pdf');
     }
 
     /**
@@ -155,8 +167,12 @@ class BienController extends Controller
 
     public function statistique()
     {
-
-        return view('Admin/statistique');
+        $chart = Charts::new('line', 'highcharts')
+            ->setTitle("My website users")
+            ->setLabels(["ES", "FR", "RU"])
+            ->setValues([100, 50, 25])
+            ->setElementlabel("total users");
+        return view('Admin/statistique', ['chart' => $chart]);
     }
 
 

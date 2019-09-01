@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="col-md-6 col-sm<-6">
+                                <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
                                         <label style="color:black">Type Bien</label>
                     <div class="input-group">
@@ -166,7 +166,7 @@
              </div>
             <div class="row">
 
-  <div class="col-lg-4 col-sm-4 col-xs-12">
+  <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
                                         <label style="color:black">Email</label>
                                        <div class="input-group">
@@ -175,24 +175,16 @@
                                 </div>
                                 </div>
   </div>
-                                <div class="col-lg-4 col-sm-4 col-xs-12">
+                                <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
-                                        <label style="color:black">Numero de Telephone1</label>
+                                        <label style="color:black">Numero de Telephone</label>
                                            <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                        <input type="number" class="form-control" min="0" name="num1" placeholder="Numero de Telephone1">
+                                        <input type="number" class="form-control" min="0" name="telephone" placeholder="Numero de Telephone1">
                                 </div>
                                 </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-4 col-xs-12">
-                                <div class="form-group">
-                                        <label style="color:black">Numero de Telephone2</label>
-                                           <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                        <input type="number" class="form-control" min="0" name="num2" placeholder="Numero de Telephone2">
-                                </div>
-                                </div>
-                                </div>
+
          </div>
 
 </div>

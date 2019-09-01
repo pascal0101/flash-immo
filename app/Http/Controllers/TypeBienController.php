@@ -37,11 +37,39 @@ class TypeBienController extends Controller
      */
     public function maison()
     {
-        $offres = Offre::paginate(6);
+        //$count = User::where('votes', '>', 100)->count();
+        $offres = Offre::where('IdTypeBien', '=', 1)->paginate(6);
         //dd($offres);
         $images = Image::get();
 
         return view('user/maison', compact('offres', 'images'));
+    }
+    public function appartement()
+    {
+        //$count = User::where('votes', '>', 100)->count();
+        $offres = Offre::where('IdTypeBien', '=', 2)->paginate(6);
+        //dd($offres);
+        $images = Image::get();
+
+        return view('user/appartement', compact('offres', 'images'));
+    }
+    public function terrain()
+    {
+        //$count = User::where('votes', '>', 100)->count();
+        $offres = Offre::where('IdTypeBien', '=', 3)->paginate(6);
+        //dd($offres);
+        $images = Image::get();
+
+        return view('user/terrain', compact('offres', 'images'));
+    }
+    public function bureau()
+    {
+        //$count = User::where('votes', '>', 100)->count();
+        $offres = Offre::where('IdTypeBien', '=', 2)->paginate(6);
+        //dd($offres);
+        $images = Image::get();
+
+        return view('user/bureau', compact('offres', 'images'));
     }
 
     /**

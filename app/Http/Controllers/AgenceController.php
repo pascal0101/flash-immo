@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use App\Agence;
+use App\Offre;
+use App\Image;
+use App\TypeBien;
+use App\TypeOffre;
+use App\Ville;
+use App\User;
+use App\Utilisateur;
 use Illuminate\Http\Request;
 
 class AgenceController extends Controller
@@ -63,22 +70,33 @@ class AgenceController extends Controller
             $agence->NomAgence = $request->input('nomagence');
             $agence->NIF = $request->input('nif');
             $agence->Description = $request->input('description');
-            $agence->Contact1 = $request->input('contact1');
-            $agence->Contact2 = $request->input('contact2');
+            $agence->telephone = $request->input('telephone');
             $agence->SiteWeb = $request->input('siteweb');
             $agence->Adresse = $request->input('adresse');
             $agence->Email = $request->input('email');
+            $agence->password = bcrypt($request->input('password'));
 
             if ($request->hasFile('logo')) {
                 $image = $request->file('logo');
                 $image_ext = $image->getClientOriginalExtension();
                 $new_image_name = rand(123456, 999999) . "." . $image_ext;
-                $destination_path = public_path('/logo');
+                $destination_path = public_path('/profil');
                 $image->move($destination_path, $new_image_name);
                 $agence->Logo =  $new_image_name;
             }
 
             //dd($agence);
+            $user = new user();
+
+
+            $user->name = $request->input('nomagence');
+            $user->email = $request->input('email');
+            $user->password = bcrypt($request->input('password'));
+            $user->avatar = $new_image_name;
+            $user->remember_token = Null;
+            $user->save();
+            //dd($user);
+            $agence->user_id = $user->id;
 
             $agence->save();
         }
@@ -102,8 +120,17 @@ class AgenceController extends Controller
     {
 
         $agences =  Agence::findOrFail($id);
+        $images = Image::get();
+        //$offres = DB::table('offres')
+        //->join('users', 'offres.user_id', 'users.id')
+        //->join('images', 'offres.id', 'images.offre_id')
+        // ->where('users.id', $id)
+        //->get();
 
-        return view('user.detailagence', compact('agences'));
+        $offres = Offre::where('user_id', '=',  $id)->get();
+
+        //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
+        return view('user.detailagence', compact('agences', 'offres', 'images'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -158,7 +185,7 @@ class AgenceController extends Controller
                 <!-- Agent box 2start -->
                 <div class="agent-2 clearfix">
                     <div class="col-lg-5 col-md-5 col-sm-4 agent-theme-2">
-                        <img src="/logo/' . $row->Logo . '" alt="Logo" class="img-responsive">
+                        <img src="/profil/' . $row->Logo . '" alt="Logo" class="img-responsive">
                         <!-- social list -->
 
                     </div>
@@ -175,7 +202,7 @@ class AgenceController extends Controller
                                 <strong>Email:</strong><a href="#"> ' . $row->Email . '</a>
                             </li>
                             <li>
-                                <strong>Contacts:</strong><a href="#"> ' . $row->Contact1 / $row->Contact2 . '</a>
+                                <strong>Contacts:</strong><a href="#"> ' . $row->telephone . '</a>
                             </li>
                             <li>
                                 <strong>Site Web:</strong><a href="#" style="color: blue"> ' . $row->SiteWeb . '</a>

@@ -211,12 +211,10 @@ input.invalid {
                             OFFRES<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+                           <li><a href="{{url('/appartement')}}">Appartements</a></li>
                             <li><a href="{{url('/maison')}}">Maisons</a></li>
-                            <li><a href="#">Appartements</a></li>
-
-                            <li><a href="#">Terrains</a></li>
-                            <li><a href="#">Bureaux</a></li>
-
+                            <li><a href="{{url('/terrain')}}">Terrains</a></li>
+                            <li><a href="{{url('/bureau')}}">Bureaux</a></li>
                         </ul>
                     </li>
 
@@ -340,20 +338,21 @@ input.invalid {
                         <ul class="personal-info">
                             <li>
                                 <i class="fa fa-map-marker"></i>
-                                Adresse: 20/F Green Road, Dhanmondi, Dhaka
+                                Adresse: 45 Rue Accablant, Agoè anomé
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                Email:<a href="mailto:sales@hotelempire.com">info@themevessel.com</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                Téléphone: <a href="tel:+55-417-634-7071">+55 4XX-634-7071</a>
+                                Email:<a href="mailto:flash-immo@africantechlab.com">flash-immo@africantechlab.com</a>
                             </li>
                             <li>
                                 <i class="fa fa-fax"></i>
-                                Fax: +55 4XX-634-7071
+                                05 BP: 816 Lomé-Togo
                             </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                Tèl: <a href="tel:+55-417-634-7071">+(228) 92 03 77 99 / 97 67 97 00 / 22 25 33 11</a>
+                            </li>
+
 
                         </ul>
                     </div>
@@ -366,7 +365,7 @@ input.invalid {
                         </div>
                         <ul class="links">
                             <li>
-                            <a href="{{url('/user')}}">Acceuil</a>
+                            <a href="#">Acceuil</a>
                             </li>
                             <li>
                     <a href="#">
@@ -387,7 +386,7 @@ input.invalid {
                         </div>
                         <div class="newsletter clearfix">
                             <p>
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                Souscrire a la newsletter
                             </p>
 
                             <form action="#" method="post">

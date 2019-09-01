@@ -75,6 +75,8 @@ Route::get('/utilisateur1', function () {
 Route::get('offresupdateoffre\{id}', 'BienController@update')->name('updateoffre');
 
 Route::get('offres', 'BienController@offres');
+Route::get('offrespdf', 'BienController@offrespdf');
+
 Route::get('statistiques', 'BienController@statistique');
 
 Route::get('active', 'BienController@active')->name('active');
@@ -84,6 +86,9 @@ Route::get('desactive', 'BienController@desactive')->name('desactive');
 Route::get('clients', 'BienController@client')->name('client');
 //les different type de bien
 Route::get('maison', 'TypeBienController@maison')->name('maison');
+Route::get('appartement', 'TypeBienController@appartement')->name('appartement');
+Route::get('terrain', 'TypeBienController@terrain')->name('terrain');
+Route::get('bureau', 'TypeBienController@bureau')->name('bureau');
 
 //suprimer un utilisateur
 Route::get('clients\{id}', 'BienController@deleteuser')->name('deleteuser');
@@ -101,6 +106,8 @@ Route::get('mesoffres', 'OffresController@mesoffres')->name('mesoffres');
 //afficher les detail d'une offre une offre
 Route::get('detail\{id}', 'OffresController@show')->name('detail');
 Route::get('voir\{id}', 'BienController@show')->name('voir');
+
+//Route::get('identite\{id}', 'BienController@identite')->name('voir');
 //afficher offre
 Route::get('user', 'OffresController@offres');
 

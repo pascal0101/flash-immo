@@ -1,5 +1,5 @@
 
-@extends('UserLayouts.map')
+@extends('UserLayouts.voir')
 
 @section('content')
 <div class="sub-banner overview-bgi">

@@ -6,10 +6,10 @@
     <div class="overlay">
         <div class="container">
             <div class="breadcrumb-area">
-                <h1>LES MAISONS</h1>
+                <h1>LES TERRAINS</h1>
                 <ul class="breadcrumbs">
                 <li><a href="{{url('/')}}">Acceuil</a></li>
-                    <li class="active">LES MAISONS</li>
+                    <li class="active">LES TERRAINS</li>
                 </ul>
             </div>
         </div>
@@ -114,7 +114,7 @@
                 </div>
 
                 @empty
-                <h3>Aucune maison n'est disponible</h3>
+                <h3>Aucun terrain n'est disponible</h3>
 @endforelse
              <div align="center">
             {{$offres->links()}}

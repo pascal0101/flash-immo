@@ -47,17 +47,9 @@
                                                 <td>{{$offre->created_at->diffForHumans()}}</td>
 
                                             <td>
-
-                        @if($offre->Publier == 1)
-                <a href="{{route('updateoffre',[$offre->id])}}" class="btn btn-danger btn-circle">
-                    <i class="fa fa-close"></i>
-                  </a>
-                  @else
-                  <a href="{{route('updateoffre',[$offre->id])}}" class="btn btn-success btn-circle">
+                <a href="{{route('updateoffre',[$offre->id])}}" class="btn btn-success btn-circle">
                     <i class="fa fa-check"></i>
                   </a>
-                    @endif
-
                   <a href="{{ route('voir',[$offre->id])}}" class="btn btn-info btn-circle">
                     <i class="fa fa-info-circle"></i>
                   </a>

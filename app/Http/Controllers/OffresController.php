@@ -132,8 +132,7 @@ class OffresController extends Controller
             $offre->meuble = $request->input('meuble');
             $offre->cuisine = $request->input('cuisine');
             $offre->email = $request->input('email');
-            $offre->Numero1 = $request->input('num1');
-            $offre->Numero2 = $request->input('num2');
+            $offre->Telephone = $request->input('telephone');
             $offre->user_id = Auth::user()->id;
 
             //dd($offre);
