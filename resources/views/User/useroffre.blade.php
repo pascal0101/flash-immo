@@ -6,10 +6,10 @@
     <div class="overlay">
         <div class="container">
             <div class="breadcrumb-area">
-                <h1>Mes Propriétés</h1>
+                <h1>Les offres de l'offreur</h1>
                 <ul class="breadcrumbs">
                 <li><a href="{{url('/user')}}">Acceuil</a></li>
-                    <li class="active">Mes Propriétés</li>
+                    <li class="active">Les Propriétés</li>
                 </ul>
             </div>
         </div>
@@ -26,10 +26,10 @@
                 <div class="user-account-box">
                     <div class="header clearfix">
                         <div class="edit-profile-photo">
-                            <img src="/profil/{{auth()->user()->avatar}}" alt="avatar" class="img-responsive">
+                            <img src="/profil/{{$offre->user->avatar}}" alt="avatar" class="img-responsive">
                         </div>
-                    <h3>{{Auth::user()->name}}</h3>
-                        <p>{{Auth::user()->email}}</p>
+                    <h3>{{$offre->user->name}}</h3>
+                        <p>{{$offre->user->email}}</p>
 
                         <ul class="social-list clearfix">
                             <li>
@@ -61,30 +61,7 @@
 
                     </div>
                     <div class="content">
-                        <ul>
-                            <li>
-                                <a href="{{url('/profil')}}">
-                                    <i class="flaticon-social"></i>Profile
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{url('/mesbiens')}}" class="active">
-                                    <i class="flaticon-apartment"></i>Mes Propriétés
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{url('/favoris')}}">
-                                    <i class="fa fa-heart"></i>Propriétés favoris
-                                </a>
-                            </li>
-                            <li>
-                            <a href="{{url('/offre')}}">
-                                    <i class="fa fa-plus"></i>Soumetre une nouvelle offre
-                                </a>
-                            </li>
 
-
-                        </ul>
                     </div>
                 </div>
                 <!-- User account box end -->
@@ -92,7 +69,7 @@
 
              <div class="col-lg-8 col-md-8 col-sm-12">
                  <div class="main-title-2">
-                     <h1><span>Mes </span> Offres</h1>
+                     <h1><span>Les </span> Offres de cet agent</h1><span style="color:royalblue">Nombre d'offre total ({{($offres->count())}})  </span>
                  </div>
                 <!-- table start -->
                 <table class="manage-table responsive-table">
@@ -106,7 +83,7 @@
                              @endif
                                         @endforeach
                             <div class="title">
-                                <h4><a href="#">{{$offre->Titre}}</a></h4>
+                                <h4><a href="{{ route('detail',[$offre->id])}}">{{$offre->Titre}}</a></h4>
                                 <span><i class="fa fa-map-marker"></i> {{$offre->Adresse}} </span>
                                 <span class="table-property-price">{{$offre->Prix}} FCFA</span>
                                 <span class="expire-date hidden-xs">{{$offre->created_at->diffForHumans()}}</span>

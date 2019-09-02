@@ -10,6 +10,7 @@ use App\Image;
 use App\Utilisateur;
 use App\Ville;
 use App\Message;
+use App\User;
 use PDF;
 use Charts;
 use Illuminate\Http\Request;
@@ -95,6 +96,22 @@ class BienController extends Controller
         return view('user.voir', compact('offre', 'images'));
     }
 
+    public function sesoffres($id)
+    {
+
+        $offre =  Offre::findOrFail($id);
+        //$offres = offre::all();
+        //$images = image::all()->where('offre_id', $id);
+        $user =  User::all();
+
+        $offres = Offre::where('user_id', '=',  $offre->user->id)->get();
+        //$utilisateurs = DB::table('utilisateurs')->where('user_id', 'Auth::user()->id')->first();
+        //$offres = DB::table('offres')->where('user_id', '=', 'Auth::user()->id')->get();
+        //$offres = $offre->user->offres;
+
+
+        return view('user.useroffre', compact('offres', 'offre'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

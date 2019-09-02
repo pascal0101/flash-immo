@@ -198,7 +198,7 @@
                             <!-- Property footer -->
                             <div class="property-footer">
                                 <span class="left">
-                                <a href="#"><i class="fa fa-user"></i>Publié par {{$offre->user->name}}</a>
+                                <a href="{{ route('sesoffres',[$offre->user->id])}}"><i class="fa fa-user"></i>Publié par {{$offre->user->name}}</a>
                                 </span>
                                 <span class="right">
                                     <i class="fa fa-calendar"></i>{{$offre->created_at->diffForHumans()}}

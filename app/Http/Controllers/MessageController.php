@@ -62,6 +62,14 @@ class MessageController extends Controller
         return redirect()->back();
     }
 
+
+
+    public function envoyer(Request $request)
+    {
+
+        dd($request->all());
+        return redirect()->back();
+    }
     /**
      * Display the specified resource.
      *

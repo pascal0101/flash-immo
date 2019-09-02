@@ -178,13 +178,14 @@ class OffresController extends Controller
     {
         //dd("toto");
         //$offres = offre::all()->where('id', $id);
+        $offres = offre::all();
         $images = image::all()->where('offre_id', $id);
         $ville = Ville::all();
 
         $offre =  Offre::findOrFail($id);
         //$offre = DB::table('offres')->join('villes', 'offres.id', '=', 'villes.id')->first();
 
-        return view('user.detail', compact('offre', 'images'));
+        return view('user.detail', compact('offre', 'images', 'offres'));
     }
 
     /**

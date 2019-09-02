@@ -92,7 +92,7 @@
 
              <div class="col-lg-8 col-md-8 col-sm-12">
                  <div class="main-title-2">
-                     <h1><span>Mes </span> Offres</h1>
+                     <h1><span>Mes </span> Offres</h1><span style="color:royalblue">Nombre total d'offre ({{($offres->count())}})  </span>
                  </div>
                 <!-- table start -->
                 <table class="manage-table responsive-table">

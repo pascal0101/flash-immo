@@ -203,26 +203,28 @@
                             <h1><span>Contact</span> Agence</h1>
                         </div>
                         <div class="contact-form">
-                            <form id="agent_form" action="https://storage.googleapis.com/themevessel-products/the-nest/index.html" method="GET" enctype="multipart/form-data">
+
+                                <form id="agent_form" action="{{route('envoyer')}}" method="POST">
+                                    {{csrf_field()}}
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-group your-name">
-                                            <input type="email" name="name" class="input-text" placeholder="Votre Nom">
+                                            <input type="text" name="nom" class="input-text" placeholder="Votre Nom">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group your-email">
-                                            <input type="email" name="email" class="input-text" placeholder="Votre Prenom">
+                                            <input type="email" name="email" class="input-text" placeholder="Votre adresse mail">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group your-phone">
-                                            <input type="text" name="phone" class="input-text" placeholder="Votre Numero de télephone">
+                                            <input type="text" name="numero" class="input-text" placeholder="Votre Numero de télephone">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group message">
-                                            <textarea class="input-text" name="message" placeholder=" Message"></textarea>
+                                            <textarea class="input-text" name="mesg" placeholder="Votre Message"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">

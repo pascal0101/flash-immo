@@ -95,11 +95,15 @@ Route::get('clients\{id}', 'BienController@deleteuser')->name('deleteuser');
 
 //envoi de mail
 Route::post('message', 'MessageController@store')->name('message');
+Route::post('envoyer', 'MessageController@envoyer')->name('envoyer');
+
 Route::get('messages', 'BienController@message');
 Route::get('messages\{id}', 'BienController@deletemsg')->name('deletemsg');
 //
 Route::get('mesoffres\{id}', 'OffresController@delete')->name('supprimeoffre');
 Route::get('offres\{id}', 'BienController@delete')->name('deleteoffre');
+
+Route::get('sesoffres\{id}', 'BienController@sesoffres')->name('sesoffres');
 //afficher les offres d'un utilisateur
 Route::get('mesoffres', 'OffresController@mesoffres')->name('mesoffres');
 

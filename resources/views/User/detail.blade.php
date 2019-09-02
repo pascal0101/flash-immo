@@ -355,10 +355,10 @@
                             <h1><span>Catégorie</span> Populaire</h1>
                         </div>
                         <ul class="list-unstyled list-cat">
-                            <li><a href="#">Maison </a> <span>(45)  </span></li>
-                            <li><a href="#">Apartment  </a> <span>(21)  </span></li>
-                            <li><a href="#">Bureuax </a> <span>(23)  </span></li>
-                            <li><a href="#">Terrains </a> <span>(19)  </span></li>
+                        <li><a href="{{url('/maison')}}">Maison </a> <span>({{($offres->where('IdTypeBien' ,'=' ,1)->count())}})  </span></li>
+                            <li><a href="{{url('/appartement')}}">Appartment  </a> <span>({{($offres->where('IdTypeBien' ,'=' ,2)->count())}})  </span></li>
+                            <li><a href="{{url('/bureau')}}">Bureuax </a> <span>({{($offres->where('IdTypeBien' ,'=' ,3)->count())}})  </span></li>
+                            <li><a href="{{url('/terrain')}}">Terrains </a> <span>({{($offres->where('IdTypeBien' ,'=' ,4)->count())}})  </span></li>
 
                         </ul>
                     </div>
