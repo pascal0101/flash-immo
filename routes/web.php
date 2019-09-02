@@ -15,6 +15,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/test8', function () {
+    $pdf = PDF::loadView('user/test8');
+    return $pdf->download('test8.pdf');
+    return view('user/test8');
+});
+
 Route::get('/test', function () {
     return view('user/test');
 });

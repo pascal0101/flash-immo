@@ -184,12 +184,14 @@ class BienController extends Controller
 
     public function statistique()
     {
-        $chart = Charts::new('line', 'highcharts')
-            ->setTitle("My website users")
-            ->setLabels(["ES", "FR", "RU"])
-            ->setValues([100, 50, 25])
-            ->setElementlabel("total users");
-        return view('Admin/statistique', ['chart' => $chart]);
+
+        $pie_chart = Charts::create('pie', 'highcharts')
+            ->title('Pie Chart Demo')
+            ->labels(['Product 1', 'Product 2', 'Product 3'])
+            ->values([15, 25, 50])
+            ->dimensions(1000, 500)
+            ->responsive(true);
+        return view('Admin/statistique', compact('pie_chart'));
     }
 
 

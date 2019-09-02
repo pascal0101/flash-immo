@@ -200,6 +200,10 @@
     <script src="TemplateAdmin/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
     <script src="TemplateAdmin/assets/js/init-scripts/data-table/datatables-init.js"></script>
 
+      {!! Charts::scripts() !!}
+    {!! $pie_chart->script() !!}
+
+
     </body>
 
     </html>

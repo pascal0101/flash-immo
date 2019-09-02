@@ -2,6 +2,11 @@
 
 @section('content')
 
-{!! $chart->render() !!}
+<div class="col-md-6">
+               {!! $pie_chart->html() !!}
+            </div>
+
+
+
 
 @endsection
