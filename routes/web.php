@@ -76,7 +76,13 @@ Route::get('/utilisateur1', function () {
     return view('User/Utilisateur1');
 });
 //admin
-
+//imprimer
+Route::get('offrespdf', 'BienController@offrespdf');
+Route::get('impclients', 'BienController@impclient');
+Route::get('impagences', 'BienController@impagence');
+Route::get('impoffres', 'BienController@impoffre');
+Route::get('impoffresactive', 'BienController@impoffresactive');
+Route::get('impoffresnonactive', 'BienController@impoffresnonactive');
 //activer une offres
 Route::get('offresupdateoffre\{id}', 'BienController@update')->name('updateoffre');
 
@@ -90,6 +96,7 @@ Route::get('active', 'BienController@active')->name('active');
 Route::get('desactive', 'BienController@desactive')->name('desactive');
 
 Route::get('clients', 'BienController@client')->name('client');
+Route::get('agences', 'BienController@agence')->name('agence');
 //les different type de bien
 Route::get('maison', 'TypeBienController@maison')->name('maison');
 Route::get('appartement', 'TypeBienController@appartement')->name('appartement');

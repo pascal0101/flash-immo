@@ -17,7 +17,7 @@
                                 <i class="fa fa-table"></i>
 
                                 <strong class="card-title">OFFRES</strong>
-                            <a href="{{url('/offrespdf')}}" class="btn btn-primary btn-sm btn-rounded w-md waves-effect waves-light" style="border-radius: 2em;"><i class="fa fa-print"></i> Imprimer</a>
+                            <a href="{{url('/impoffres')}}" target="_blank" class="btn btn-primary btn-sm btn-rounded w-md waves-effect waves-light" style="border-radius: 2em;"><i class="fa fa-print"></i> Imprimer</a>
 
                             </div>
 
@@ -43,7 +43,7 @@
                                             <td><span class="badge badge-success">{{$offre->typeoffre->LibelleTypeOffre}}</span></td>
 
                                             <td>{{$offre->user->name}}</td>
-                                             <td>{{$offre->Numero1}}/{{$offre->Numero2}}</td>
+                                             <td>{{$offre->Telephone}}</td>
                                                 <td>{{$offre->created_at->diffForHumans()}}</td>
 
                                             <td>

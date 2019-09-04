@@ -11,6 +11,7 @@ use App\Utilisateur;
 use App\Ville;
 use App\Message;
 use App\User;
+use App\Agence;
 use PDF;
 use Charts;
 use Illuminate\Http\Request;
@@ -64,6 +65,42 @@ class BienController extends Controller
     {
         $utilisateurs = Utilisateur::all();
         return view('Admin/clients', compact('utilisateurs'));
+    }
+
+    //impression
+    public function impclient()
+    {
+        $utilisateurs = Utilisateur::all();
+        return view('Admin/imprime/impclients', compact('utilisateurs'));
+    }
+    public function impagence()
+    {
+        $agences = Agence::all();
+        return view('Admin/imprime/impagences', compact('agences'));
+    }
+    public function impoffre()
+    {
+        $offres = Offre::all();
+
+        return view('Admin/imprime/impoffres', compact('offres'));
+    }
+    public function impoffreactive()
+    {
+        $offres = Offre::all();
+
+        return view('Admin/imprime/impoffresactive', compact('offres'));
+    }
+    public function impoffrenonactive()
+    {
+        $offres = Offre::all();
+
+        return view('Admin/imprime/impoffresnonactive', compact('offres'));
+    }
+
+    public function agence()
+    {
+        $agences = Agence::all();
+        return view('Admin/agences', compact('agences'));
     }
 
     /**

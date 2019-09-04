@@ -12,7 +12,7 @@
                                 <i class="fa fa-table"></i>
 
                                 <strong class="card-title">OFFRES DESACTIVEES</strong>
-                                <button class="btn btn-primary btn-sm btn-rounded w-md waves-effect waves-light" style="border-radius: 2em;"><i class="fa fa-print"></i> Imprimer</button>
+                                <a href="{{url('/impoffresnonactive')}}" target="_blank"><button class="btn btn-primary btn-sm btn-rounded w-md waves-effect waves-light" style="border-radius: 2em;"><i class="fa fa-print"></i> Imprimer</button></a>
 
                             </div>
 

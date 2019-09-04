@@ -70,8 +70,8 @@
                      <li class="menu-item-has-children dropdown">
                      <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>CLIENTS</a>
                         <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="{{url('/agences')}}">Les Agences</a></li>
                             <li><i class="fa fa-table"></i><a href="{{url('/clients')}}">Les Clients</a></li>
-
                         </ul>
                      </li>
                       <li class="menu-item-has-children dropdown">
@@ -201,7 +201,7 @@
     <script src="TemplateAdmin/assets/js/init-scripts/data-table/datatables-init.js"></script>
 
       {!! Charts::scripts() !!}
-    {!! $pie_chart->script() !!}
+
 
 
     </body>
