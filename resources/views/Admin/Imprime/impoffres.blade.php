@@ -71,7 +71,7 @@
                                         <td>{{$offre->typeoffre->LibelleTypeOffre}}</td>
                                         <td>{{ $offre->user->name}}</td>
                                             <td>{{$offre->Telephone}}</td>
-                                            <td>{{$offre->created_at->diffForHumans()}}</td>
+                                            <td>{{$offre->created_at->formatLocalized("%a %e %b %Y")}}</td>
 
 
                                         </tr>

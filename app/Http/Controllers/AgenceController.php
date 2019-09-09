@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use App\Http\Requests\AgenceFormRequest;
 use App\Agence;
 use App\Offre;
 use App\Image;
@@ -61,7 +62,7 @@ class AgenceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AgenceFormRequest $request)
     {
         if ($request->isMethod('post')) {
 
@@ -105,7 +106,7 @@ class AgenceController extends Controller
             'alert-type' => 'success'
         );
 
-        //session()->flash('message', 'Agence crée avec succès!!!');
+        session()->flash('message', 'Agence crée avec succès!!!');
         return redirect('/agence')->with($notification);;
     }
 

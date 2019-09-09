@@ -17,7 +17,7 @@
                                 <i class="fa fa-table"></i>
 
                                 <strong class="card-title">MESSAGES</strong>
-                                <button class="btn btn-primary btn-sm btn-rounded w-md waves-effect waves-light" style="border-radius: 2em;"><i class="fa fa-print"></i> Imprimer</button>
+                            <a href="{{url('/impmessages')}}" target="_blank"><button class="btn btn-primary btn-sm btn-rounded w-md waves-effect waves-light" style="border-radius: 2em;"><i class="fa fa-print"></i> Imprimer</button></a>
 
                             </div>
 

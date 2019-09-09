@@ -10,12 +10,14 @@
 
 <!-- One "tab" for each step in the form: -->
 <div class="tab">
-                <div class="form-group">
+                <div class="form-group {{$errors->has('titre') ? 'has-error' : ''}}">
                     <label style="color:black">Veuillez renseignez un nom a votre projet</label>
                      <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                    <input type="text" class="form-control" name="titre" placeholder="Nom du projet">
+                    <input type="text" class="form-control" name="titre" placeholder="Nom du projet" value="{{ old('titre') }}">
+
                 </div>
+                 {!!$errors->first('titre','<span class="help-block">:message</span>')!!}
                 </div>
                 <div class="row">
                             <div class="col-md-6 col-sm-6">
@@ -71,7 +73,7 @@
                                         <label style="color:black">Prix</label>
                                         <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
-                                        <input type="number" class="form-control" name="prix" placeholder="Prix">
+                                        <input type="number" min="0" class="form-control" name="prix" placeholder="Prix" value="{{ old('prix') }}">
                                 </div>
                                 </div>
   </div>
@@ -167,12 +169,13 @@
             <div class="row">
 
   <div class="col-md-6 col-sm-6">
-                                <div class="form-group">
+                                <div class="form-group  {{$errors->has('email') ? 'has-error' : ''}}">
                                         <label style="color:black">Email</label>
                                        <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                        <input type="email" class="form-control" name="email" placeholder="Email">
+                                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{ old('email') }}">
                                 </div>
+                                  {!!$errors->first('email','<span class="help-block">:message</span>')!!}
                                 </div>
   </div>
                                 <div class="col-md-6 col-sm-6">
@@ -180,7 +183,7 @@
                                         <label style="color:black">Numero de Telephone</label>
                                            <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                        <input type="number" class="form-control" min="0" name="telephone" placeholder="Numero de Telephone1">
+                                        <input type="number" class="form-control" min="0" name="telephone" placeholder="Numero de Telephone" value="{{ old('telephone') }}">
                                 </div>
                                 </div>
                                 </div>
@@ -232,19 +235,20 @@
  </div>
 
 
-<div class="form-group">
+<div class="form-group {{$errors->has('description') ? 'has-error' : ''}}">
     <label for="exampleTextarea">Description</label>
        <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-book"></i></span>
-    <textarea class="form-control" id="exampleTextarea" rows="3" name="description"></textarea>
+    <textarea class="form-control" id="exampleTextarea" rows="3" name="description" value="{{ old('description') }}"></textarea>
   </div>
+  {!!$errors->first('description','<span class="help-block">:message</span>')!!}
 </div>
 
 <div class="form-group">
                         <label style="color:black">Adresse</label>
                            <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-            <input type="text" class="form-control" name="adresse" placeholder="Adresse">
+            <input type="text" class="form-control" name="adresse" placeholder="Adresse"  value="{{ old('adresse') }}">
                 </div>
 </div>
 </div>
@@ -264,7 +268,7 @@
                             <label style="color:black">Longitude</label>
                                <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                            <input type="text" class="form-control" name="Longitude" placeholder="Longitude" id="Longitude">
+                            <input type="text" class="form-control" name="Longitude" placeholder="Longitude" id="Longitude"  value="{{ old('Longitude') }}">
                     </div>
                     </div>
             </div>
@@ -273,7 +277,7 @@
                                         <label style="color:black">Latitude</label>
                                            <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                        <input type="text" class="form-control" name="Latitude" placeholder="Latitude" id="Latitude">
+                                        <input type="text" class="form-control" name="Latitude" placeholder="Latitude" id="Latitude" value="{{ old('Latitude') }}">
                                 </div>
                                 </div>
                                 </div>

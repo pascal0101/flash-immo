@@ -202,7 +202,7 @@
 
       {!! Charts::scripts() !!}
 
-      
+      {!! $pie_chart->script() !!}
 
     </body>
 

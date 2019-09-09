@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Utilisateur;
 use App\User;
+use App\Http\Requests\UserFormRequest;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
@@ -37,7 +38,7 @@ class UtilisateurController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserFormRequest $request)
     {
         if ($request->isMethod('post')) {
 
@@ -87,7 +88,7 @@ class UtilisateurController extends Controller
 
             $utilisateur->save();
         }
-        session()->flash('message', 'Compte crée avec succès!!!');
+        session()->flash('message', 'Enregistrement Effectuée Avec Succès!');
         return redirect('/utilisateur');
     }
 

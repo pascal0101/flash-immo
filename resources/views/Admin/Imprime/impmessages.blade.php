@@ -46,7 +46,7 @@
       <!-- /.col -->
     </div>
     <!-- /.row -->
-    <h6 align="center"><strong>Liste des Clients</strong></h6>
+    <h6 align="center"><strong>Liste des Messages</strong></h6>
     <br>
     <!-- Table row -->
 <div class="row">
@@ -55,21 +55,22 @@
                                     <thead>
                                         <tr>
                                             <th>Nom</th>
-                                            <th>Prenoms</th>
-                                            <th>Numero de Téléphone</th>
                                             <th>Email</th>
-                                            <th>Sexe</th>
+                                            <th>Objet</th>
+                                            <th>Numero</th>
+                                            <th>Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($utilisateurs as $utilisateur)
+                                        @foreach ($messages as $message)
 
                                         <tr>
-                                            <td>{{$utilisateur->Nom}}</td>
-                                            <td>{{$utilisateur->Prenom}}</td>
-                                        <td>{{$utilisateur->NumeroTel}}</td>
-                                            <td>{{$utilisateur->Email}}</td>
-                                            <td>{{$utilisateur->Sexe}}</td>
+                                            <td>{{$message->Nom}}</td>
+                                            <td>{{$message->Email}}</td>
+                                        <td>{{$message->Objet}}</td>
+                                            <td>{{$message->Numero}}</td>
+                                    <td>{{$message->created_at->diffForHumans()}}</td>
+
 
 
                                         </tr>

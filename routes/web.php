@@ -16,8 +16,8 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/test8', function () {
-    $pdf = PDF::loadView('user/test8');
-    return $pdf->download('test8.pdf');
+    //$pdf = PDF::loadView('user/test8');
+    //return $pdf->download('test8.pdf');
     return view('user/test8');
 });
 
@@ -37,9 +37,7 @@ Route::get('/test2', function () {
 Route::get('/test3', function () {
     return view('user/test3');
 });
-Route::get('/test4', function () {
-    return view('user/test4');
-});
+Route::get('/test4','TestController@create');
 
 Route::post('/submitdata', 'TestController@testfunction');
 
@@ -83,6 +81,7 @@ Route::get('impagences', 'BienController@impagence');
 Route::get('impoffres', 'BienController@impoffre');
 Route::get('impoffresactive', 'BienController@impoffresactive');
 Route::get('impoffresnonactive', 'BienController@impoffresnonactive');
+Route::get('impmessages', 'BienController@impmessages');
 //activer une offres
 Route::get('offresupdateoffre\{id}', 'BienController@update')->name('updateoffre');
 

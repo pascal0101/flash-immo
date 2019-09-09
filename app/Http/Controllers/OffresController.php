@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use App\Http\Requests\OffreFormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Http\Controllers;
@@ -41,11 +42,9 @@ class OffresController extends Controller
      */
     public function offres()
     {
-        //$offre =  Offre::findOrFail($id);
 
         $offres = Offre::paginate(6);
-        //$images = image::all();
-        //$images = image::all();
+
         $images = Image::get();
         //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
 
@@ -54,22 +53,10 @@ class OffresController extends Controller
 
     public function acceuil(Request $request)
     {
-        /*$nbrechambre = $request->input('nbrechambre');
-            $toilette = $request->input('toilette');
-            $ville = $request->input('ville');
-            $prix1 = $request->input('prix1');
-            $prix2 = $request->input('prix2');
-            $typeoffre = $request->input('typeoffre');
-            $typebien = $request->input('typebien');
-            dd($request->all());
-            */
+
         $offres = Offre::paginate(6);
 
-
         $images = Image::get();
-
-        //return view('user/acceuil', compact('offres', 'images'));
-
 
         return view('welcome', compact('offres', 'images'));
     }
@@ -77,8 +64,6 @@ class OffresController extends Controller
     public function rechercher(Request $request)
     {
         if ($request->isMethod('post')) {
-            //dd($request->all());
-
             $typebien = $request->input('typebien');;
             $typeoffre = $request->input('typeoffre');
             $nbrechambre = $request->input('nbrechambre');
@@ -86,18 +71,13 @@ class OffresController extends Controller
             $ville = $request->input('ville');
             $prix1 = $request->input('prix1');
             $prix2 = $request->input('prix2');
-
-            //dd($request->all());
-
             $offres = offre::where('IdTypeBien', '=', $typebien)
                 ->orwhere('IdTypeOffre', '=', $typeoffre)
                 ->orwhere('NombreChambre', '=', $nbrechambre)
                 ->orwhere('WcDouche', '=', $toilette)
                 ->where('IdVille', '=', $ville)
                 ->whereBetween('Prix', [$prix1, $prix2])
-
                 ->paginate(6);
-            //dd($offres);
             return view('welcome', compact('offres', 'images'));
         }
     }
@@ -107,13 +87,10 @@ class OffresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OffreFormRequest $request)
     {
-
         if ($request->isMethod('post')) {
-
             $offre = new offre();
-
             $offre->titre = $request->input('titre');
             $offre->IdTypeOffre = $request->input('typeoffre');
             $offre->IdTypeBien = $request->input('typebien');
@@ -134,16 +111,10 @@ class OffresController extends Controller
             $offre->email = $request->input('email');
             $offre->Telephone = $request->input('telephone');
             $offre->user_id = Auth::user()->id;
-
-            //dd($offre);
-
             $offre->save();
-
             if ($request->hasFile('file')) {
                 foreach ($request->file as $file) {
                     $filename = $file->getClientOriginalName();
-                    //print_r($filename);
-                    //$filesize = $file->getClientSize();
                     $file->move('images', $filename);
 
                     $image = new image();
@@ -152,12 +123,8 @@ class OffresController extends Controller
 
                     $image->offre_id = $offre->id;
 
-                    // dd($request->file);
-
                     $image->save();
                 }
-
-                // return "ok";
             }
         }
         $notification = array(
@@ -176,15 +143,11 @@ class OffresController extends Controller
      */
     public function show($id)
     {
-        //dd("toto");
-        //$offres = offre::all()->where('id', $id);
+
         $offres = offre::all();
         $images = image::all()->where('offre_id', $id);
         $ville = Ville::all();
-
         $offre =  Offre::findOrFail($id);
-        //$offre = DB::table('offres')->join('villes', 'offres.id', '=', 'villes.id')->first();
-
         return view('user.detail', compact('offre', 'images', 'offres'));
     }
 
@@ -218,17 +181,12 @@ class OffresController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Offres $offres)
-    {
-        //
-    }
+    { }
 
     public function mesoffres()
     {
         $utilisateurs = Utilisateur::all();
-        //$images = image::all()->where('offre_id', $id);
-        //$user =  User::findOrFail($id);
-        //$utilisateurs = DB::table('utilisateurs')->where('user_id', 'Auth::user()->id')->first();
-        //$offres = DB::table('offres')->where('user_id', '=', 'Auth::user()->id')->get();
+
         $offres = Auth::user()->offres;
 
         return view('user.mesoffres', compact('offres', 'utilisateurs'));
@@ -238,7 +196,6 @@ class OffresController extends Controller
     {
         $offre = offre::findOrFail($id);
         $offre->delete($id);
-        //session()->flash('message', 'Offre Supprimé avec succes!!!');
         $notification = array(
             'message' => 'Offre Supprimé avec succes!',
             'alert-type' => 'info'

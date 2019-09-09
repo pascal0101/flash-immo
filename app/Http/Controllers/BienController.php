@@ -96,6 +96,13 @@ class BienController extends Controller
 
         return view('Admin/imprime/impoffresnonactive', compact('offres'));
     }
+    public function impmessages()
+    {
+        $messages = Message::all();
+
+        return view('Admin/imprime/impmessages', compact('messages'));
+    }
+    //
 
     public function agence()
     {
@@ -221,14 +228,16 @@ class BienController extends Controller
 
     public function statistique()
     {
-
+        $offres = Offre::where('Publier' ,'=' ,0)->count();
+        $offre = Offre::where('Publier' ,'=' ,1)->count();
+        //dd($offres);
         $pie_chart = Charts::create('pie', 'highcharts')
             ->title('Pie Chart Demo')
-            ->labels(['Product 1', 'Product 2', 'Product 3'])
-            ->values([15, 25, 50])
+            ->labels(['Offres non activées', 'Offres activées'])
+            ->values([$offres, $offre])
             ->dimensions(1000, 500)
             ->responsive(true);
-        return view('Admin/statistique', compact('pie_chart'));
+        return view('Admin/statistique', compact('pie_chart','offres','offre'));
     }
 
 

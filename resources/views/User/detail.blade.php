@@ -288,26 +288,26 @@
                             <div class="row">
                             <input type="hidden" value="{{$offre->Email}}" name="propemail">
                             <div class="form-group {{$errors->has('nom') ? 'has-error' : ''}}">
-                               <input type="text" class="form-control" placeholder="Nom & Prenom" name="nom">
+                            <input type="text" class="form-control" placeholder="Nom & Prenom" name="nom" value="{{ old('nom') }}">
                                {!!$errors->first('nom','<span class="help-block">:message</span>')!!}
                             </div>
                             <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
-                               <input type="text" class="form-control" placeholder="Entrer Email" name="email">
+                               <input type="text" class="form-control" placeholder="Entrer Email" name="email" value="{{ old('email') }}">
                                {!!$errors->first('email','<span class="help-block">:message</span>')!!}
                             </div>
 
                             <div class="form-group {{$errors->has('objet') ? 'has-error' : ''}}">
-                               <input type="text" class="form-control" placeholder="Objet" name="objet">
+                               <input type="text" class="form-control" placeholder="Objet" name="objet" value="{{ old('objet') }}">
                                {!!$errors->first('objet','<span class="help-block">:message</span>')!!}
                             </div>
 
                             <div class="form-group {{$errors->has('numero') ? 'has-error' : ''}}">
-                              <input type="text" class="form-control" placeholder="Numero Telephone" name="numero">
+                              <input type="text" class="form-control" placeholder="Numero Telephone" name="numero" value="{{ old('numero') }}">
                               {!!$errors->first('numero','<span class="help-block">:message</span>')!!}
                             </div>
 
                               <div class="form-group {{$errors->has('msg') ? 'has-error' : ''}}">
-                              <textarea class="form-control" id="exampleTextarea" rows="3" name="msg" placeholder="Message"></textarea>
+                              <textarea class="form-control" id="exampleTextarea" rows="3" name="msg" placeholder="Message" value="{{ old('msg') }}"></textarea>
                               {!!$errors->first('msg','<span class="help-block">:message</span>')!!}
                             </div>
 </div>

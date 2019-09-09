@@ -1,12 +1,6 @@
 @extends('AdminLayouts.index1')
-
 @section('content')
-
-
-
-
 <div class="content mt-3">
-
     <div class="col-sm-12">
         <div class="alert  alert-success alert-dismissible fade show" role="alert">
             <span class="badge badge-pill badge-success">Success</span> Bienvenue.
@@ -15,8 +9,6 @@
             </button>
         </div>
     </div>
-
-
     <div class="col-lg-3 col-md-6">
         <div class="card">
             <div class="card-body">
@@ -30,36 +22,32 @@
             </div>
         </div>
     </div>
-
-
-     <div class="col-lg-3 col-md-6">
+ <div class="col-lg-3 col-md-6">
         <div class="card">
             <div class="card-body">
                 <div class="stat-widget-one">
                     <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
                     <div class="stat-content dib">
-                        <div class="stat-text">ACTIVE</div>
+                        <div class="stat-text">Activées</div>
                         <div class="stat-digit">{{($offre->where('Publier' ,'=' ,1)->count())}}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="col-lg-3 col-md-6">
         <div class="card">
             <div class="card-body">
                 <div class="stat-widget-one">
                     <div class="stat-icon dib"><i class="ti-link text-danger border-danger"></i></div>
                     <div class="stat-content dib">
-                        <div class="stat-text">DESACTIVEE</div>
-                        <div class="stat-digit">{{($offre->where('EtatInscrip' ,'=' ,0)->count())}}</div>
+                        <div class="stat-text">Non Activées</div>
+                        <div class="stat-digit">{{($offre->where('Publier' ,'=' ,0)->count())}}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
  <div class="col-lg-3 col-md-6">
         <div class="card">
             <div class="card-body">
@@ -73,8 +61,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 @endsection

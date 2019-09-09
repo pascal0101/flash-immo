@@ -27,8 +27,15 @@ class TestController extends Controller
      */
     public function create()
     {
-        //
+        return view('user/test4');
     }
+
+
+
+
+
+
+
     public function multifileupload()
     {
         return view('dropzoneJs');
