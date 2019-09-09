@@ -8,11 +8,9 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          @foreach($test as $offre)
+          ['{{$offre->Titre}}', {{$offre->NombreChambre}}],
+          @endforeach
         ]);
 
         var options = {

@@ -228,8 +228,9 @@ class BienController extends Controller
 
     public function statistique()
     {
-        $offres = Offre::where('Publier' ,'=' ,0)->count();
-        $offre = Offre::where('Publier' ,'=' ,1)->count();
+        $offres = Offre::where('Publier', '=', 0)->count();
+        $offre = Offre::where('Publier', '=', 1)->count();
+        $test = Offre::all();
         //dd($offres);
         $pie_chart = Charts::create('pie', 'highcharts')
             ->title('Pie Chart Demo')
@@ -237,7 +238,7 @@ class BienController extends Controller
             ->values([$offres, $offre])
             ->dimensions(1000, 500)
             ->responsive(true);
-        return view('Admin/statistique', compact('pie_chart','offres','offre'));
+        return view('Admin/statistique', compact('pie_chart', 'offres', 'offre', 'test'));
     }
 
 

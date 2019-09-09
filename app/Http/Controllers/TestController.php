@@ -29,6 +29,15 @@ class TestController extends Controller
     {
         return view('user/test4');
     }
+    public function payement()
+    {
+
+
+        post('https://paygateglobal.com/api/v1/pay');
+
+
+        return view('user/test9');
+    }
 
 
 
