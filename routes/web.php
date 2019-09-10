@@ -41,6 +41,12 @@ Route::get('/test4', 'TestController@create');
 
 Route::get('/test9', 'TestController@payement');
 
+Route::post('/test9', function () {
+    
+    return view('user/test9');
+});
+
+
 Route::post('/submitdata', 'TestController@testfunction');
 
 

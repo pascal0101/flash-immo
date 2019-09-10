@@ -54,8 +54,7 @@
                                 </a>
                                             </td>
                                         </tr>
-                                        @else
-                                    <tr>Aucun enregistrement trouvé</tr>
+                                        
                                         @endif
                                         @endforeach
 

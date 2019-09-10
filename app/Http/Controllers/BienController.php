@@ -15,6 +15,7 @@ use App\Agence;
 use PDF;
 use Charts;
 use Illuminate\Http\Request;
+use Alert;
 
 class BienController extends Controller
 {
@@ -207,7 +208,8 @@ class BienController extends Controller
     {
         //dd("toto");
         $offres = DB::table('offres')->where('id', $id)->update(array('Publier' => 1));
-        session()->flash('message', 'Offre activé avec succès!!!');
+        Alert::success('', 'Offre activé avec succès!')->persistent("Ok");
+        session()->flash('message', 'Offre activé avec succès!');
         return redirect('/offres');
     }
 

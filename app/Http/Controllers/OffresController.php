@@ -19,6 +19,7 @@ use App\Image;
 use App\Quartier;
 use App\Utilisateur;
 
+
 class OffresController extends Controller
 {
     /**

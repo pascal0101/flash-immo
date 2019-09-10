@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -16,5 +19,14 @@
                                   <input type="hidden" name="url" value="http://127.0.0.1:8000/test9">
                                 <button class="btn btn-primary" type="submit">Proceder au payement</button>
     </form>
+
+    <div class="col-md-offset-2 col-md-8">
+      
+      @include('sweet::alert')
+ 
+    </div>
+
+  
+  
 </body>
 </html>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
 use Input;
+use Alert;
 
 class TestController extends Controller
 {
@@ -31,11 +32,8 @@ class TestController extends Controller
     }
     public function payement()
     {
-
-
-        post('https://paygateglobal.com/api/v1/pay');
-
-
+        
+        Alert::success('', 'Offre activé avec succès!')->persistent("Ok");;
         return view('user/test9');
     }
 

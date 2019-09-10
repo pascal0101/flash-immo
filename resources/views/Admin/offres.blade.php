@@ -1,6 +1,13 @@
 @extends('AdminLayouts.index1')
 
 @section('content')
+
+
+ <div class="col-md-offset-2 col-md-8">
+      
+      @include('sweet::alert')
+ 
+    </div>
 @if(session()->has('message'))
 
         <div class="alert alert-primary">
