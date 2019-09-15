@@ -27,7 +27,7 @@
 
     <link rel="stylesheet" href="TemplateAdmin/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-   
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
     <style>
@@ -172,9 +172,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Tableau de bord</a></li>
                             <li><a href="{{url('/admin')}}">Acceuil</a></li>
-                            
+
                         </ol>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
 
       {!! Charts::scripts() !!}
 
-      
+
 
     </body>
 

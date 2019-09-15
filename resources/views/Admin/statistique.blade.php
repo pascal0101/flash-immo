@@ -9,7 +9,10 @@
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           @foreach($test as $offre)
-          ['{{$offre->Titre}}', {{$offre->NombreChambre}}],
+          ['Maisons', {{($offre->where('IdTypeBien' ,'=' ,1)->count())}}],
+          ['Appartements', {{($offre->where('IdTypeBien' ,'=' ,2)->count())}}],
+          ['Bureaux', {{($offre->where('IdTypeBien' ,'=' ,3)->count())}}],
+          ['Terrains', {{($offre->where('IdTypeBien' ,'=' ,4)->count())}}],
           @endforeach
         ]);
 
@@ -23,13 +26,14 @@
       }
     </script>
 <body>
-
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-
-    <br>
-        <div class="col-md-6 col-sm-6">
+     <div class="col-md-6 col-sm-6">
                     {!! $pie_chart->html() !!}
         </div>
+
+    <br>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+
+
 
 
 </body>

@@ -54,7 +54,7 @@
                                 </a>
                                             </td>
                                         </tr>
-                                        
+
                                         @endif
                                         @endforeach
 

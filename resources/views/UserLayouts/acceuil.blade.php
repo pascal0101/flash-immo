@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>FLASH-IMMO</title>
+    <title>ahoe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 
@@ -63,7 +63,7 @@
 <div class="page_loader"></div>
 
 <!-- Option Panel -->
-<div class="option-panel option-panel-collased">
+<!--<div class="option-panel option-panel-collased">
     <h2>Change Color</h2>
     <div class="color-plate default-plate" data-color="default"></div>
     <div class="color-plate blue-plate" data-color="blue"></div>
@@ -80,7 +80,7 @@
     <div class="setting-button">
         <i class="fa fa-gear"></i>
     </div>
-</div>
+</div-->
 <!-- /Option Panel -->
 
 <!-- Top header start -->

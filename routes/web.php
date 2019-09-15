@@ -42,7 +42,7 @@ Route::get('/test4', 'TestController@create');
 Route::get('/test9', 'TestController@payement');
 
 Route::post('/test9', function () {
-    
+
     return view('user/test9');
 });
 
@@ -81,6 +81,8 @@ Route::get('/mesbiens', function () {
 Route::get('/utilisateur1', function () {
     return view('User/Utilisateur1');
 });
+Route::get('modoffre\{id}', 'OffresController@edit')->name('modoffre');
+Route::post('modoffre\{id}', 'OffresController@update')->name('modoffre');
 //admin
 //imprimer
 Route::get('offrespdf', 'BienController@offrespdf');

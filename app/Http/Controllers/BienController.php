@@ -85,13 +85,14 @@ class BienController extends Controller
 
         return view('Admin/imprime/impoffres', compact('offres'));
     }
-    public function impoffreactive()
+    public function impoffresactive()
     {
+
         $offres = Offre::all();
 
         return view('Admin/imprime/impoffresactive', compact('offres'));
     }
-    public function impoffrenonactive()
+    public function impoffresnonactive()
     {
         $offres = Offre::all();
 

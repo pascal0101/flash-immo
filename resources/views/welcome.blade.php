@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                             <div class="form-group">
-                                <button class="search-button">Chercher</button>
+                                <button class="search-button">REChercher</button>
                             </div>
                         </div>
                     </div>
@@ -103,13 +103,13 @@
         <div class="main-title">
             <h1>OFFRES DISPONNIBLES</h1>
         </div>
-        <ul class="list-inline-listing filters filters-listing-navigation">
+        <!--ul class="list-inline-listing filters filters-listing-navigation">
             <li class="active btn filtr-button filtr" data-filter="all">Tout</li>
             <li data-filter="1" class="btn btn-inline filtr-button filtr">Maison</li>
             <li data-filter="2" class="btn btn-inline filtr-button filtr">Bureau</li>
             <li data-filter="3" class="btn btn-inline filtr-button filtr">Appartement</li>
             <li data-filter="4" class="btn btn-inline filtr-button filtr">Collocation</li>
-        </ul>
+        </ul-->
         <div class="row">
             <div class="filtr-container">
 
@@ -121,12 +121,12 @@
                             @if($offre->IdTypeOffre == 2)
                             <div class="property-tag button alt featured" style="background: red;">Vente</div>
                             @elseif($offre->IdTypeOffre == 1)
-                            <div class="property-tag button alt featured"  style="background: blue;">Location</div>
+                            <div class="property-tag button alt featured"  style="background: red;">Location</div>
                             @else
-                            <div class="property-tag button alt featured" style="background: green;">Collocation</div>
+                            <div class="property-tag button alt featured" style="background: red;">Collocation</div>
                             @endif
 
-                            <div class="property-tag button sale">En cours</div>
+                           <!--div class="property-tag button sale">En cours</div -->
                             <div class="property-price">{{$offre->Prix}} FCFA</div>
                               @foreach ($offre->images as $image)
                                 @if ($loop->first)
@@ -161,7 +161,7 @@
                             </h1>
                             <!-- Property address -->
                             <h3 class="property-address">
-                                <a href="properties-details.html">
+                                <a href="{{ route('detail',[$offre->id])}}">
                                     <i class="fa fa-map-marker"></i>{{$offre->Adresse}}
                                 </a>
                             </h3>

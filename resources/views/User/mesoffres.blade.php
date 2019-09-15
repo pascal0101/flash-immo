@@ -73,8 +73,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{url('/favoris')}}">
-                                    <i class="fa fa-heart"></i>Propriétés favoris
+                                <a href="{{url('/sta')}}">
+                                    <i class="fa fa-home"></i>Statistiques
                                 </a>
                             </li>
                             <li>
@@ -118,7 +118,7 @@
                         <td class="action">
 
                             <a href="{{ route('supprimeoffre',[$offre->id])}}"><button  class="btn btn-danger">Supprimer</button></a>
-                            <a href=""><button  class="btn btn-primary">Modifier</button></a>
+                            <a href="{{ route('modoffre',[$offre->id])}}"><button  class="btn btn-primary">Modifier</button></a>
                         </td>
                     </tr>
                     @empty

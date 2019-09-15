@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>FLASH-IMMO</title>
+    <title>ahoe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 
@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css"  href="TemplateUser/the-nest/css/skins/default.css">
 
     <!-- Favicon icon -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="TemplateUser/the-nest/img/favicon.ico" type="image/x-icon" >
 
 
@@ -63,7 +64,7 @@
 <div class="page_loader"></div>
 
 <!-- Option Panel -->
-<div class="option-panel option-panel-collased">
+<!--div class="option-panel option-panel-collased">
     <h2>Change Color</h2>
     <div class="color-plate default-plate" data-color="default"></div>
     <div class="color-plate blue-plate" data-color="blue"></div>
@@ -80,7 +81,7 @@
     <div class="setting-button">
         <i class="fa fa-gear"></i>
     </div>
-</div>
+</div-->
 <!-- /Option Panel -->
 
 <!-- Top header start -->
@@ -181,6 +182,7 @@
                             <i class="glyphicon glyphicon-bullhorn"></i>
                             DEPOSER UNE ANNONCE
                         </a>
+
                     </li>
 
                     <li>
@@ -493,7 +495,28 @@
         </div>
     </div>
 </div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+<script>
+    @if(Session::has('message'))
+        var type="{{Session::get('alert-type','info')}}"
+        switch(type){
+            case 'info':
+                 toastr.info("{{ Session::get('message') }}");
+                 break;
+            case 'success':
+                toastr.success("{{ Session::get('message') }}");
+                break;
+            case 'warning':
+                toastr.warning("{{ Session::get('message') }}");
+                break;
+            case 'error':
+                toastr.error("{{ Session::get('message') }}");
+                break;
+        }
+    @endif
+</script>
 
 <script src="TemplateUser/the-nest/js/jquery-2.2.0.min.js"></script>
 <script src="TemplateUser/the-nest/js/bootstrap.min.js"></script>

@@ -82,9 +82,9 @@
                         <input type="text" class="form-control form-control-lg" name="prix2"  placeholder="Prix Minimum" style="height: 45px">
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                             <div class="form-group">
-                                <button class="search-button">Chercher</button>
+                                <button class="search-button">REChercher</button>
                             </div>
                         </div>
                     </div>
@@ -103,13 +103,7 @@
         <div class="main-title">
             <h1>OFFRES DISPONNIBLES</h1>
         </div>
-        <ul class="list-inline-listing filters filters-listing-navigation">
-            <li class="active btn filtr-button filtr" data-filter="all">Tout</li>
-            <li data-filter="1" class="btn btn-inline filtr-button filtr">Maison</li>
-            <li data-filter="2" class="btn btn-inline filtr-button filtr">Bureau</li>
-            <li data-filter="3" class="btn btn-inline filtr-button filtr">Appartement</li>
-            <li data-filter="4" class="btn btn-inline filtr-button filtr">Collocation</li>
-        </ul>
+
         <div class="row">
             <div class="filtr-container">
                 @forelse($offres as $offre)
@@ -118,14 +112,14 @@
                         <!-- Property img -->
                         <div class="property-img">
                             @if($offre->IdTypeOffre == 2)
-                            <div class="property-tag button alt featured">Vente</div>
+                            <div class="property-tag button alt featured" style="background: red;">Vente</div>
                             @elseif($offre->IdTypeOffre == 1)
-                            <div class="property-tag button alt featured">Location</div>
+                            <div class="property-tag button alt featured"  style="background: red;">Location</div>
                             @else
-                            <div class="property-tag button alt featured">Collocation</div>
+                            <div class="property-tag button alt featured" style="background: red;">Collocation</div>
                             @endif
 
-                            <div class="property-tag button sale">En cours</div>
+
                             <div class="property-price">{{$offre->Prix}} FCFA</div>
                               @foreach ($offre->images as $image)
                                 @if ($loop->first)
@@ -148,8 +142,7 @@
                                         <i class="fa fa-expand"></i>
                                     </a>
 
-                                    <a href="TemplateUser/the-nest/img/properties/properties-2.jpg" class="hidden"></a>
-                                    <a href="TemplateUser/the-nest/img/properties/properties-3.jpg" class="hidden"></a>
+
                                 </div>
                             </div>
                         </div>
@@ -157,12 +150,12 @@
                         <div class="property-content">
                             <!-- title -->
                             <h1 class="title">
-                            <a href="properties-details.html">{{$offre->Titre}}</a>
+                            <a href="{{ route('detail',[$offre->id])}}">{{$offre->Titre}}</a>
                             </h1>
                             <!-- Property address -->
                             <h3 class="property-address">
                                 <a href="properties-details.html">
-                                    <i class="fa fa-map-marker"></i>{{$offre->Adresse}}. Tampa City,
+                                    <i class="fa fa-map-marker"></i>{{$offre->Adresse}}
                                 </a>
                             </h3>
                             <!-- Facilities List -->
@@ -198,7 +191,7 @@
                             <!-- Property footer -->
                             <div class="property-footer">
                                 <span class="left">
-                                    <a href="#"><i class="fa fa-user"></i>Publié par {{$offre->user->name}}</a>
+                                    <a href="{{ route('sesoffres',[$offre->user->id])}}"><i class="fa fa-user"></i>Publié par {{$offre->user->name}}</a>
                                 </span>
                                 <span class="right">
                                     <i class="fa fa-calendar"></i>{{$offre->created_at->diffForHumans()}}

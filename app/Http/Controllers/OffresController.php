@@ -158,9 +158,14 @@ class OffresController extends Controller
      * @param  \App\Offres  $offres
      * @return \Illuminate\Http\Response
      */
-    public function edit(Offres $offres)
+    public function edit($id)
     {
-        //
+         $offre = offre::findOrFail($id);
+         $ville = ville::all(['id', 'NomVille']);
+        $typebien = typebien::all(['id', 'LibelleTypeBien']);
+        $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
+            
+        return view('user.modifieroffre',compact(['ville', $ville],['offre', $offre], ['typeoffre', $typeoffre], ['typebien', $typebien]));   
     }
 
     /**
@@ -170,9 +175,64 @@ class OffresController extends Controller
      * @param  \App\Offres  $offres
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Offres $offres)
+    public function update(Request $request, $id)
     {
-        //
+
+         $offre = offre::findOrFail($id);
+
+       //$images = DB::table('images')->where('offre_id', '=', $id)->get();
+
+        
+
+        //$typebien->delete($id);
+         $offre = DB::table('offres')->where('id',$id)->update(array(
+
+            'titre' => $request->input('titre'),
+            'IdTypeOffre' => $request->input('typeoffre'),
+            'IdTypeBien' => $request->input('typebien'),
+            'prix' => $request->input('prix'),
+            'surface' => $request->input('surface'),
+            'NombreChambre' => $request->input('nbrechambre'),
+            'adresse' => $request->input('adresse'),
+            'IdVille' => $request->input('ville'),
+            'description' => $request->input('description'),
+            'salon' => $request->input('salon'),
+            'balcon' => $request->input('balcon'),
+            'Longitude' => $request->input('Longitude'),
+           'Latitude' => $request->input('Latitude'),
+            'wcdouche' => $request->input('wcdouche'),
+           'garage' => $request->input('garage'),
+            'meuble' => $request->input('meuble'),
+            'cuisine' => $request->input('cuisine'),
+            'email' => $request->input('email'),
+            'Telephone' => $request->input('telephone')
+
+               
+
+            ));
+
+            
+            if ($request->hasFile('file')) {
+                foreach ($request->file as $file) {
+                    $filename = $file->getClientOriginalName();
+                    $file->move('images', $filename);
+
+                    $image = new image();
+
+                    $image->image_path = "/images/$filename";
+
+                    $image->offre_id = $id;
+
+                    $image->save();
+                }
+            }
+             DB::table('images')->where('offre_id', '=', $id)->delete($id);
+             //session()->flash('message', ' Offre modifié avec succès!'); 
+             $notification = array(
+            'message' => 'Offre modifié avec succès!',
+            'alert-type' => 'success'
+            );   
+            return redirect('/mesoffres')->with($notification);   
     }
 
     /**

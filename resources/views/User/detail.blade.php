@@ -96,7 +96,7 @@
                     <div class="panel-box properties-panel-box Property-description">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1default" data-toggle="tab" aria-expanded="true">DESCRIPTION</a></li>
-                            <li class=""><a href="#tab2default" data-toggle="tab" aria-expanded="false">EQUIPEMENTS</a></li>
+                            <li class=""><a href="#tab2default" data-toggle="tab" aria-expanded="false">CARACTERISTIQUES</a></li>
                             <li class=""><a href="#tab3default" data-toggle="tab" aria-expanded="false">CONTACTS PROPRIETAIRE</a></li>
 
 
@@ -231,7 +231,7 @@
                                         <!-- Properties amenities start -->
                                         <div class="properties-amenities">
                                             <div class="main-title-2">
-                                                <h1><span>CONTACTS PROPRIETAIRE</span></h1>
+                                                <h1><span>CARACTERISTIQUES</span></h1>
                                             </div>
                                             <div class="sidebar-widget helping-box clearfix">
 
@@ -249,6 +249,7 @@
                             <div class="icon"><i class="fa fa-phone"></i></div>
                             <h4>Numero Telephone</h4>
                             <p><a href="#">{{$offre->Telephone}}</a> </p>
+<a href="https://wa.me/{{$offre->Telephone}}?text={{$offre->user->name}},je suis interessé par votre offre" target="_blank"><i class="fa fa-whatsapp"></i>Whatsapp</a>
                         </div>
                     </div>
                                         </div>

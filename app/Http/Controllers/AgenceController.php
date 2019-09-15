@@ -106,7 +106,7 @@ class AgenceController extends Controller
             'alert-type' => 'success'
         );
 
-        session()->flash('message', 'Agence crée avec succès!!!');
+        //session()->flash('message', 'Agence crée avec succès!!!');
         return redirect('/agence')->with($notification);;
     }
 

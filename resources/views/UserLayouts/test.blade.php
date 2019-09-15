@@ -6,7 +6,7 @@
     <!-- Google Tag Manager -->
 
     <!-- End Google Tag Manager -->
-    <title>FLASH-IMMO</title>
+    <title>ahoe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 
