@@ -147,6 +147,16 @@
 
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
+                           TROUVER<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                         <li><a href="{{url('user/location')}}">Location</a></li>
+                            <li><a href="{{url('user/vente')}}">Vente</a></li>
+
+                        </ul>
+                    </li>
 
 
                     <li class="dropdown">

@@ -60,6 +60,34 @@ class OffresController extends Controller
         return view('user/acceuil', compact('offres', 'images', ['ville', $ville], ['typeoffre', $typeoffre], ['typebien', $typebien]));
     }
 
+    public function location()
+    {
+        $ville = ville::all(['id', 'NomVille']);
+        $typebien = typebien::all(['id', 'LibelleTypeBien']);
+        $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
+
+        $offres = Offre::where('IdTypeOffre', '=', 1)->paginate(6);
+
+        $images = Image::get();
+        //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
+
+        return view('user/location', compact('offres', 'images', ['ville', $ville], ['typeoffre', $typeoffre], ['typebien', $typebien]));
+    }
+
+    public function vente()
+    {
+        $ville = ville::all(['id', 'NomVille']);
+        $typebien = typebien::all(['id', 'LibelleTypeBien']);
+        $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
+
+        $offres = Offre::paginate(6);
+
+        $images = Image::get();
+        //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
+
+        return view('user/vente', compact('offres', 'images', ['ville', $ville], ['typeoffre', $typeoffre], ['typebien', $typebien]));
+    }
+
     public function acceuil(Request $request)
     {
         $ville = ville::all(['id', 'NomVille']);
