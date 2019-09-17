@@ -11,10 +11,10 @@
 <!-- One "tab" for each step in the form: -->
 <div class="tab">
                 <div class="form-group {{$errors->has('titre') ? 'has-error' : ''}}">
-                    <label style="color:black">Veuillez renseignez un nom a votre projet</label>
+                    <label style="color:black">Veuillez renseignez un titre</label>
                      <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                    <input type="text" class="form-control" name="titre" placeholder="Nom du projet" value="{{ old('titre') }}">
+                    <input type="text" class="form-control" name="titre" placeholder="Titre" value="{{ old('titre') }}">
 
                 </div>
                  {!!$errors->first('titre','<span class="help-block">:message</span>')!!}

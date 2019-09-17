@@ -50,7 +50,7 @@
                                 <span>
                                     <i class="fa fa-phone"></i>Télephone:
                                 </span>
-                                     &nbsp;&nbsp;&nbsp; {{$agences->Contact1}} / {{$agences->Contact2}}
+                                     &nbsp;&nbsp;&nbsp; {{$agences->telephone}}
                             </li>
                             <li>
                                 <span>
@@ -100,14 +100,14 @@
                         <!-- Property img -->
                         <div class="property-img">
                             @if($offre->IdTypeOffre == 2)
-                            <div class="property-tag button alt featured">Vente</div>
+                            <div class="property-tag button alt featured" style="background: red;">Vente</div>
                             @elseif($offre->IdTypeOffre == 1)
-                            <div class="property-tag button alt featured">Location</div>
+                            <div class="property-tag button alt featured" style="background: red;">Location</div>
                             @else
-                            <div class="property-tag button alt featured">Collocation</div>
+                            <div class="property-tag button alt featured" style="background: red;">Collocation</div>
                             @endif
 
-                            <div class="property-tag button sale">En cours</div>
+
                             <div class="property-price">{{$offre->Prix}} FCFA</div>
                               @foreach ($offre->images as $image)
                                 @if ($loop->first)

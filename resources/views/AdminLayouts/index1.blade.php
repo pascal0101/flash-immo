@@ -88,9 +88,18 @@
                     <li>
                     <a href="{{url('/messages')}}"> <i class="menu-icon fa fa-envelope"></i>MESSAGES </a>
                     </li>
-                    <li>
-                    <a href="{{url('/statistiques')}}"> <i class="menu-icon fa fa-bar-chart-o"></i>STATISTIQUES </a>
+
+                     <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart-o"></i>STATISTIQUES SELON</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-bar-chart-o"></i><a href="{{url('/statistiques1')}}">Etat Offres</a></li>
+                            <li><i class="menu-icon fa fa-bar-chart-o"></i><a href="{{url('/statistiques')}}">Type de biens</a></li>
+                            <li><i class="menu-icon fa fa-bar-chart-o"></i><a href="{{url('/statistiques2')}}">Type offres</a></li>
+
+                        </ul>
                     </li>
+
+
 
                     <h3 class="menu-title"></h3><!-- /.menu-title -->
         </nav>

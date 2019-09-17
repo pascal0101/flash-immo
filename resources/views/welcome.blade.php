@@ -19,9 +19,9 @@
                             <div class="form-group">
                                 <select class="selectpicker search-fields" id="typeoffre" name="typeoffre" data-live-search="true" data-live-search-placeholder="Search value">
                                     <option value="0">Type(s) d'offre</option>
-                                    <option value="1">Acheter</option>
-                                    <option value="2">Location</option>
-                                    <option value="3">Colocation</option>
+                                    @foreach($typeoffre as $typeoffre)
+                        <option value="{{$typeoffre->id}}">{{$typeoffre->LibelleTypeOffre}}</option>
+                                            @endforeach
                                 </select>
                             </div>
                         </div>
@@ -29,10 +29,9 @@
                             <div class="form-group">
                                 <select class="selectpicker search-fields" id="typebien" name="typebien" data-live-search="true" data-live-search-placeholder="Search value">
                                     <option value="0">Type(s) de bien</option>
-                                     <option value="1">Maison</option>
-                                    <option value="2">Appartement</option>
-                                    <option value="3">Terrain</option>
-                                    <option value="4">Bureau</option>
+                                   @foreach($typebien as $typebien)
+                        <option value="{{$typebien->id}}">{{$typebien->LibelleTypeBien}}</option>
+                                            @endforeach
                                 </select>
                             </div>
                         </div>
@@ -40,9 +39,16 @@
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="nbrechambre" placeholder="Search value">
                                     <option value="0">Nombre Chambre</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
+                                        <option value= '2'>2</option>
+                                            <option value= '3'>3</option>
+                                            <option value= '4'>4</option>
+                                            <option value= '5'>5</option>
+                                            <option value= '6'>6</option>
+                                            <option value= '7'>7</option>
+                                            <option value= '8'>8</option>
+                                            <option value= '9'>9</option>
+                                            <option value= '10'>10</option>
+                                            <option value= '11'>+10</option>
 
                                 </select>
                             </div>
@@ -63,10 +69,9 @@
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="ville" data-live-search="true" data-live-search-placeholder="Search value" >
                                     <option value="0">Ville</option>
-                                    <option value="1">Aného</option>
-                                    <option value="2">Atakpamé</option>
-                                    <option value="3">Badou</option>
-                                    <option value="4">Bafilo</option>
+                                 @foreach($ville as $ville)
+                        <option value="{{$ville->id}}">{{$ville->NomVille}}</option>
+                              @endforeach
 
 
                                 </select>
@@ -114,6 +119,7 @@
             <div class="filtr-container">
 
                 @forelse($offres as $offre)
+                 @if($offre->Publier == 1)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  filtr-item" data-category="1, 2, 3">
                     <div class="property">
                         <!-- Property img -->
@@ -207,9 +213,10 @@
                         </div>
                     </div>
                 </div>
-
+@endif
                 @empty
                 <h3>Aucune offre disponible</h3>
+
 @endforelse
 
 

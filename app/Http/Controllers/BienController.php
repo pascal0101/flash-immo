@@ -233,7 +233,10 @@ class BienController extends Controller
     {
         $offres = Offre::where('Publier', '=', 0)->count();
         $offre = Offre::where('Publier', '=', 1)->count();
-        $test = Offre::all();
+
+        $test1 = Offre::where('IdTypeBien', '=', 1)->count();
+        $test2 = Offre::where('IdTypeBien', '=', 2)->count();
+        $test3 = Offre::where('IdTypeBien', '=', 3)->count();
         //dd($offres);
         $pie_chart = Charts::create('pie', 'highcharts')
             ->title('Pie Chart Demo')
@@ -241,7 +244,22 @@ class BienController extends Controller
             ->values([$offres, $offre])
             ->dimensions(1000, 500)
             ->responsive(true);
-        return view('Admin/statistique', compact('pie_chart', 'offres', 'offre', 'test'));
+        return view('Admin/statistique', compact('pie_chart', 'offres', 'offre', 'test1', 'test2', 'test3'));
+    }
+    public function statistique1()
+    {
+
+        $offres = Offre::where('Publier', '=', 0)->count();
+        $offre = Offre::where('Publier', '=', 1)->count();
+
+        return view('Admin/statistique1', compact('offres', 'offre'));
+    }
+    public function statistique2()
+    {
+        $test1 = Offre::where('IdTypeOffre', '=', 1)->count();
+        $test2 = Offre::where('IdTypeOffre', '=', 2)->count();
+
+        return view('Admin/statistique2', compact('test1', 'test2'));
     }
 
 

@@ -99,6 +99,9 @@ Route::get('offres', 'BienController@offres');
 Route::get('offrespdf', 'BienController@offrespdf');
 
 Route::get('statistiques', 'BienController@statistique');
+Route::get('statistiques1', 'BienController@statistique1');
+Route::get('statistiques2', 'BienController@statistique2');
+
 
 Route::get('active', 'BienController@active')->name('active');
 

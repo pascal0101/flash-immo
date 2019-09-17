@@ -10,15 +10,13 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-
-          ['Maisons', {{$test1}}],
-          ['Appartements', {{$test2}}],
-          ['Bureaux', {{$test3}}],
+          ['Offres non activées', {{$offres}}],
+          ['Offres activées', {{$offre}}],
 
         ]);
 
         var options = {
-          title: 'Les types de biens',
+          title: 'Etat des offres',
           is3D: true,
         };
 
@@ -29,13 +27,8 @@
 
 
 <body>
-
-<br>
     <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-<div class="col-md-6 col-sm-6">
-                    {!! $pie_chart->html() !!}
-        </div>
-</body>
+  </body>
 
 
 @endsection

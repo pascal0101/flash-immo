@@ -11,14 +11,14 @@
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
 
-          ['Maisons', {{$test1}}],
-          ['Appartements', {{$test2}}],
-          ['Bureaux', {{$test3}}],
+          ['Location', {{$test1}}],
+          ['Vente', {{$test2}}],
+
 
         ]);
 
         var options = {
-          title: 'Les types de biens',
+          title: 'Les types d\'offre',
           is3D: true,
         };
 
@@ -26,16 +26,12 @@
         chart.draw(data, options);
       }
     </script>
-
+<body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+  </body>
 
 <body>
 
-<br>
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-<div class="col-md-6 col-sm-6">
-                    {!! $pie_chart->html() !!}
-        </div>
-</body>
 
 
 @endsection

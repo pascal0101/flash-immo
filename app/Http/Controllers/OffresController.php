@@ -27,6 +27,11 @@ class OffresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->only(["index"]);
+    }
+
     public function index()
     {
         $ville = ville::all(['id', 'NomVille']);
@@ -43,27 +48,34 @@ class OffresController extends Controller
      */
     public function offres()
     {
+        $ville = ville::all(['id', 'NomVille']);
+        $typebien = typebien::all(['id', 'LibelleTypeBien']);
+        $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
 
         $offres = Offre::paginate(6);
 
         $images = Image::get();
         //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
 
-        return view('user/acceuil', compact('offres', 'images'));
+        return view('user/acceuil', compact('offres', 'images', ['ville', $ville], ['typeoffre', $typeoffre], ['typebien', $typebien]));
     }
 
     public function acceuil(Request $request)
     {
+        $ville = ville::all(['id', 'NomVille']);
+        $typebien = typebien::all(['id', 'LibelleTypeBien']);
+        $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
 
         $offres = Offre::paginate(6);
 
         $images = Image::get();
 
-        return view('welcome', compact('offres', 'images'));
+        return view('welcome', compact('offres', 'images', ['ville', $ville], ['typeoffre', $typeoffre], ['typebien', $typebien]));
     }
 
     public function rechercher(Request $request)
     {
+
         if ($request->isMethod('post')) {
             $typebien = $request->input('typebien');;
             $typeoffre = $request->input('typeoffre');
@@ -76,11 +88,15 @@ class OffresController extends Controller
                 ->orwhere('IdTypeOffre', '=', $typeoffre)
                 ->orwhere('NombreChambre', '=', $nbrechambre)
                 ->orwhere('WcDouche', '=', $toilette)
-                ->where('IdVille', '=', $ville)
+                ->orwhere('IdVille', '=', $ville)
                 ->whereBetween('Prix', [$prix1, $prix2])
                 ->paginate(6);
-            return view('welcome', compact('offres', 'images'));
+            $images = Image::get();
         }
+        $ville = ville::all(['id', 'NomVille']);
+        $typebien = typebien::all(['id', 'LibelleTypeBien']);
+        $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
+        return view('welcome', compact('offres', 'images', ['ville', $ville], ['typeoffre', $typeoffre], ['typebien', $typebien]));
     }
     /**
      * Store a newly created resource in storage.
@@ -160,12 +176,12 @@ class OffresController extends Controller
      */
     public function edit($id)
     {
-         $offre = offre::findOrFail($id);
-         $ville = ville::all(['id', 'NomVille']);
+        $offre = offre::findOrFail($id);
+        $ville = ville::all(['id', 'NomVille']);
         $typebien = typebien::all(['id', 'LibelleTypeBien']);
         $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
-            
-        return view('user.modifieroffre',compact(['ville', $ville],['offre', $offre], ['typeoffre', $typeoffre], ['typebien', $typebien]));   
+
+        return view('user.modifieroffre', compact(['ville', $ville], ['offre', $offre], ['typeoffre', $typeoffre], ['typebien', $typebien]));
     }
 
     /**
@@ -178,14 +194,14 @@ class OffresController extends Controller
     public function update(Request $request, $id)
     {
 
-         $offre = offre::findOrFail($id);
+        $offre = offre::findOrFail($id);
 
-       //$images = DB::table('images')->where('offre_id', '=', $id)->get();
+        //$images = DB::table('images')->where('offre_id', '=', $id)->get();
 
-        
+
 
         //$typebien->delete($id);
-         $offre = DB::table('offres')->where('id',$id)->update(array(
+        $offre = DB::table('offres')->where('id', $id)->update(array(
 
             'titre' => $request->input('titre'),
             'IdTypeOffre' => $request->input('typeoffre'),
@@ -199,40 +215,40 @@ class OffresController extends Controller
             'salon' => $request->input('salon'),
             'balcon' => $request->input('balcon'),
             'Longitude' => $request->input('Longitude'),
-           'Latitude' => $request->input('Latitude'),
+            'Latitude' => $request->input('Latitude'),
             'wcdouche' => $request->input('wcdouche'),
-           'garage' => $request->input('garage'),
+            'garage' => $request->input('garage'),
             'meuble' => $request->input('meuble'),
             'cuisine' => $request->input('cuisine'),
             'email' => $request->input('email'),
             'Telephone' => $request->input('telephone')
 
-               
 
-            ));
 
-            
-            if ($request->hasFile('file')) {
-                foreach ($request->file as $file) {
-                    $filename = $file->getClientOriginalName();
-                    $file->move('images', $filename);
+        ));
 
-                    $image = new image();
 
-                    $image->image_path = "/images/$filename";
+        if ($request->hasFile('file')) {
+            foreach ($request->file as $file) {
+                $filename = $file->getClientOriginalName();
+                $file->move('images', $filename);
 
-                    $image->offre_id = $id;
+                $image = new image();
 
-                    $image->save();
-                }
+                $image->image_path = "/images/$filename";
+
+                $image->offre_id = $id;
+
+                $image->save();
             }
-             DB::table('images')->where('offre_id', '=', $id)->delete($id);
-             //session()->flash('message', ' Offre modifié avec succès!'); 
-             $notification = array(
+        }
+        DB::table('images')->where('offre_id', '=', $id)->delete($id);
+        //session()->flash('message', ' Offre modifié avec succès!');
+        $notification = array(
             'message' => 'Offre modifié avec succès!',
             'alert-type' => 'success'
-            );   
-            return redirect('/mesoffres')->with($notification);   
+        );
+        return redirect('/mesoffres')->with($notification);
     }
 
     /**
