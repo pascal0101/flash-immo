@@ -103,23 +103,30 @@ class OffresController extends Controller
 
     public function rechercher(Request $request)
     {
-
+        //if ($request->input('typebien') == 1) {
+        //
         if ($request->isMethod('post')) {
-            $typebien = $request->input('typebien');;
+            $typebien = $request->input('typebien');
             $typeoffre = $request->input('typeoffre');
             $nbrechambre = $request->input('nbrechambre');
             $toilette = $request->input('toilette');
             $ville = $request->input('ville');
             $prix1 = $request->input('prix1');
             $prix2 = $request->input('prix2');
-            $offres = offre::where('IdTypeBien', '=', $typebien)
-                ->orwhere('IdTypeOffre', '=', $typeoffre)
-                ->orwhere('NombreChambre', '=', $nbrechambre)
-                ->orwhere('WcDouche', '=', $toilette)
-                ->orwhere('IdVille', '=', $ville)
-                ->whereBetween('Prix', [$prix1, $prix2])
+            //dd($request->)
+
+            $offres = offre::
+                //->join('images', 'offres.id', '=', 'images.offre_id')
+                where('IdTypeBien', '=', $typebien)
+                ->where('IdTypeOffre', '=', $typeoffre)
+                ->Where('NombreChambre', '=', $nbrechambre)
+                //->where('WcDouche', '=', $toilette)
+                //->where('IdVille', '=', $ville)
+                // ->whereBetween('Prix', [$prix1, $prix2])
                 ->paginate(6);
+
             $images = Image::get();
+            //dd($offres);
         }
         $ville = ville::all(['id', 'NomVille']);
         $typebien = typebien::all(['id', 'LibelleTypeBien']);

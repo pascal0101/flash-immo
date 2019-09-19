@@ -39,6 +39,7 @@
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="nbrechambre" placeholder="Search value">
                                     <option value="0">Nombre Chambre</option>
+                                        <option value= '1'>1</option>
                                         <option value= '2'>2</option>
                                             <option value= '3'>3</option>
                                             <option value= '4'>4</option>
@@ -124,9 +125,9 @@
                     <div class="property">
                         <!-- Property img -->
                         <div class="property-img">
-                            @if($offre->IdTypeOffre == 2)
+                            @if($offre->IdTypeOffre == 1)
                             <div class="property-tag button alt featured" style="background: red;">Vente</div>
-                            @elseif($offre->IdTypeOffre == 1)
+                            @elseif($offre->IdTypeOffre == 2)
                             <div class="property-tag button alt featured"  style="background: red;">Location</div>
                             @else
                             <div class="property-tag button alt featured" style="background: red;">Collocation</div>
