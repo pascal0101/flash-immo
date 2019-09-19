@@ -213,7 +213,11 @@
 
       {!! Charts::scripts() !!}
 
-
+        <Script>
+        $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+        })
+        </Script>
 
     </body>
 

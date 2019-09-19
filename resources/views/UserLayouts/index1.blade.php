@@ -152,8 +152,8 @@
                            TROUVER<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                         <li><a href="{{url('user/location')}}">Location</a></li>
-                            <li><a href="{{url('user/vente')}}">Vente</a></li>
+                         <li><a href="{{url('location')}}">Location</a></li>
+                            <li><a href="{{url('vente')}}">Vente</a></li>
 
                         </ul>
                     </li>

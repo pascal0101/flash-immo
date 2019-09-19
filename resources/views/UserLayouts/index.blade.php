@@ -36,7 +36,7 @@
    <link rel="stylesheet" type="text/css"  href="TemplateUser/the-nest/css/monmap.css">
     <!-- Google fonts -->
 
-
+    <link rel="stylesheet" type="text/css" href="plugin/css/intlTelInput.css">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link rel="stylesheet" type="text/css" href="TemplateUser/the-nest/css/ie10-viewport-bug-workaround.css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
@@ -696,7 +696,23 @@ function fixStepIndicator(n) {
 <script src="TemplateUser/the-nest/js/ie10-viewport-bug-workaround.js"></script>
 <!-- Custom javascript -->
 
+<script src="plugin/js/intlTelInput.js"></script>
 
+    <script>
+        var input = document.querySelector("#phone");
+      //$('#phone').intlTelInput();
+        window.intlTelInput(input, {
+            initialCountry: "Tg",
+            preferredCountries: ['Tg'],
+            geoIpLookup: function(callback) {
+        $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+          var countryCode = (resp && resp.country) ? resp.country : "";
+          callback(countryCode);
+        });
+       },
+      utilsScript: "plugin/js/utils.js",
+    });
+    </script>
 </body>
 
 

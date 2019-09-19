@@ -29,7 +29,7 @@ class OffresController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->only(["index"]);
+        $this->middleware('auth')->only(["index", "mesoffres"]);
     }
 
     public function index()
@@ -52,7 +52,7 @@ class OffresController extends Controller
         $typebien = typebien::all(['id', 'LibelleTypeBien']);
         $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
 
-        $offres = Offre::paginate(6);
+        $offres = Offre::latest()->paginate(6);
 
         $images = Image::get();
         //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
@@ -80,7 +80,7 @@ class OffresController extends Controller
         $typebien = typebien::all(['id', 'LibelleTypeBien']);
         $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
 
-        $offres = Offre::paginate(6);
+        $offres = Offre::where('IdTypeOffre', '=', 2)->paginate(6);
 
         $images = Image::get();
         //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
@@ -94,7 +94,7 @@ class OffresController extends Controller
         $typebien = typebien::all(['id', 'LibelleTypeBien']);
         $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
 
-        $offres = Offre::paginate(6);
+        $offres = Offre::latest()->paginate(6);
 
         $images = Image::get();
 

@@ -24,6 +24,7 @@ class BienController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function offres()
     {
         $offres = offre::all();
@@ -131,15 +132,17 @@ class BienController extends Controller
      */
     public function show($id)
     {
+
         //dd("toto");
         //$offres = offre::all()->where('id', $id);
+        $offres = offre::all();
         $images = image::all()->where('offre_id', $id);
         $ville = Ville::all();
 
         $offre =  Offre::findOrFail($id);
         //$offre = DB::table('offres')->join('villes', 'offres.id', '=', 'villes.id')->first();
 
-        return view('user.voir', compact('offre', 'images'));
+        return view('user.voir', compact('offre', 'images', 'offres'));
     }
 
     public function sesoffres($id)

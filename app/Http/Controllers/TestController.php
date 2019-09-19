@@ -21,6 +21,11 @@ class TestController extends Controller
         //
     }
 
+    public function test()
+    {
+        return view('test');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +37,7 @@ class TestController extends Controller
     }
     public function payement()
     {
-        
+
         Alert::success('', 'Offre activé avec succès!')->persistent("Ok");;
         return view('user/test9');
     }

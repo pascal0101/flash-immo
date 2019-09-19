@@ -78,6 +78,8 @@ Route::get('/mesbiens', function () {
 });
 
 
+Route::get('ok', 'TestController@test');
+
 Route::get('/utilisateur1', function () {
     return view('User/Utilisateur1');
 });
@@ -139,8 +141,8 @@ Route::get('voir\{id}', 'BienController@show')->name('voir');
 //Route::get('identite\{id}', 'BienController@identite')->name('voir');
 //afficher offre
 Route::get('user', 'OffresController@offres');
-Route::get('user/location', 'OffresController@location');
-Route::get('user/vente', 'OffresController@vente');
+Route::get('location', 'OffresController@location');
+Route::get('vente', 'OffresController@vente');
 
 //afficher page acceuil
 Route::get('/', 'OffresController@acceuil')->name('acceuil');
