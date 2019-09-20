@@ -36,7 +36,7 @@
                         </p>
                     </div>
                     <div class="pull-right">
-                        <h3><span>{{$offre->Prix}} FCFA</span></h3>
+                        <h3><span>{{number_format($offre->Prix)}} FCFA</span></h3>
                         <h5>
 
                         </h5>
@@ -115,7 +115,7 @@
                                         <!-- Properties condition start -->
                                         <div class="properties-condition">
                                             <div class="main-title-2">
-                                                <h1><span>Equipements</span></h1>
+                                                <h1><span>CARACTERISTIQUES</span></h1>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-4 col-xs-12">
@@ -221,6 +221,9 @@
                                         <i class="flaticon-building"></i>Balcon : NON
                                     </li>
                                 @endif
+                                    <li>
+                                        <i class="fa fa-check-square"></i>Type Bien : {{$offre->typebien->LibelleTypeBien}}
+                                    </li>
                                                     </ul>
                                                 </div>
                                             </div>

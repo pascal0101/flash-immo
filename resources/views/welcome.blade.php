@@ -6,11 +6,13 @@
 <div class="banner">
 
 <!-- Search area start -->
+
 <div class="content-area featured-properties">
 <div class="search-area">
     <div class="container">
         <div class="search-area-inner">
             <div class="search-contents ">
+
 <form action="{{ route('rechercher') }}" method="POST">
                          {{csrf_field()}}
 
@@ -107,7 +109,7 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>OFFRES DISPONNIBLES</h1>
+            <marquee><h1>ANNONCES DISPONNIBLES</h1></marquee>
         </div>
         <!--ul class="list-inline-listing filters filters-listing-navigation">
             <li class="active btn filtr-button filtr" data-filter="all">Tout</li>
@@ -120,7 +122,7 @@
             <div class="filtr-container">
 
                 @forelse($offres as $offre)
-                 @if($offre->Publier == 1)
+
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  filtr-item" data-category="1, 2, 3">
                     <div class="property">
                         <!-- Property img -->
@@ -132,9 +134,9 @@
                             @else
                             <div class="property-tag button alt featured" style="background: red;">Collocation</div>
                             @endif
-
+ <div class="property-tag button sale" style="background: blue;">{{$offre->typebien->LibelleTypeBien}}</div>
                            <!--div class="property-tag button sale">En cours</div -->
-                            <div class="property-price">{{$offre->Prix}} FCFA</div>
+                            <div class="property-price">{{number_format($offre->Prix)}} FCFA</div>
                               @foreach ($offre->images as $image)
                                 @if ($loop->first)
                                      <img src="{{$image->image_path}}" alt="fp" class="img-responsive">
@@ -214,7 +216,7 @@
                         </div>
                     </div>
                 </div>
-@endif
+
                 @empty
                 <h3>Aucune offre disponible</h3>
 

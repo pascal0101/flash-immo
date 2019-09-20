@@ -27,7 +27,7 @@ class BienController extends Controller
 
     public function offres()
     {
-        $offres = offre::all();
+        $offres = offre::latest()->get();
         $typebien = typebien::all();
         return view('Admin/offres', compact('offres', 'typebien'));
     }

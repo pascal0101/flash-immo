@@ -107,26 +107,27 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>OFFRES DISPONNIBLES</h1>
+             <marquee><h1>ANNONCES DISPONNIBLES</h1></marquee>
         </div>
 
         <div class="row">
             <div class="filtr-container">
                 @forelse($offres as $offre)
+                @if($offre->Publier == 1)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12  filtr-item" data-category="1, 2, 3">
                     <div class="property">
                         <!-- Property img -->
                         <div class="property-img">
-                            @if($offre->IdTypeOffre == 2)
+                            @if($offre->IdTypeOffre == 1)
                             <div class="property-tag button alt featured" style="background: red;">Vente</div>
-                            @elseif($offre->IdTypeOffre == 1)
+                            @elseif($offre->IdTypeOffre == 2)
                             <div class="property-tag button alt featured"  style="background: red;">Location</div>
                             @else
                             <div class="property-tag button alt featured" style="background: red;">Collocation</div>
                             @endif
+                            <div class="property-tag button sale" style="background: blue;">{{$offre->typebien->LibelleTypeBien}}</div>
 
-
-                            <div class="property-price">{{$offre->Prix}} FCFA</div>
+                            <div class="property-price">{{number_format($offre->Prix)}} FCFA</div>
                               @foreach ($offre->images as $image)
                                 @if ($loop->first)
                                      <img src="{{$image->image_path}}" alt="fp" class="img-responsive">
@@ -160,7 +161,7 @@
                             </h1>
                             <!-- Property address -->
                             <h3 class="property-address">
-                                <a href="properties-details.html">
+                                <a href="#">
                                     <i class="fa fa-map-marker"></i>{{$offre->Adresse}}
                                 </a>
                             </h3>
@@ -206,6 +207,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
   @empty
                 <h3>Aucune offre disponible</h3>
 @endforelse

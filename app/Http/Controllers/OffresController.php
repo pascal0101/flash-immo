@@ -52,7 +52,7 @@ class OffresController extends Controller
         $typebien = typebien::all(['id', 'LibelleTypeBien']);
         $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
 
-        $offres = Offre::latest()->paginate(6);
+        $offres = Offre::where('Publier', '=', 1)->latest()->paginate(6);
 
         $images = Image::get();
         //$images = DB::table('images')->join('offres', 'images.offre_id', '=', 'offres.id')->where('offre_id', '=', 'offres.id')->get();
@@ -94,7 +94,7 @@ class OffresController extends Controller
         $typebien = typebien::all(['id', 'LibelleTypeBien']);
         $typeoffre = TypeOffre::all(['id', 'LibelleTypeOffre']);
 
-        $offres = Offre::latest()->paginate(6);
+        $offres = Offre::where('Publier', '=', 1)->latest()->paginate(6);
 
         $images = Image::get();
 
@@ -119,7 +119,7 @@ class OffresController extends Controller
                 //->join('images', 'offres.id', '=', 'images.offre_id')
                 where('IdTypeBien', '=', $typebien)
                 ->where('IdTypeOffre', '=', $typeoffre)
-                ->Where('NombreChambre', '=', $nbrechambre)
+                //->Where('NombreChambre', '=', $nbrechambre)
                 //->where('WcDouche', '=', $toilette)
                 //->where('IdVille', '=', $ville)
                 // ->whereBetween('Prix', [$prix1, $prix2])
