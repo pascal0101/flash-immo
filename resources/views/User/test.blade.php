@@ -44,28 +44,14 @@
 
     function initialize() {
         console.log('ok');
-        var mymap = L.map("mapid").setView([7.528691, 1.130505], 15);
+        var mymap = L.map("mapid").setView([6.125553, 1.210171], 15);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(mymap);
 
 
-        var marker = L.marker([7.528691, 1.130505], {
-            draggable: "true"
-        });
-
-            var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
-
-            var results = L.layerGroup().addTo(mymap);
-
-            searchControl.on('results', function (data) {
-                results.clearLayers();
-                for (var i = data.results.length - 1; i >= 0; i--) {
-                  var marker = L.marker(data.results[i].latlng,{draggable: "true"});
-                results.addLayer(marker);
-                }
-            });
+   
 
         function currentLocation() {
         if (navigator.geolocation) {
@@ -73,10 +59,8 @@
                 //alert(position.coords.latitude)
                 document.getElementById("Latitude").value=position.coords.latitude;
                 document.getElementById("Longitude").value=position.coords.longitude;
-                var marker = L.marker([position.coords.latitude, position.coords.longitude], {
-            draggable: "true"
-        });
-                //marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+                var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap);
+                marker.bindPopup("Votre position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
             }));
         } else {
             alert("La géolocalisation n'est pas supportée par ce navigateur.");

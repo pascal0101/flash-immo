@@ -38,13 +38,15 @@
                                 <span>
                                     <i class="fa fa-globe"></i>Site Web:
                                 </span>
-                                <a href="{{$agences->SiteWeb}}" style="color: blue">{{$agences->SiteWeb}}</a>
+ 
+                                <a href="{{$agences->SiteWeb}}" target="_blank" style="color: blue">{{$agences->SiteWeb}}</a>
                             </li>
                             <li>
                                 <span>
                                     <i class="fa fa-envelope"></i>Email:
                                 </span>
-                                {{$agences->Email}}
+
+                                <a href="mailto:{{$agences->Email}}">{{$agences->Email}}</a>
                             </li>
                             <li>
                                 <span>
@@ -108,7 +110,7 @@
                             @endif
 
 
-                            <div class="property-price">{{$offre->Prix}} FCFA</div>
+                            <div class="property-price">{{number_format($offre->Prix)}} FCFA</div>
                               @foreach ($offre->images as $image)
                                 @if ($loop->first)
                                      <img src="{{$image->image_path}}" alt="fp" class="img-responsive">

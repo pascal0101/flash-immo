@@ -10,12 +10,12 @@
 
 <!-- One "tab" for each step in the form: -->
 <div class="tab">
-    <h5 style="color:black;text-align:center">Etape 1/4</h5>
+    <h4 style="text-align:center;color:blue">Etape 1/4</h4>
                 <div class="form-group {{$errors->has('titre') ? 'has-error' : ''}}">
                     <label style="color:black">Veuillez renseignez un titre</label>
                      <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                    <input type="text" class="form-control" name="titre" placeholder="Titre" value="{{ old('titre') }}">
+                    <input type="text" class="form-control" name="titre" placeholder="Titre de l'annonce" value="{{ old('titre') }}">
 
                 </div>
                  {!!$errors->first('titre','<span class="help-block">:message</span>')!!}
@@ -84,7 +84,7 @@
 </div>
 
 <div class="tab">
-    <h5 style="color:black;text-align:center">Etape 2/4</h5>
+     <h4 style="text-align:center;color:blue">Etape 2/4</h4>
 
                          <div class="row">
                             <div class="col-md-6 col-sm-6">
@@ -196,7 +196,7 @@
 </div>
 
 <div class="tab">
-    <h5 style="color:black;text-align:center">Etape 3/4</h5>
+     <h4 style="text-align:center;color:blue">Etape 3/4</h4>
 <div class="row">
                 <div class="col-lg-4 col-sm-4 col-xs-12">
                 <div class="form-group">
@@ -257,7 +257,7 @@
 </div>
 
 <div class="tab">
-    <h5 style="color:black;text-align:center">Etape 4/4</h5>
+     <h4 style="text-align:center;color:blue">Etape 4/4</h4>
  <div class="row">
   <div id="mapid" style="width: 900px; height: 480px;"></div>
         <div class="col-lg-4 col-sm-4 col-xs-12">
